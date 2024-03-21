@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '400620';
-include_once('./_common.php');
+include_once('_common.php');
 
 auth_check_menu($auth, $sub_menu, "r");
 
@@ -58,7 +58,7 @@ $result = sql_query($sql);
 $qstr1 = 'sel_ca_id='.$sel_ca_id.'&amp;sel_field='.$sel_field.'&amp;search='.$search;
 $qstr = $qstr1.'&amp;sort1='.$sort1.'&amp;sort2='.$sort2.'&amp;page='.$page;
 
-$listall = '<a href="'.$_SERVER['SCRIPT_NAME'].'" class="ov_listall">전체목록</a>';
+$listall = '<a href="'.remove_query_string($_SERVER['REQUEST_URI']).'" class="ov_listall">전체목록</a>';
 ?>
 
 <div class="local_ov01 local_ov">
@@ -104,7 +104,7 @@ $listall = '<a href="'.$_SERVER['SCRIPT_NAME'].'" class="ov_listall">전체목�
 </div>
 
 
-<form name="fitemstocklist" action="./itemstocklistupdate.php" method="post">
+<form name="fitemstocklist" action="./itemstocklistupdate" method="post">
 <input type="hidden" name="sort1" value="<?php echo $sort1; ?>">
 <input type="hidden" name="sort2" value="<?php echo $sort2; ?>">
 <input type="hidden" name="sel_ca_id" value="<?php echo $sel_ca_id; ?>">
@@ -194,7 +194,7 @@ $listall = '<a href="'.$_SERVER['SCRIPT_NAME'].'" class="ov_listall">전체목�
             <label for="stock_sms_<?php echo $i; ?>" class="sound_only">재입고 알림</label>
             <input type="checkbox" name="it_stock_sms[<?php echo $i; ?>]" value="1" id="stock_sms_<?php echo $i; ?>" <?php echo ($row['it_stock_sms'] ? "checked" : ""); ?>>
         </td>
-        <td class="td_mng td_mng_s"><a href="./itemform.php?w=u&amp;it_id=<?php echo $row['it_id']; ?>&amp;ca_id=<?php echo $row['ca_id']; ?>&amp;<?php echo $qstr; ?>" class="btn btn_03">수정</a></td>
+        <td class="td_mng td_mng_s"><a href="./itemform?w=u&amp;it_id=<?php echo $row['it_id']; ?>&amp;ca_id=<?php echo $row['ca_id']; ?>&amp;<?php echo $qstr; ?>" class="btn btn_03">수정</a></td>
     </tr>
     <?php
     }
@@ -206,8 +206,8 @@ $listall = '<a href="'.$_SERVER['SCRIPT_NAME'].'" class="ov_listall">전체목�
 </div>
 
 <div class="btn_fixed_top">
-    <a href="./optionstocklist.php" class="btn btn_02">상품옵션재고</a>
-    <a href="./itemsellrank.php"  class="btn btn_02">상품판매순위</a>
+    <a href="./optionstocklist" class="btn btn_02">상품옵션재고</a>
+    <a href="./itemsellrank"  class="btn btn_02">상품판매순위</a>
     <input type="submit" value="일괄수정" class="btn_submit btn">
 </div>
 </form>

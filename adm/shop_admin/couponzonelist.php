@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '400810';
-include_once('./_common.php');
+include_once('_common.php');
 
 auth_check_menu($auth, $sub_menu, "r");
 
@@ -53,7 +53,7 @@ $colspan = 9;
 </form>
 
 
-<form name="fcouponlist" id="fcouponzonelist" method="post" action="./couponzonelist_delete.php" onsubmit="return fcouponzonelist_submit(this);">
+<form name="fcouponlist" id="fcouponzonelist" method="post" action="./couponzonelist_delete" onsubmit="return fcouponzonelist_submit(this);">
 <input type="hidden" name="stx" value="<?php echo $stx; ?>">
 <input type="hidden" name="page" value="<?php echo $page; ?>">
 <input type="hidden" name="token" value="">
@@ -132,7 +132,7 @@ $colspan = 9;
         <td class="td_num"><?php echo number_format($row['cz_download']); ?></td>
         <td class="td_datetime"><?php echo substr($row['cz_start'], 2, 8); ?> ~ <?php echo substr($row['cz_end'], 2, 8); ?></td>
         <td class="td_mng td_mng_s">
-            <a href="./couponzoneform.php?w=u&amp;cz_id=<?php echo $row['cz_id']; ?>&amp;<?php echo $qstr; ?>" class="btn btn_03"><span class="sound_only"><?php echo get_text($row['cz_subject']); ?> </span>수정</a>
+            <a href="./couponzoneform?w=u&amp;cz_id=<?php echo $row['cz_id']; ?>&amp;<?php echo $qstr; ?>" class="btn btn_03"><span class="sound_only"><?php echo get_text($row['cz_subject']); ?> </span>수정</a>
         </td>
     </tr>
 
@@ -148,7 +148,7 @@ $colspan = 9;
 
 <div class="btn_fixed_top">
      <input type="submit" name="act_button" value="선택삭제" onclick="document.pressed=this.value" class="btn btn_02">
-   <a href="./couponzoneform.php" id="coupon_add" class="btn btn_01">쿠폰 추가</a>
+   <a href="./couponzoneform" id="coupon_add" class="btn btn_01">쿠폰 추가</a>
 </div>
 
 </form>

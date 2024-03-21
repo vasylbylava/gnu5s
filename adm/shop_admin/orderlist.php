@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '400400';
-include_once('./_common.php');
+include_once('_common.php');
 
 auth_check_menu($auth, $sub_menu, "r");
 
@@ -136,7 +136,7 @@ if($default['de_escrow_use'])
     $qstr1 .= "&amp;od_escrow=$od_escrow";
 $qstr = "$qstr1&amp;sort1=$sort1&amp;sort2=$sort2&amp;page=$page";
 
-$listall = '<a href="'.$_SERVER['SCRIPT_NAME'].'" class="ov_listall">전체목록</a>';
+$listall = '<a href="'.remove_query_string($_SERVER['REQUEST_URI']).'" class="ov_listall">전체목록</a>';
 
 // 주문삭제 히스토리 테이블 필드 추가
 if(!sql_query(" select mb_id from {$g5['g5_shop_order_delete_table']} limit 1 ", false)) {
@@ -674,7 +674,7 @@ function forderlist_submit(f)
     if (!confirm("선택하신 주문서의 주문상태를 '"+change_status+"'상태로 변경하시겠습니까?"))
         return false;
 
-    f.action = "./orderlistupdate.php";
+    f.action = "./orderlistupdate";
     return true;
 }
 </script>

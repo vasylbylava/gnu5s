@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '400300';
-include_once('./_common.php');
+include_once('_common.php');
 
 auth_check_menu($auth, $sub_menu, "r");
 
@@ -79,7 +79,7 @@ $result = sql_query($sql);
 //$qstr  = $qstr.'&amp;sca='.$sca.'&amp;page='.$page;
 $qstr  = $qstr.'&amp;sca='.$sca.'&amp;page='.$page.'&amp;save_stx='.$stx;
 
-$listall = '<a href="'.$_SERVER['SCRIPT_NAME'].'" class="ov_listall">전체목록</a>';
+$listall = '<a href="'.remove_query_string($_SERVER['REQUEST_URI']).'" class="ov_listall">전체목록</a>';
 ?>
 
 <div class="local_ov01 local_ov">
@@ -120,7 +120,7 @@ $listall = '<a href="'.$_SERVER['SCRIPT_NAME'].'" class="ov_listall">전체목�
 
 </form>
 
-<form name="fitemlistupdate" method="post" action="./itemlistupdate.php" onsubmit="return fitemlist_submit(this);" autocomplete="off" id="fitemlistupdate">
+<form name="fitemlistupdate" method="post" action="./itemlistupdate" onsubmit="return fitemlist_submit(this);" autocomplete="off" id="fitemlistupdate">
 <input type="hidden" name="sca" value="<?php echo $sca; ?>">
 <input type="hidden" name="sst" value="<?php echo $sst; ?>">
 <input type="hidden" name="sod" value="<?php echo $sod; ?>">
@@ -206,8 +206,8 @@ $listall = '<a href="'.$_SERVER['SCRIPT_NAME'].'" class="ov_listall">전체목�
         </td>
         <td rowspan="3" class="td_num"><?php echo $row['it_hit']; ?></td>
         <td rowspan="3" class="td_mng td_mng_s">
-            <a href="./itemform.php?w=u&amp;it_id=<?php echo $row['it_id']; ?>&amp;ca_id=<?php echo $row['ca_id']; ?>&amp;<?php echo $qstr; ?>" class="btn btn_03"><span class="sound_only"><?php echo htmlspecialchars2(cut_str($row['it_name'],250, "")); ?> </span>수정</a>
-            <a href="./itemcopy.php?it_id=<?php echo $row['it_id']; ?>&amp;ca_id=<?php echo $row['ca_id']; ?>" class="itemcopy btn btn_02" target="_blank"><span class="sound_only"><?php echo htmlspecialchars2(cut_str($row['it_name'],250, "")); ?> </span>복사</a>
+            <a href="./itemform?w=u&amp;it_id=<?php echo $row['it_id']; ?>&amp;ca_id=<?php echo $row['ca_id']; ?>&amp;<?php echo $qstr; ?>" class="btn btn_03"><span class="sound_only"><?php echo htmlspecialchars2(cut_str($row['it_name'],250, "")); ?> </span>수정</a>
+            <a href="./itemcopy?it_id=<?php echo $row['it_id']; ?>&amp;ca_id=<?php echo $row['ca_id']; ?>" class="itemcopy btn btn_02" target="_blank"><span class="sound_only"><?php echo htmlspecialchars2(cut_str($row['it_name'],250, "")); ?> </span>복사</a>
             <a href="<?php echo $href; ?>" class="btn btn_02"><span class="sound_only"><?php echo htmlspecialchars2(cut_str($row['it_name'],250, "")); ?> </span>보기</a>
         </td>
     </tr>
@@ -252,8 +252,8 @@ $listall = '<a href="'.$_SERVER['SCRIPT_NAME'].'" class="ov_listall">전체목�
 
 <div class="btn_fixed_top">
 
-    <a href="./itemform.php" class="btn btn_01">상품등록</a>
-    <a href="./itemexcel.php" onclick="return excelform(this.href);" target="_blank" class="btn btn_02">상품일괄등록</a>
+    <a href="./itemform" class="btn btn_01">상품등록</a>
+    <a href="./itemexcel" onclick="return excelform(this.href);" target="_blank" class="btn btn_02">상품일괄등록</a>
     <input type="submit" name="act_button" value="선택수정" onclick="document.pressed=this.value" class="btn btn_02">
     <?php if ($is_admin == 'super') { ?>
     <input type="submit" name="act_button" value="선택삭제" onclick="document.pressed=this.value" class="btn btn_02">

@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '400200';
-include_once('./_common.php');
+include_once('_common.php');
 include_once(G5_EDITOR_LIB);
 
 auth_check_menu($auth, $sub_menu, "w");
@@ -154,7 +154,7 @@ else {
 }
 ?>
 
-<form name="fcategoryform" action="./categoryformupdate.php" onsubmit="return fcategoryformcheck(this);" method="post" enctype="multipart/form-data">
+<form name="fcategoryform" action="./categoryformupdate" onsubmit="return fcategoryformcheck(this);" method="post" enctype="multipart/form-data">
 
 <input type="hidden" name="w" value="<?php echo $w; ?>">
 <input type="hidden" name="sst" value="<?php echo $sst; ?>">
@@ -186,8 +186,8 @@ else {
                 <input type="hidden" name="ca_id" value="<?php echo $ca['ca_id']; ?>">
                 <span class="frm_ca_id"><?php echo $ca['ca_id']; ?></span>
                 <a href="<?php echo shop_category_url($ca_id); ?>" class="btn_frmline">미리보기</a>
-                <a href="./categoryform.php?ca_id=<?php echo $ca_id; ?>&amp;<?php echo $qstr; ?>" class="btn_frmline">하위분류 추가</a>
-                <a href="./itemlist.php?sca=<?php echo $ca['ca_id']; ?>" class="btn_frmline">상품리스트</a>
+                <a href="./categoryform?ca_id=<?php echo $ca_id; ?>&amp;<?php echo $qstr; ?>" class="btn_frmline">하위분류 추가</a>
+                <a href="./itemlist?sca=<?php echo $ca['ca_id']; ?>" class="btn_frmline">상품리스트</a>
             <?php } ?>
             </td>
         </tr>
@@ -487,7 +487,7 @@ else {
 <?php } ?>
 <div class="btn_fixed_top">
     <input type="submit" value="확인" class="btn_submit btn" accesskey="s">
-    <a href="./categorylist.php?<?php echo $qstr; ?>" class="btn_02 btn">목록</a>
+    <a href="./categorylist?<?php echo $qstr; ?>" class="btn_02 btn">목록</a>
 </div>
 </form>
 
@@ -532,7 +532,7 @@ function fcategoryformcheck(f)
     if (f.w.value == "") {
         var error = "";
         $.ajax({
-            url: "./ajax.ca_id.php",
+            url: "./ajax.ca_id",
             type: "POST",
             data: {
                 "ca_id": f.ca_id.value
@@ -564,7 +564,7 @@ var captcha_chk = false;
 function use_captcha_check(){
     $.ajax({
         type: "POST",
-        url: g5_admin_url+"/ajax.use_captcha.php",
+        url: g5_admin_url+"/ajax.use_captcha",
         data: { admin_use_captcha: "1" },
         cache: false,
         async: false,
@@ -610,7 +610,7 @@ jQuery(function($){
 
         $.ajax({
             type: "POST",
-            url: "../theme_config_load.php",
+            url: "../theme_config_load",
             cache: false,
             async: false,
             data: { type: 'shop_category' },

@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 $naverpay_button_js = '';
 include_once(G5_SHOP_PATH.'/settle_naverpay.inc.php');
 
@@ -16,7 +16,7 @@ $s_cart_id = get_session('ss_cart_id');
 $sql = " update {$g5['g5_shop_cart_table']} set ct_select = '0' where od_id = '$s_cart_id' ";
 sql_query($sql);
 
-$cart_action_url = G5_SHOP_URL.'/cartupdate.php';
+$cart_action_url = G5_SHOP_URL.'/cartupdate';
 
 if(function_exists('before_check_cart_price')) {
     before_check_cart_price($s_cart_id, true, true, true);
@@ -38,7 +38,7 @@ if(defined('G5_THEME_SHOP_PATH')) {
 }
 
 $g5['title'] = '장바구니';
-include_once('./_head.php');
+include_once('_head.php');
 ?>
 
 <!-- 장바구니 시작 { -->
@@ -279,6 +279,12 @@ function fsubmit_check(f) {
 
 function form_check(act) {
     var f = document.frmcartlist;
+
+    if (typeof f.records === 'undefined') {
+        alert("장바구니에 상품이 없습니다.");
+        return false;
+    }
+
     var cnt = f.records.value;
 
     if (act == "buy")
@@ -313,4 +319,4 @@ function form_check(act) {
 <!-- } 장바구니 끝 -->
 
 <?php
-include_once('./_tail.php');
+include_once('_tail.php');

@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '400200';
-include_once('./_common.php');
+include_once('_common.php');
 
 check_demo();
 
@@ -94,4 +94,4 @@ for ($i=0; $i<$post_ca_id_count; $i++)
 
 }
 
-goto_url("./categorylist.php?$qstr");
+goto_url("./categorylist?$qstr");

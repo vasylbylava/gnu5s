@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '500500';
-include_once('./_common.php');
+include_once('_common.php');
 
 auth_check_menu($auth, $sub_menu, "w");
 
@@ -42,7 +42,7 @@ if(!sql_query(" select bn_device from {$g5['g5_shop_banner_table']} limit 0, 1 "
 include_once (G5_ADMIN_PATH.'/admin.head.php');
 ?>
 
-<form name="fbanner" action="./bannerformupdate.php" method="post" enctype="multipart/form-data">
+<form name="fbanner" action="./bannerformupdate" method="post" enctype="multipart/form-data">
 <input type="hidden" name="w" value="<?php echo $w; ?>">
 <input type="hidden" name="bn_id" value="<?php echo $bn_id; ?>">
 
@@ -164,7 +164,7 @@ include_once (G5_ADMIN_PATH.'/admin.head.php');
 </div>
 
 <div class="btn_fixed_top">
-    <a href="./bannerlist.php" class="btn_02 btn">목록</a>
+    <a href="./bannerlist" class="btn_02 btn">목록</a>
     <input type="submit" value="확인" class="btn_submit btn" accesskey="s">
 </div>
 

@@ -94,9 +94,9 @@ if ($xpay->TX()) {
 
         if(G5_IS_MOBILE) {
             if(isset($_POST['pp_id']) && $_POST['pp_id']) {
-                $page_return_url = G5_SHOP_URL.'/personalpayform.php?pp_id='.get_session('ss_personalpay_id');
+                $page_return_url = G5_SHOP_URL.'/personalpayform?pp_id='.get_session('ss_personalpay_id');
             } else {
-                $page_return_url = G5_SHOP_URL.'/orderform.php';
+                $page_return_url = G5_SHOP_URL.'/orderform';
                 if(get_session('ss_direct'))
                     $page_return_url .= '?sw_direct=1';
             }

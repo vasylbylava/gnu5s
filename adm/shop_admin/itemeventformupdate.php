@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '500300';
-include_once('./_common.php');
+include_once('_common.php');
 
 if ($w == "u" || $w == "d")
     check_demo();
@@ -124,9 +124,9 @@ if ($w == "" || $w == "u")
         }
     }
 
-    goto_url("./itemeventform.php?w=u&amp;ev_id=$ev_id");
+    goto_url("./itemeventform?w=u&amp;ev_id=$ev_id");
 }
 else
 {
-    goto_url("./itemevent.php");
+    goto_url("./itemevent");
 }

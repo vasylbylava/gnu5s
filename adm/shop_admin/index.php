@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '400010';
-include_once('./_common.php');
+include_once('_common.php');
 
 $max_limit = 7; // 몇행 출력할 것인지?
 
@@ -29,7 +29,7 @@ function get_order_status_sum($status)
     $info = array();
     $info['count'] = (int)$row['cnt'];
     $info['price'] = (int)$row['price'];
-    $info['href'] = './orderlist.php?od_status='.urlencode($status);
+    $info['href'] = './orderlist?od_status='.urlencode($status);
 
     return $info;
 }
@@ -296,8 +296,8 @@ function get_max_value($arr)
                 </thead>
                 <tbody>
                 <tr>
-                    <td class="td_num2"><a href="./itemstocklist.php"><?php echo number_format($item_noti); ?></a></td>
-                    <td class="td_num2"><a href="./optionstocklist.php"><?php echo number_format($option_noti); ?></a></td>
+                    <td class="td_num2"><a href="./itemstocklist"><?php echo number_format($item_noti); ?></a></td>
+                    <td class="td_num2"><a href="./optionstocklist"><?php echo number_format($option_noti); ?></a></td>
                     <td class="td_price"><?php echo display_price(intval($userinfo['coin'])); ?></td>
                 </tr>
                 </tbody>
@@ -451,7 +451,7 @@ function graph_draw()
                 ?>
                 <li>
                     <span class="oneq_cate oneq_span"><?php echo get_text($row['qa_category']); ?></span>
-                    <a href="<?php echo G5_BBS_URL; ?>/qaview.php?qa_id=<?php echo $row['qa_id']; ?>" target="_blank" class="oneq_link"><?php echo conv_subject($row['qa_subject'],40); ?></a>
+                    <a href="<?php echo G5_BBS_URL; ?>/qaview?qa_id=<?php echo $row['qa_id']; ?>" target="_blank" class="oneq_link"><?php echo conv_subject($row['qa_subject'],40); ?></a>
                     <?php echo $name; ?>
                 </li>
                 <?php
@@ -464,7 +464,7 @@ function graph_draw()
         </div>
 
         <div class="btn_list03 btn_list">
-            <a href="<?php echo G5_BBS_URL; ?>/qalist.php" target="_blank">1:1문의 더보기</a>
+            <a href="<?php echo G5_BBS_URL; ?>/qalist" target="_blank">1:1문의 더보기</a>
         </div>
     </section>
 
@@ -488,7 +488,7 @@ function graph_draw()
                     $name = get_sideview($row['mb_id'], get_text($row['iq_name']), $row1['mb_email'], $row1['mb_homepage']);
                 ?>
                 <li>
-                    <a href="./itemqaform.php?w=u&amp;iq_id=<?php echo $row['iq_id']; ?>" class="qna_link"><?php echo conv_subject($row['iq_subject'],40); ?></a>
+                    <a href="./itemqaform?w=u&amp;iq_id=<?php echo $row['iq_id']; ?>" class="qna_link"><?php echo conv_subject($row['iq_subject'],40); ?></a>
                     <?php echo $name; ?>
                 </li>
                 <?php
@@ -501,7 +501,7 @@ function graph_draw()
         </div>
 
         <div class="btn_list03 btn_list">
-            <a href="./itemqalist.php?sort1=iq_answer&amp;sort2=asc">상품문의 더보기</a>
+            <a href="./itemqalist?sort1=iq_answer&amp;sort2=asc">상품문의 더보기</a>
         </div>
     </section>
 
@@ -525,7 +525,7 @@ function graph_draw()
                 $name = get_sideview($row['mb_id'], get_text($row['is_name']), $row1['mb_email'], $row1['mb_homepage']);
             ?>
                 <li>
-                    <a href="./itemuseform.php?w=u&amp;is_id=<?php echo $row['is_id']; ?>" class="ps_link"><?php echo conv_subject($row['is_subject'],40); ?></a>
+                    <a href="./itemuseform?w=u&amp;is_id=<?php echo $row['is_id']; ?>" class="ps_link"><?php echo conv_subject($row['is_subject'],40); ?></a>
                     <?php echo $name; ?>
                 </li>
             <?php
@@ -536,7 +536,7 @@ function graph_draw()
         </div>
 
         <div class="btn_list03 btn_list">
-            <a href="./itemuselist.php?sort1=is_confirm&amp;sort2=asc">사용후기 더보기</a>
+            <a href="./itemuselist?sort1=is_confirm&amp;sort2=asc">사용후기 더보기</a>
         </div>
     </section>
 </div>

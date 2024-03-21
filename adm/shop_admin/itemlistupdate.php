@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '400300';
-include_once('./_common.php');
+include_once('_common.php');
 
 check_demo();
 
@@ -85,8 +85,8 @@ if ($post_act_button == "선택수정") {
 
         // include 전에 $it_id 값을 반드시 넘겨야 함
         $it_id = isset($_POST['it_id'][$k]) ? preg_replace('/[^a-z0-9_\-]/i', '', $_POST['it_id'][$k]) : '';
-        include ('./itemdelete.inc.php');
+        include ('itemdelete.inc.php');
     }
 }
 
-goto_url("./itemlist.php?sca=$sca&amp;sst=$sst&amp;sod=$sod&amp;sfl=$sfl&amp;stx=$stx&amp;page=$page");
+goto_url("./itemlist?sca=$sca&amp;sst=$sst&amp;sod=$sod&amp;sfl=$sfl&amp;stx=$stx&amp;page=$page");

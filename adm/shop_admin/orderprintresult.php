@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '500120';
-include_once('./_common.php');
+include_once('_common.php');
 
 $fr_date = isset($_REQUEST['fr_date']) ? preg_replace('/[^0-9 :_\-]/i', '', $_REQUEST['fr_date']) : '';
 $to_date = isset($_REQUEST['to_date']) ? preg_replace('/[^0-9 :_\-]/i', '', $_REQUEST['to_date']) : '';

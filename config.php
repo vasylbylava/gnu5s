@@ -100,7 +100,7 @@ define('G5_BBS_URL',        G5_URL.'/'.G5_BBS_DIR);
 define('G5_CSS_URL',        G5_URL.'/'.G5_CSS_DIR);
 define('G5_DATA_URL',       G5_URL.'/'.G5_DATA_DIR);
 define('G5_IMG_URL',        G5_URL.'/'.G5_IMG_DIR);
-define('G5_JS_URL',         G5_URL.'/'.G5_JS_DIR);
+define('G5_JS_URL',         G5_URL.'/static/'.G5_JS_DIR);
 define('G5_SKIN_URL',       G5_URL.'/'.G5_SKIN_DIR);
 define('G5_PLUGIN_URL',     G5_URL.'/'.G5_PLUGIN_DIR);
 define('G5_EDITOR_URL',     G5_PLUGIN_URL.'/'.G5_EDITOR_DIR);
@@ -142,7 +142,7 @@ define('G5_PHPMAILER_PATH', G5_PLUGIN_PATH.'/'.G5_PHPMAILER_DIR);
 // mobile 설정 시 PC에서도 모바일화면 보여짐
 // both 설정 시 접속 기기에 따른 화면 보여짐
 //------------------------------------------------------------------------------
-define('G5_SET_DEVICE', 'both');
+define('G5_SET_DEVICE', 'pc');
 
 define('G5_USE_MOBILE', false); // 모바일 홈페이지를 사용하지 않을 경우 false 로 설정
 define('G5_USE_CACHE',  false); // 최신글등에 cache 기능 사용 여부

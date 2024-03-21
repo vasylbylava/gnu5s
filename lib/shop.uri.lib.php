@@ -9,7 +9,7 @@ function shop_type_url($type, $add_param=''){
     }
 	
 	$add_params = $add_param ? '&'.$add_param : '';
-    return G5_SHOP_URL.'/listtype.php?type='.urlencode($type).$add_params;
+    return G5_SHOP_URL.'/listtype?type='.urlencode($type).$add_params;
 }
 
 function shop_item_url($it_id, $add_param=''){
@@ -20,7 +20,7 @@ function shop_item_url($it_id, $add_param=''){
     }
 	
 	$add_params = $add_param ? '&'.$add_param : '';
-    return G5_SHOP_URL.'/item.php?it_id='.urlencode($it_id).$add_params;
+    return G5_SHOP_URL.'/item?it_id='.urlencode($it_id).$add_params;
 }
 
 function shop_category_url($ca_id, $add_param=''){
@@ -31,7 +31,7 @@ function shop_category_url($ca_id, $add_param=''){
     }
 	
 	$add_params = $add_param ? '&'.$add_param : '';
-    return G5_SHOP_URL.'/list.php?ca_id='.urlencode($ca_id).$add_params;
+    return G5_SHOP_URL.'/list?ca_id='.urlencode($ca_id).$add_params;
 }
 
 function add_pretty_shop_url($url, $folder, $no='', $query_string='', $action=''){

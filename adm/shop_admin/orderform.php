@@ -128,7 +128,7 @@ add_javascript(G5_POSTCODE_JS, 0);    //다음 주소 js
         <?php } ?>
     </div>
 
-    <form name="frmorderform" method="post" action="./orderformcartupdate.php" onsubmit="return form_submit(this);">
+    <form name="frmorderform" method="post" action="./orderformcartupdate" onsubmit="return form_submit(this);">
     <input type="hidden" name="od_id" value="<?php echo $od_id; ?>">
     <input type="hidden" name="mb_id" value="<?php echo $od['mb_id']; ?>">
     <input type="hidden" name="od_email" value="<?php echo $od['od_email']; ?>">
@@ -220,7 +220,7 @@ add_javascript(G5_POSTCODE_JS, 0);    //다음 주소 js
             <tr>
                 <?php if($k == 0) { ?>
                 <td rowspan="<?php echo $rowspan; ?>" class="td_left">
-                    <a href="./itemform.php?w=u&amp;it_id=<?php echo $row['it_id']; ?>"><?php echo $image; ?> <?php echo stripslashes($row['it_name']); ?></a>
+                    <a href="./itemform?w=u&amp;it_id=<?php echo $row['it_id']; ?>"><?php echo $image; ?> <?php echo stripslashes($row['it_name']); ?></a>
                     <?php if($od['od_tax_flag'] && $row['ct_notax']) echo '[비과세상품]'; ?>
                 </td>
                 <td rowspan="<?php echo $rowspan; ?>" class="td_chk">

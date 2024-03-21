@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 
 if (G5_IS_MOBILE) {
     include_once(G5_MSHOP_PATH.'/item.php');
@@ -129,7 +129,7 @@ if(defined('G5_THEME_USE_ITEM_CATEGORY') && G5_THEME_USE_ITEM_CATEGORY){
 }
 
 if ($is_admin) {
-    echo '<div class="sit_admin"><a href="'.G5_ADMIN_URL.'/shop_admin/itemform.php?w=u&amp;it_id='.$it_id.'" class="btn_admin btn" title="상품 관리"><span class="sound_only">상품 관리</span><i class="fa fa-cog fa-spin fa-fw"></i></a></div>';
+    echo '<div class="sit_admin"><a href="'.G5_ADMIN_URL.'/shop_admin/itemform?w=u&amp;it_id='.$it_id.'" class="btn_admin btn" title="상품 관리"><span class="sound_only">상품 관리</span><i class="fa fa-cog fa-spin fa-fw"></i></a></div>';
 }
 ?>
 
@@ -140,9 +140,9 @@ echo run_replace('shop_it_head_html', '<div id="sit_hhtml">'.conv_content($it['i
 
 // 보안서버경로
 if (G5_HTTPS_DOMAIN)
-    $action_url = G5_HTTPS_DOMAIN.'/'.G5_SHOP_DIR.'/cartupdate.php';
+    $action_url = G5_HTTPS_DOMAIN.'/'.G5_SHOP_DIR.'/cartupdate';
 else
-    $action_url = G5_SHOP_URL.'/cartupdate.php';
+    $action_url = G5_SHOP_URL.'/cartupdate';
 
 
 // 이전 상품보기

@@ -59,7 +59,7 @@ $sql = " select count(*) as cnt {$sql_common} {$sql_search} and mb_intercept_dat
 $row = sql_fetch($sql);
 $intercept_count = $row['cnt'];
 
-$listall = '<a href="' . $_SERVER['SCRIPT_NAME'] . '" class="ov_listall">전체목록</a>';
+$listall = '<a href="'.remove_query_string($_SERVER['REQUEST_URI']).'" class="ov_listall">전체목록</a>';
 
 $g5['title'] = '회원관리';
 require_once 'admin.head.php';

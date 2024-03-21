@@ -34,7 +34,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_SHOP_CSS_URL.'/style.css">', 0
 	        }
 	
 	        if($big_img_count == 0) {
-	            echo '<img src="'.G5_SHOP_URL.'/img/no_image.gif" alt="">';
+	            echo '<img src="'.G5_URL.'/staic/shop/img/no_image.gif" alt="">';
 	        }
 	        ?>
 	        <a href="<?php echo G5_SHOP_URL; ?>/largeimage.php?it_id=<?php echo $it['it_id']; ?>&amp;no=1" target="_blank" id="popup_item_image" class="popup_item_image"><i class="fa fa-search-plus" aria-hidden="true"></i><span class="sound_only">확대보기</span></a>
@@ -330,7 +330,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_SHOP_CSS_URL.'/style.css">', 0
 	            if (!g5_is_member)
 	            {
 	                if (confirm("회원만 추천하실 수 있습니다."))
-	                    document.location.href = "<?php echo G5_BBS_URL; ?>/login.php?url=<?php echo urlencode(shop_item_url($it_id)); ?>";
+	                    document.location.href = "<?php echo G5_BBS_URL; ?>/login?url=<?php echo urlencode(shop_item_url($it_id)); ?>";
 	            }
 	            else
 	            {

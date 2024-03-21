@@ -30,10 +30,10 @@ if (isset($row['dt_data']) && (base64_encode(base64_decode($row['dt_data'], true
 
 if(isset($data['pp_id']) && $data['pp_id']) {
     $order_action_url = G5_HTTPS_MSHOP_URL.'/personalpayformupdate.php';
-    $page_return_url  = G5_SHOP_URL.'/personalpayform.php?pp_id='.$data['pp_id'];
+    $page_return_url  = G5_SHOP_URL.'/personalpayform?pp_id='.$data['pp_id'];
 } else {
     $order_action_url = G5_HTTPS_MSHOP_URL.'/orderformupdate.php';
-    $page_return_url  = G5_SHOP_URL.'/orderform.php';
+    $page_return_url  = G5_SHOP_URL.'/orderform';
     if(get_session('ss_direct'))
         $page_return_url .= '?sw_direct=1';
 

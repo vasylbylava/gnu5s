@@ -3,13 +3,13 @@ if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
 
 // add_stylesheet('css 구문', 출력순서); 숫자가 작을 수록 먼저 출력됨
 add_stylesheet('<link rel="stylesheet" href="'.G5_SHOP_SKIN_URL.'/style.css">', 0);
-$cart_action_url = G5_SHOP_URL.'/cartupdate.php';
+$cart_action_url = G5_SHOP_URL.'/cartupdate';
 ?>
 
 <!-- 장바구니 간략 보기 시작 { -->
 <aside id="sbsk" class="sbsk">
     <h2 class="s_h2">장바구니 <span class="cart-count"><?php echo get_boxcart_datas_count(); ?></span></h2>
-    <form name="skin_frmcartlist" id="skin_sod_bsk_list" method="post" action="<?php echo G5_SHOP_URL.'/cartupdate.php'; ?>">
+    <form name="skin_frmcartlist" id="skin_sod_bsk_list" method="post" action="<?php echo $cart_action_url; ?>">
     <ul>
     <?php
     $cart_datas = get_boxcart_datas(true);

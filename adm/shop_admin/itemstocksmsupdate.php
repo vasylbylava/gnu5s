@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '500400';
-include_once('./_common.php');
+include_once('_common.php');
 
 check_demo();
 
@@ -119,4 +119,4 @@ if ($_POST['act_button'] == "선택SMS전송") {
 $qstr1 = 'sel_field='.$sel_field.'&amp;search='.$search;
 $qstr = $qstr1.'&amp;sort1='.$sort1.'&amp;sort2='.$sort2.'&amp;page='.$page;
 
-goto_url('./itemstocksms.php?'.$qstr);
+goto_url('./itemstocksms?'.$qstr);

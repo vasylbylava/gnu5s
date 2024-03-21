@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 
 if (get_session('ss_direct'))
     $tmp_cart_id = get_session('ss_cart_direct');

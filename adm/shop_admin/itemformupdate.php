@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '400300';
-include_once('./_common.php');
+include_once('_common.php');
 
 if ($w == "u" || $w == "d")
     check_demo();
@@ -639,17 +639,17 @@ run_event('shop_admin_itemformupdate', $it_id, $w);
 $qstr = "$qstr&amp;sca=$sca&amp;page=$page";
 
 if ($w == "u") {
-    goto_url("./itemform.php?w=u&amp;it_id=$it_id&amp;$qstr");
+    goto_url("./itemform?w=u&amp;it_id=$it_id&amp;$qstr");
 } else if ($w == "d")  {
     $qstr = "ca_id=$ca_id&amp;sfl=$sfl&amp;sca=$sca&amp;page=$page&amp;stx=".urlencode($stx)."&amp;save_stx=".urlencode($save_stx);
-    goto_url("./itemlist.php?$qstr");
+    goto_url("./itemlist?$qstr");
 }
 
 echo "<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\">";
 ?>
 <script>
     if (confirm("계속 입력하시겠습니까?"))
-        location.href = "<?php echo "./itemform.php?".str_replace('&amp;', '&', $qstr); ?>";
+        location.href = "<?php echo "./itemform?".str_replace('&amp;', '&', $qstr); ?>";
     else
-        location.href = "<?php echo "./itemlist.php?".str_replace('&amp;', '&', $qstr); ?>";
+        location.href = "<?php echo "./itemlist?".str_replace('&amp;', '&', $qstr); ?>";
 </script>

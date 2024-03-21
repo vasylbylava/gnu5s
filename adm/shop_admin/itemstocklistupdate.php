@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '400620';
-include_once('./_common.php');
+include_once('_common.php');
 
 check_demo();
 
@@ -36,4 +36,4 @@ for ($i=0; $i<$count_post_it_id; $i++)
     sql_query($sql);
 }
 
-goto_url("./itemstocklist.php?sort1=$sort1&amp;sort2=$sort2&amp;sel_ca_id=$sel_ca_id&amp;sel_field=$sel_field&amp;search=$search&amp;page=$page");
+goto_url("./itemstocklist?sort1=$sort1&amp;sort2=$sort2&amp;sel_ca_id=$sel_ca_id&amp;sel_field=$sel_field&amp;search=$search&amp;page=$page");

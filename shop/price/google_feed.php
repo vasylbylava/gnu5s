@@ -1,5 +1,5 @@
 <?php
-include_once("./_common.php");
+include_once("_common.php");
 
 $sql = "SELECT a.ca_id,
                 a.ca_adult_use AS ca_adult,

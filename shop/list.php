@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 
 $ca_id = isset($_REQUEST['ca_id']) ? safe_replace_regex($_REQUEST['ca_id'], 'ca_id') : '';
 $skin = isset($_REQUEST['skin']) ? safe_replace_regex($_REQUEST['skin'], 'skin') : '';

@@ -103,9 +103,9 @@ try {
             $data = isset($row['dt_data']) ? unserialize(base64_decode($row['dt_data'])) : array();
 
             if(isset($data['pp_id']) && $data['pp_id']) {
-                $page_return_url  = G5_SHOP_URL.'/personalpayform.php?pp_id='.$data['pp_id'];
+                $page_return_url  = G5_SHOP_URL.'/personalpayform?pp_id='.$data['pp_id'];
             } else {
-                $page_return_url  = G5_SHOP_URL.'/orderform.php';
+                $page_return_url  = G5_SHOP_URL.'/orderform';
                 if(get_session('ss_direct'))
                     $page_return_url .= '?sw_direct=1';
             }

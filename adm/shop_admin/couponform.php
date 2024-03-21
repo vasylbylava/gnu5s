@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '400800';
-include_once('./_common.php');
+include_once('_common.php');
 
 auth_check_menu($auth, $sub_menu, "w");
 
@@ -45,7 +45,7 @@ include_once (G5_ADMIN_PATH.'/admin.head.php');
 include_once(G5_PLUGIN_PATH.'/jquery-ui/datepicker.php');
 ?>
 
-<form name="fcouponform" action="./couponformupdate.php" method="post" onsubmit="return form_check(this);">
+<form name="fcouponform" action="./couponformupdate" method="post" onsubmit="return form_check(this);">
 <input type="hidden" name="w" value="<?php echo $w; ?>">
 <input type="hidden" name="cp_id" value="<?php echo $cp_id; ?>">
 <input type="hidden" name="sst" value="<?php echo $sst; ?>">
@@ -165,7 +165,7 @@ include_once(G5_PLUGIN_PATH.'/jquery-ui/datepicker.php');
 </div>
 
 <div class="btn_fixed_top">
-    <a href="./couponlist.php" class="btn btn_02">목록</a>
+    <a href="./couponlist" class="btn btn_02">목록</a>
     <input type="submit" value="확인" class="btn_submit btn" accesskey="s">
 </div>
 
@@ -194,7 +194,7 @@ $(function() {
     $("#sch_target").click(function() {
         var cp_method = $("#cp_method").val();
         var opt = "left=50,top=50,width=520,height=600,scrollbars=1";
-        var url = "./coupontarget.php?sch_target=";
+        var url = "./coupontarget?sch_target=";
 
         if(cp_method == "0") {
             window.open(url+"0", "win_target", opt);
@@ -212,7 +212,7 @@ $(function() {
         }
 
         var opt = "left=50,top=50,width=520,height=600,scrollbars=1";
-        var url = "./couponmember.php";
+        var url = "./couponmember";
         window.open(url, "win_member", opt);
     });
 

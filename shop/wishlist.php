@@ -2,7 +2,7 @@
 include_once('./_common.php');
 
 if (!$is_member)
-    goto_url(G5_BBS_URL."/login.php?url=".urlencode(G5_SHOP_URL.'/wishlist.php'));
+    goto_url(G5_BBS_URL."/login?url=".urlencode(G5_SHOP_URL.'/wishlist'));
 
 if (G5_IS_MOBILE) {
     include_once(G5_MSHOP_PATH.'/wishlist.php');
@@ -26,7 +26,7 @@ include_once('./_head.php');
 <!-- 위시리스트 시작 { -->
 <div id="sod_ws">
 
-    <form name="fwishlist" method="post" action="./cartupdate.php">
+    <form name="fwishlist" method="post" action="./cartupdate">
     <input type="hidden" name="act" value="multi">
     <input type="hidden" name="sw_direct" value="">
     <input type="hidden" name="prog" value="wish">

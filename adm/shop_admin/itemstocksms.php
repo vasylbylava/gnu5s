@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '500400';
-include_once('./_common.php');
+include_once('_common.php');
 
 auth_check_menu($auth, $sub_menu, "r");
 
@@ -64,7 +64,7 @@ $result = sql_query($sql);
 $qstr1 = 'sel_field='.$sel_field.'&amp;search='.$search;
 $qstr = $qstr1.'&amp;sort1='.$sort1.'&amp;sort2='.$sort2.'&amp;page='.$page;
 
-$listall = '<a href="'.$_SERVER['SCRIPT_NAME'].'" class="ov_listall">전체목록</a>';
+$listall = '<a href="'.remove_query_string($_SERVER['REQUEST_URI']).'" class="ov_listall">전체목록</a>';
 ?>
 
 <div class="local_ov01 local_ov">

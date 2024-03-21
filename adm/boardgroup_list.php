@@ -54,7 +54,7 @@ $from_record = ($page - 1) * $rows; // 시작 열을 구함
 $sql = " select * {$sql_common} {$sql_search} {$sql_order} limit {$from_record}, {$rows} ";
 $result = sql_query($sql);
 
-$listall = '<a href="' . $_SERVER['SCRIPT_NAME'] . '" class="ov_listall">처음</a>';
+$listall = '<a href="'.remove_query_string($_SERVER['REQUEST_URI']).'" class="ov_listall">처음</a>';
 
 $g5['title'] = '게시판그룹설정';
 require_once 'admin.head.php';

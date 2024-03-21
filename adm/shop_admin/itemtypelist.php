@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '400610';
-include_once('./_common.php');
+include_once('_common.php');
 
 auth_check_menu($auth, $sub_menu, "r");
 
@@ -76,7 +76,7 @@ $result = sql_query($sql);
 
 $qstr  = $qstr.'&amp;sca='.$sca.'&amp;page='.$page.'&amp;save_stx='.$stx;
 
-$listall = '<a href="'.$_SERVER['SCRIPT_NAME'].'" class="ov_listall">전체목록</a>';
+$listall = '<a href="'.remove_query_string($_SERVER['REQUEST_URI']).'" class="ov_listall">전체목록</a>';
 ?>
 
 <div class="local_ov01 local_ov">
@@ -115,7 +115,7 @@ $listall = '<a href="'.$_SERVER['SCRIPT_NAME'].'" class="ov_listall">전체목�
 
 </form>
 
-<form name="fitemtypelist" method="post" action="./itemtypelistupdate.php">
+<form name="fitemtypelist" method="post" action="./itemtypelistupdate">
 <input type="hidden" name="sca" value="<?php echo $sca; ?>">
 <input type="hidden" name="sst" value="<?php echo $sst; ?>">
 <input type="hidden" name="sod" value="<?php echo $sod; ?>">
@@ -171,7 +171,7 @@ $listall = '<a href="'.$_SERVER['SCRIPT_NAME'].'" class="ov_listall">전체목�
             <input type="checkbox" name="it_type5[<?php echo $i; ?>]" value="1" id="type5_<?php echo $i; ?>" <?php echo ($row['it_type5'] ? 'checked' : ''); ?>>
         </td>
         <td class="td_mng td_mng_s">
-            <a href="./itemform.php?w=u&amp;it_id=<?php echo $row['it_id']; ?>&amp;ca_id=<?php echo $row['ca_id']; ?>&amp;<?php echo $qstr; ?>" class="btn btn_03"><span class="sound_only"><?php echo cut_str(stripslashes($row['it_name']), 60, "&#133"); ?> </span>수정</a>
+            <a href="./itemform?w=u&amp;it_id=<?php echo $row['it_id']; ?>&amp;ca_id=<?php echo $row['ca_id']; ?>&amp;<?php echo $qstr; ?>" class="btn btn_03"><span class="sound_only"><?php echo cut_str(stripslashes($row['it_name']), 60, "&#133"); ?> </span>수정</a>
          </td>
     </tr>
     <?php

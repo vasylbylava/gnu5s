@@ -21,7 +21,7 @@ $is_auth = $is_admin ? true : false;
 $category_option = '';
 
 if ($qaconfig['qa_category']) {
-    $category_href = G5_BBS_URL.'/qalist.php';
+    $category_href = G5_BBS_URL.'/qalist';
 
     $category_option .= '<li><a href="'.$category_href.'"';
     if ($sca=='')
@@ -143,7 +143,7 @@ if(is_file($skin_file)) {
     $stx = get_text(stripslashes($stx));
     include_once($skin_file);
 } else {
-    echo '<div>'.str_replace(G5_PATH.'/', '', $skin_file).'이 존재하지 않습니다.</div>';
+    echo '<div>'.str_replace(G5_THEME_PATH.'/', '', $skin_file).'이 존재하지 않습니다.</div>';
 }
 
 include_once('qatail.php');

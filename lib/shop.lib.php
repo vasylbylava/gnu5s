@@ -382,7 +382,7 @@ function get_image($img, $width=0, $height=0, $img_id='')
     }
     else
     {
-        $str = '<img src="'.G5_SHOP_URL.'/img/no_image.gif" alt="" ';
+        $str = '<img src="'.G5_URL.'/static/shop/img/no_image.gif" alt="" ';
         if ($width)
             $str .= 'width="'.$width.'" height="'.$height.'"';
         else
@@ -442,7 +442,7 @@ function get_it_image($it_id, $width, $height=0, $anchor=false, $img_id='', $img
         $file_url = str_replace(G5_PUBLIC_PATH, G5_URL, $filepath.'/'.$thumb);
         $img = '<img src="'.$file_url.'" width="'.$width.'" height="'.$height.'" alt="'.$img_alt.'"';
     } else {
-        $img = '<img src="'.G5_SHOP_URL.'/img/no_image.gif" width="'.$width.'"';
+        $img = '<img src="'.G5_URL.'/static/shop/img/no_image.gif" width="'.$width.'"';
         if($height)
             $img .= ' height="'.$height.'"';
         $img .= ' alt="'.$img_alt.'"';
@@ -525,7 +525,7 @@ function get_it_imageurl($it_id)
     if($filepath)
         $str = str_replace(G5_PUBLIC_PATH, G5_URL, $filepath);
     else
-        $str = G5_SHOP_URL.'/img/no_image.gif';
+        $str = G5_URL.'/static/shop/img/no_image.gif';
 
     return $str;
 }
@@ -2348,9 +2348,9 @@ function exists_inicis_shop_order($oid, $pp=array(), $od_time='', $od_ip='')
             // orderview 에서 사용하기 위해 session에 넣고
             $uid = md5($oid.$od_time.$od_ip);
             set_session('ss_orderview_uid', $uid);
-            goto_url(G5_SHOP_URL.'/orderinquiryview.php?od_id='.$oid.'&amp;uid='.$uid.'&amp;ini_noti=1');
+            goto_url(G5_SHOP_URL.'/orderinquiryview?od_id='.$oid.'&amp;uid='.$uid.'&amp;ini_noti=1');
         } else {
-            goto_url(G5_SHOP_URL.'/orderinquiryview.php?od_id='.$oid.'&amp;ini_noti=1');
+            goto_url(G5_SHOP_URL.'/orderinquiryview?od_id='.$oid.'&amp;ini_noti=1');
         }
     }
     return '';

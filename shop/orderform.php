@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 
 // add_javascript('js 구문', 출력순서); 숫자가 작을 수록 먼저 출력됨
 add_javascript(G5_POSTCODE_JS, 0);    //다음 주소 js
@@ -25,7 +25,7 @@ if (get_cart_count($tmp_cart_id) == 0)
     alert('장바구니가 비어 있습니다.', G5_SHOP_URL.'/cart.php');
 
 if (function_exists('before_check_cart_price')) {
-    if(! before_check_cart_price($tmp_cart_id) ) alert('장바구니 금액에 변동사항이 있습니다.\n장바구니를 다시 확인해 주세요.', G5_SHOP_URL.'/cart.php');
+    if(! before_check_cart_price($tmp_cart_id) ) alert('장바구니 금액에 변동사항이 있습니다.\n장바구니를 다시 확인해 주세요.', G5_SHOP_URL.'/cart');
 }
 
 // 새로운 주문번호 생성
@@ -51,10 +51,10 @@ if ($default['de_hope_date_use']) {
 
 // 기기별 주문폼 include
 if($is_mobile_order) {
-    $order_action_url = G5_HTTPS_MSHOP_URL.'/orderformupdate.php';
+    $order_action_url = G5_HTTPS_MSHOP_URL.'/orderformupdate';
     require_once(G5_MSHOP_PATH.'/orderform.sub.php');
 } else {
-    $order_action_url = G5_HTTPS_SHOP_URL.'/orderformupdate.php';
+    $order_action_url = G5_HTTPS_SHOP_URL.'/orderformupdate';
     require_once(G5_SHOP_PATH.'/orderform.sub.php');
 }
 

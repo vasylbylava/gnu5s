@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '500310';
-include_once('./_common.php');
+include_once('_common.php');
 
 auth_check_menu($auth, $sub_menu, "r");
 
@@ -60,7 +60,7 @@ $result = sql_query($sql);
 $qstr1 = 'ev_id='.$ev_id.'&amp;sel_ca_id='.$sel_ca_id.'&amp;sel_field='.$sel_field.'&amp;search='.$search;
 $qstr  = $qstr1.'&amp;sort1='.$sort1.'&amp;sort2='.$sort2.'&amp;page='.$page;
 
-$listall = '<a href="'.$_SERVER['SCRIPT_NAME'].'" class="ov_listall">전체목록</a>';
+$listall = '<a href="'.remove_query_string($_SERVER['REQUEST_URI']).'" class="ov_listall">전체목록</a>';
 
 // 이벤트제목
 if($ev_id) {
@@ -77,7 +77,7 @@ if($ev_id) {
 <form name="flist" class="local_sch01 local_sch" autocomplete="off">
 <input type="hidden" name="page" value="<?php echo $page; ?>">
 <label for="ev_id" class="sound_only">이벤트</label>
-<select name="ev_id" id="ev_id" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
+<select name="ev_id" id="ev_id">
     <?php
     // 이벤트 옵션처리
     $event_option = "<option value=''>이벤트를 선택하세요</option>";
@@ -128,7 +128,7 @@ if($ev_id) {
     <p>상품을 이벤트별로 일괄 처리합니다. <?php echo ($ev_title ? '현재 선택된 이벤트는 '.$ev_title.'입니다.' : '이벤트를 선택해 주세요.'); ?></p>
 </div>
 
-<form name="fitemeventlistupdate" method="post" action="./itemeventlistupdate.php" onsubmit="return fitemeventlistupdatecheck(this)">
+<form name="fitemeventlistupdate" method="post" action="./itemeventlistupdate" onsubmit="return fitemeventlistupdatecheck(this)">
 <input type="hidden" name="ev_id" value="<?php echo $ev_id; ?>">
 <input type="hidden" name="sel_ca_id" value="<?php echo $sel_ca_id; ?>">
 <input type="hidden" name="sel_field" value="<?php echo $sel_field; ?>">

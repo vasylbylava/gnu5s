@@ -14,7 +14,7 @@ function get_social_skin_path(){
         $cf_theme = trim($config['cf_theme']);
         $dir = G5_SOCIAL_LOGIN_DIR;
 
-        $theme_path = G5_PATH.'/public/'.G5_THEME_DIR.'/'.$cf_theme;
+        $theme_path = G5_THEME_PATH.'/'.G5_THEME_DIR.'/'.$cf_theme;
 
         if(G5_IS_MOBILE) {
             $skin_path = $theme_path.'/'.G5_MOBILE_DIR.'/'.G5_SKIN_DIR.'/'.$dir;

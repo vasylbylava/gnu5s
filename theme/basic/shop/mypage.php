@@ -28,25 +28,25 @@ for($k=0; $cp=sql_fetch_array($res); $k++) {
         
         <div class="smb_me">
 	        <strong class="my_ov_name"><?php echo get_member_profile_img($member['mb_id']); ?><br><?php echo $member['mb_name']; ?></strong><br>
-	        <a href="<?php echo G5_BBS_URL ?>/member_confirm.php?url=register_form.php" class="smb_info">정보수정</a>
-	        <a href="<?php echo G5_BBS_URL ?>/logout.php">로그아웃</a>
+	        <a href="<?php echo G5_BBS_URL ?>/member_confirm?url=register_form" class="smb_info">정보수정</a>
+	        <a href="<?php echo G5_BBS_URL ?>/logout">로그아웃</a>
         </div>
         
         <ul id="smb_private">
 	    	<li>
-	            <a href="<?php echo G5_BBS_URL ?>/point.php" target="_blank" class="win_point">
+	            <a href="<?php echo G5_BBS_URL ?>/point" target="_blank" class="win_point">
 					<i class="fa fa-database" aria-hidden="true"></i>포인트
 					<strong><?php echo number_format($member['mb_point']); ?></strong>
 	            </a>
 	        </li>
 	        <li>
-	        	<a href="<?php echo G5_SHOP_URL ?>/coupon.php" target="_blank" class="win_coupon">
+	        	<a href="<?php echo G5_SHOP_URL ?>/coupon" target="_blank" class="win_coupon">
 	        		<i class="fa fa-ticket" aria-hidden="true"></i>쿠폰
 	        		<strong><?php echo number_format($cp_count); ?></strong>
 	        	</a>
 	        </li>
 	        <li>
-	            <a href="<?php echo G5_BBS_URL ?>/memo.php" target="_blank" class="win_memo">
+	            <a href="<?php echo G5_BBS_URL ?>/memo" target="_blank" class="win_memo">
 	            	<i class="fa fa-envelope-o" aria-hidden="true"></i><span class="sound_only">안 읽은 </span>쪽지
 	                <strong><?php echo $memo_not_read ?></strong>
 	            </a>
@@ -73,7 +73,7 @@ for($k=0; $cp=sql_fetch_array($res); $k++) {
             <dd id="smb_my_ovaddd"><?php echo sprintf("(%s%s)", $member['mb_zip1'], $member['mb_zip2']).' '.print_address($member['mb_addr1'], $member['mb_addr2'], $member['mb_addr3'], $member['mb_addr_jibeon']); ?></dd>
         </dl>
         
-        <a href="<?php echo G5_BBS_URL; ?>/member_confirm.php?url=member_leave.php" onclick="return member_leave();" class="withdrawal">회원탈퇴</a>
+        <a href="<?php echo G5_BBS_URL; ?>/member_confirm?url=member_leave.php" onclick="return member_leave();" class="withdrawal">회원탈퇴</a>
     </section>
     <!-- } 회원정보 개요 끝 -->
 
@@ -98,7 +98,7 @@ for($k=0; $cp=sql_fetch_array($res); $k++) {
 	    <!-- 최근 위시리스트 시작 { -->
 	    <section id="smb_my_wish">
 	        <h2>최근 위시리스트</h2>
-            <form name="fwishlist" method="post" action="./cartupdate.php">
+            <form name="fwishlist" method="post" action="./cartupdate">
             <input type="hidden" name="act" value="multi">
             <input type="hidden" name="sw_direct" value="">
             <input type="hidden" name="prog" value="wish">

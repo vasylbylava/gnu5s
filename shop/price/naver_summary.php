@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 
 // clean the output buffer
 ob_end_clean();

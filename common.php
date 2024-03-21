@@ -16,8 +16,8 @@ if( version_compare( PHP_VERSION, '5.2.17' , '<' ) ){
 
 // 이 코드를 해결할 마땅한 방법이 없네
 global $config, $member, $board, $group, $g5, $qaconfig, $g5_debug;
-global $menu, $auth_menu, $is_admin, $is_member, $auth;
-global $g5_object;
+global $menu, $auth_menu, $is_admin, $is_member, $auth, $g5_object;
+global $default;
 
 //==========================================================================================================================
 // extract($_GET); 명령으로 인해 page.php?_POST[var1]=data1&_POST[var2]=data2 와 같은 코드가 _POST 변수로 사용되는 것을 막음

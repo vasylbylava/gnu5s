@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '500210';
-include_once('./_common.php');
+include_once('_common.php');
 
 auth_check_menu($auth, $sub_menu, "r");
 
@@ -37,8 +37,8 @@ $pg_anchor = '<ul class="anchor">
             <dd>
                 <ul>
                     <li>입점 안내 : <a href="http://join.shopping.naver.com/join/intro.nhn" target="_blank">http://join.shopping.naver.com/join/intro.nhn</a></li>
-                    <li>전체상품 URL : <a href="<?php echo G5_SHOP_URL; ?>/price/naver.php" target="_blank"><?php echo G5_SHOP_URL; ?>/price/naver.php</a></li>
-                    <li>요약상품 URL : <a href="<?php echo G5_SHOP_URL; ?>/price/naver_summary.php" target="_blank"><?php echo G5_SHOP_URL; ?>/price/naver_summary.php</a></li>
+                    <li>전체상품 URL : <a href="<?php echo G5_SHOP_URL; ?>/price/naver" target="_blank"><?php echo G5_SHOP_URL; ?>/price/naver</a></li>
+                    <li>요약상품 URL : <a href="<?php echo G5_SHOP_URL; ?>/price/naver_summary" target="_blank"><?php echo G5_SHOP_URL; ?>/price/naver_summary</a></li>
                 </ul>
             </dd>
 
@@ -47,7 +47,7 @@ $pg_anchor = '<ul class="anchor">
                 <ul>
                     <li>구글 Merchant Center : <a href="https://www.google.com/intl/ko_kr/retail/solutions/merchant-center" target="_blank">https://www.google.com/intl/ko_kr/retail/solutions/merchant-center</a></li>
                     <li>파일 이름 : google_feed.php</a></li>
-                    <li>파일 URL : <a href="<?php echo G5_SHOP_URL; ?>/price/google_feed.php" target="_blank"><?php echo G5_SHOP_URL; ?>/price/google_feed.php</a></li>
+                    <li>파일 URL : <a href="<?php echo G5_SHOP_URL; ?>/price/google_feed" target="_blank"><?php echo G5_SHOP_URL; ?>/price/google_feed</a></li>
                 </ul>
             </dd>
             <dt>Feed 설명</dt>
@@ -63,8 +63,8 @@ $pg_anchor = '<ul class="anchor">
             <dd>
                 <ul>
                     <li>입점 안내 : <a href="https://shopping.biz.daum.net/join/main" target="_blank">https://shopping.biz.daum.net/join/main</a></li>
-                    <li>전체상품 URL : <a href="<?php echo G5_SHOP_URL; ?>/price/daum.php" target="_blank"><?php echo G5_SHOP_URL; ?>/price/daum.php</a></li>
-                    <li>요약상품 URL : <a href="<?php echo G5_SHOP_URL; ?>/price/daum_summary.php" target="_blank"><?php echo G5_SHOP_URL; ?>/price/daum_summary.php</a></li>
+                    <li>전체상품 URL : <a href="<?php echo G5_SHOP_URL; ?>/price/daum" target="_blank"><?php echo G5_SHOP_URL; ?>/price/daum</a></li>
+                    <li>요약상품 URL : <a href="<?php echo G5_SHOP_URL; ?>/price/daum_summary" target="_blank"><?php echo G5_SHOP_URL; ?>/price/daum_summary</a></li>
                 </ul>
             </dd>
         </dl>

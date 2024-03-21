@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '400300';
-include_once('./_common.php');
+include_once('_common.php');
 
 auth_check_menu($auth, $sub_menu, "w");
 
@@ -20,11 +20,11 @@ include_once(G5_PATH.'/head.sub.php');
         </p>
 
         <p>
-            <a href="<?php echo G5_URL; ?>/<?php echo G5_LIB_DIR; ?>/Excel/itemexcel.xls">상품일괄등록용 엑셀파일 다운로드</a>
+            <a href="<?php echo G5_URL; ?>/static/shop/excel/itemexcel.xls">상품일괄등록용 엑셀파일 다운로드</a>
         </p>
     </div>
 
-    <form name="fitemexcel" method="post" action="./itemexcelupdate.php" enctype="MULTIPART/FORM-DATA" autocomplete="off">
+    <form name="fitemexcel" method="post" action="./itemexcelupdate" enctype="MULTIPART/FORM-DATA" autocomplete="off">
 
     <div id="excelfile_upload">
         <label for="excelfile">파일선택</label>

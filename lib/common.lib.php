@@ -4247,3 +4247,9 @@ function option_array_checked($option, $arr=array()){
 
     return $checked;
 }
+
+// URI에서 쿼리 문자열을 제거
+// 예) /bbs/board.php?bo_table=free&page=1 => /bbs/board.php
+function remove_query_string($uri) {
+    return preg_replace('/\?.*/', '', $uri);
+}

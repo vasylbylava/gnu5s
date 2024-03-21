@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 
 if(!$member['mb_id'])
     die(json_encode(array('error' => '회원 로그인 후 이용해 주십시오.')));

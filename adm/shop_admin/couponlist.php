@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '400800';
-include_once('./_common.php');
+include_once('_common.php');
 
 auth_check_menu($auth, $sub_menu, "r");
 
@@ -67,7 +67,7 @@ $colspan = 9;
 
 
 
-<form name="fcouponlist" id="fcouponlist" method="post" action="./couponlist_delete.php" onsubmit="return fcouponlist_submit(this);">
+<form name="fcouponlist" id="fcouponlist" method="post" action="./couponlist_delete" onsubmit="return fcouponlist_submit(this);">
 <input type="hidden" name="sst" value="<?php echo $sst; ?>">
 <input type="hidden" name="sod" value="<?php echo $sod; ?>">
 <input type="hidden" name="sfl" value="<?php echo $sfl; ?>">
@@ -143,7 +143,7 @@ $colspan = 9;
         <td class="td_datetime"><?php echo substr($row['cp_start'], 2, 8); ?> ~ <?php echo substr($row['cp_end'], 2, 8); ?></td>
         <td class="td_cntsmall"><?php echo number_format($used_count); ?></td>
         <td class="td_mng td_mng_s">
-            <a href="./couponform.php?w=u&amp;cp_id=<?php echo $row['cp_id']; ?>&amp;<?php echo $qstr; ?>" class="btn btn_03"><span class="sound_only"><?php echo $row['cp_id']; ?> </span>수정</a>
+            <a href="./couponform?w=u&amp;cp_id=<?php echo $row['cp_id']; ?>&amp;<?php echo $qstr; ?>" class="btn btn_03"><span class="sound_only"><?php echo $row['cp_id']; ?> </span>수정</a>
         </td>
     </tr>
 
@@ -158,7 +158,7 @@ $colspan = 9;
 </div>
 <div class="btn_fixed_top">
      <input type="submit" name="act_button" value="선택삭제" onclick="document.pressed=this.value" class="btn btn_02">
-   <a href="./couponform.php" id="coupon_add" class="btn btn_01">쿠폰 추가</a> 
+   <a href="./couponform" id="coupon_add" class="btn btn_01">쿠폰 추가</a> 
 </div>
 
 </form>

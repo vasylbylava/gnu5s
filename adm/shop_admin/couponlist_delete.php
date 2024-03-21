@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '400800';
-include_once('./_common.php');
+include_once('_common.php');
 
 check_demo();
 
@@ -21,4 +21,4 @@ for ($i=0; $i<$count; $i++)
     sql_query($sql);
 }
 
-goto_url('./couponlist.php?'.$qstr);
+goto_url('./couponlist?'.$qstr);

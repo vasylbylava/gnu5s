@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '400610';
-include_once('./_common.php');
+include_once('_common.php');
 
 check_demo();
 
@@ -30,4 +30,4 @@ for ($i=0; $i<$count_post_it_id; $i++)
     sql_query($sql);
 }
 
-goto_url("itemtypelist.php?sca=$sca&amp;sst=$sst&amp;sod=$sod&amp;sfl=$sfl&amp;stx=$stx&amp;page=$page");
+goto_url("itemtypelist?sca=$sca&amp;sst=$sst&amp;sod=$sod&amp;sfl=$sfl&amp;stx=$stx&amp;page=$page");

@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '400410';
-include_once('./_common.php');
+include_once('_common.php');
 
 auth_check_menu($auth, $sub_menu, "r");
 
@@ -64,7 +64,7 @@ $colspan = 10;
     <input type="submit" class="btn_submit" value="검색">
 </form>
 
-<form name="finorderlist" id="finorderlist" method="post" action="./inorderlistdelete.php" onsubmit="return finorderlist_submit(this);">
+<form name="finorderlist" id="finorderlist" method="post" action="./inorderlistdelete" onsubmit="return finorderlist_submit(this);">
 <input type="hidden" name="sst" value="<?php echo $sst; ?>">
 <input type="hidden" name="sod" value="<?php echo $sod; ?>">
 <input type="hidden" name="sfl" value="<?php echo $sfl; ?>">

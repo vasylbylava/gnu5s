@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '500500';
-include_once('./_common.php');
+include_once('_common.php');
 
 auth_check_menu($auth, $sub_menu, "r");
 
@@ -78,7 +78,7 @@ $from_record = ($page - 1) * $rows; // 시작 열을 구함
 </div>
 
 <div class="btn_fixed_top">
-    <a href="./bannerform.php" class="btn_01 btn">배너추가</a>
+    <a href="./bannerform" class="btn_01 btn">배너추가</a>
 </div>
 
 <div class="tbl_head01 tbl_wrap">
@@ -151,8 +151,8 @@ $from_record = ($page - 1) * $rows; // 시작 열을 구함
         <td headers="th_odr" class="td_num"><?php echo $row['bn_order']; ?></td>
         <td headers="th_hit" class="td_num"><?php echo $row['bn_hit']; ?></td>
         <td headers="th_mng" class="td_mng td_mns_m">
-            <a href="./bannerform.php?w=u&amp;bn_id=<?php echo $row['bn_id']; ?>" class="btn btn_03">수정</a>
-            <a href="./bannerformupdate.php?w=d&amp;bn_id=<?php echo $row['bn_id']; ?>" onclick="return delete_confirm(this);" class="btn btn_02">삭제</a>
+            <a href="./bannerform?w=u&amp;bn_id=<?php echo $row['bn_id']; ?>" class="btn btn_03">수정</a>
+            <a href="./bannerformupdate?w=d&amp;bn_id=<?php echo $row['bn_id']; ?>" onclick="return delete_confirm(this);" class="btn btn_02">삭제</a>
         </td>
     </tr>
     <tr class="<?php echo $bg; ?>">

@@ -19,7 +19,7 @@ for ($i=1; $row=sql_fetch_array($result); $i++) {
         echo "<ul class=\"sct sct_pv\">\n";
     }
 
-    $href = G5_SHOP_URL.'/personalpayform.php?pp_id='.$row['pp_id'].'&amp;page='.$page;
+    $href = G5_SHOP_URL.'/personalpayform?pp_id='.$row['pp_id'].'&amp;page='.$page;
 ?>
     <li class="sct_li<?php echo $sct_last; ?>" style="width:<?php echo $img_width; ?>px">
         <div class="sct_img"><a href="<?php echo $href; ?>" class="sct_a"><img src="<?php echo G5_SHOP_SKIN_URL; ?>/img/personal.jpg" alt=""></a></div>

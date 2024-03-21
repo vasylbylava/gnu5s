@@ -1,6 +1,6 @@
 <?php
 $sub_menu = "100280";
-include_once('./_common.php');
+include_once('_common.php');
 
 $data = array();
 $data['error'] = '';

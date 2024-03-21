@@ -36,7 +36,7 @@ else if ($od_id && $od_pwd) // 비회원인 경우 주문서번호와 비밀번�
 }
 else // 그렇지 않다면 로그인으로 가기
 {
-    goto_url(G5_BBS_URL.'/login.php?url='.urlencode(G5_SHOP_URL.'/orderinquiry.php'));
+    goto_url(G5_BBS_URL.'/login?url='.urlencode(G5_SHOP_URL.'/orderinquiry'));
 }
 
 // 테이블의 전체 레코드수만 얻음
@@ -75,7 +75,7 @@ if (!$is_member)
     if ($row['od_id']) {
         $uid = md5($row['od_id'].$row['od_time'].$row['od_ip']);
         set_session('ss_orderview_uid', $uid);
-        goto_url(G5_SHOP_URL.'/orderinquiryview.php?od_id='.$row['od_id'].'&amp;uid='.$uid);
+        goto_url(G5_SHOP_URL.'/orderinquiryview?od_id='.$row['od_id'].'&amp;uid='.$uid);
     }
 }
 

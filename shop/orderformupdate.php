@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 include_once(G5_LIB_PATH.'/mailer.lib.php');
 
 //이니시스 lpay 요청으로 왔다면 $default['de_pg_service'] 값을 이니시스로 변경합니다.
@@ -27,7 +27,7 @@ else
 
 if (get_cart_count($tmp_cart_id) == 0) {    // 장바구니에 담기
     if(function_exists('add_order_post_log')) add_order_post_log('장바구니가 비어 있습니다.');
-    alert('장바구니가 비어 있습니다.\\n\\n이미 주문하셨거나 장바구니에 담긴 상품이 없는 경우입니다.', G5_SHOP_URL.'/cart.php');
+    alert('장바구니가 비어 있습니다.\\n\\n이미 주문하셨거나 장바구니에 담긴 상품이 없는 경우입니다.', G5_SHOP_URL.'/cart');
 }
 
 $sql = "select * from {$g5['g5_shop_order_table']} limit 1";
@@ -73,7 +73,7 @@ for ($i=0; $row=sql_fetch_array($result); $i++)
 
 if($i == 0) {
     if(function_exists('add_order_post_log')) add_order_post_log('장바구니가 비어 있습니다.');
-    alert('장바구니가 비어 있습니다.\\n\\n이미 주문하셨거나 장바구니에 담긴 상품이 없는 경우입니다.', G5_SHOP_URL.'/cart.php');
+    alert('장바구니가 비어 있습니다.\\n\\n이미 주문하셨거나 장바구니에 담긴 상품이 없는 경우입니다.', G5_SHOP_URL.'/cart');
 }
 
 if ($error != "")
@@ -322,13 +322,13 @@ else if ($od_settle_case == "계좌이체")
 {
     switch($default['de_pg_service']) {
         case 'lg':
-            include G5_SHOP_PATH.'/lg/xpay_result.php';
+            include G5_SHOP_PATH.'/lg/xpay_result';
             break;
         case 'inicis':
-            include G5_SHOP_PATH.'/inicis/inistdpay_result.php';
+            include G5_SHOP_PATH.'/inicis/inistdpay_result';
             break;
         default:
-            include G5_SHOP_PATH.'/kcp/pp_ax_hub.php';
+            include G5_SHOP_PATH.'/kcp/pp_ax_hub';
             $bank_name  = iconv("cp949", "utf-8", $bank_name);
             break;
     }
@@ -348,15 +348,15 @@ else if ($od_settle_case == "가상계좌")
 {
     switch($default['de_pg_service']) {
         case 'lg':
-            include G5_SHOP_PATH.'/lg/xpay_result.php';
+            include G5_SHOP_PATH.'/lg/xpay_result';
             $od_receipt_time = '0000-00-00 00:00:00';
             break;
         case 'inicis':
-            include G5_SHOP_PATH.'/inicis/inistdpay_result.php';
+            include G5_SHOP_PATH.'/inicis/inistdpay_result';
             $od_app_no = $app_no;
             break;
         default:
-            include G5_SHOP_PATH.'/kcp/pp_ax_hub.php';
+            include G5_SHOP_PATH.'/kcp/pp_ax_hub';
             $bankname   = iconv("cp949", "utf-8", $bankname);
             $depositor  = iconv("cp949", "utf-8", $depositor);
             break;
@@ -374,13 +374,13 @@ else if ($od_settle_case == "휴대폰")
 {
     switch($default['de_pg_service']) {
         case 'lg':
-            include G5_SHOP_PATH.'/lg/xpay_result.php';
+            include G5_SHOP_PATH.'/lg/xpay_result';
             break;
         case 'inicis':
-            include G5_SHOP_PATH.'/inicis/inistdpay_result.php';
+            include G5_SHOP_PATH.'/inicis/inistdpay_result';
             break;
         default:
-            include G5_SHOP_PATH.'/kcp/pp_ax_hub.php';
+            include G5_SHOP_PATH.'/kcp/pp_ax_hub';
             break;
     }
 
@@ -398,13 +398,13 @@ else if ($od_settle_case == "신용카드")
 {
     switch($default['de_pg_service']) {
         case 'lg':
-            include G5_SHOP_PATH.'/lg/xpay_result.php';
+            include G5_SHOP_PATH.'/lg/xpay_result';
             break;
         case 'inicis':
-            include G5_SHOP_PATH.'/inicis/inistdpay_result.php';
+            include G5_SHOP_PATH.'/inicis/inistdpay_result';
             break;
         default:
-            include G5_SHOP_PATH.'/kcp/pp_ax_hub.php';
+            include G5_SHOP_PATH.'/kcp/pp_ax_hub';
             $card_name  = iconv("cp949", "utf-8", $card_name);
             break;
     }
@@ -424,13 +424,13 @@ else if ($od_settle_case == "간편결제" || (($od_settle_case == "lpay" || $od
 {
     switch($default['de_pg_service']) {
         case 'lg':
-            include G5_SHOP_PATH.'/lg/xpay_result.php';
+            include G5_SHOP_PATH.'/lg/xpay_result';
             break;
         case 'inicis':
-            include G5_SHOP_PATH.'/inicis/inistdpay_result.php';
+            include G5_SHOP_PATH.'/inicis/inistdpay_result';
             break;
         default:
-            include G5_SHOP_PATH.'/kcp/pp_ax_hub.php';
+            include G5_SHOP_PATH.'/kcp/pp_ax_hub';
             $card_name  = iconv("cp949", "utf-8", $card_name);
             break;
     }
@@ -924,7 +924,7 @@ if($is_member) {
     sql_query($sql);
 }
 
-goto_url(G5_SHOP_URL.'/orderinquiryview.php?od_id='.$od_id.'&amp;uid='.$uid);
+goto_url(G5_SHOP_URL.'/orderinquiryview?od_id='.$od_id.'&amp;uid='.$uid);
 ?>
 <html>
     <head>

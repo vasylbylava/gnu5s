@@ -81,9 +81,9 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_JS_URL.'/owlcarousel/owl.carou
 			<li class="shop_login">
 				<?php echo outlogin('shop_basic'); // 아웃로그인 ?>	
 			</li>
-			<li class="shop_cart"><a href="<?php echo G5_SHOP_URL; ?>/cart.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="sound_only">장바구니</span><span class="count"><?php echo get_boxcart_datas_count(); ?></span></a></li>
+			<li class="shop_cart"><a href="<?php echo G5_SHOP_URL; ?>/cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="sound_only">장바구니</span><span class="count"><?php echo get_boxcart_datas_count(); ?></span></a></li>
             <?php } else { ?>
-            <li class="login"><a href="<?php echo G5_BBS_URL ?>/login.php?url=<?php echo $urlencode; ?>">로그인</a></li>
+            <li class="login"><a href="<?php echo G5_BBS_URL ?>/login?url=<?php echo $urlencode; ?>">로그인</a></li>
             <?php }  ?>
         </ul>
     </div>
@@ -116,7 +116,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_JS_URL.'/owlcarousel/owl.carou
 	    		<?php echo outlogin('shop_side'); // 아웃로그인 ?>
 		        <ul class="side_tnb">
 		        	<?php if ($is_member) { ?>
-					<li><a href="<?php echo G5_SHOP_URL; ?>/mypage.php">마이페이지</a></li>
+					<li><a href="<?php echo G5_SHOP_URL; ?>/mypage">마이페이지</a></li>
 		            <?php } ?>
 					<li><a href="<?php echo G5_SHOP_URL; ?>/orderinquiry.php">주문내역</a></li>
 					<li><a href="<?php echo G5_BBS_URL ?>/faq.php">FAQ</a></li>

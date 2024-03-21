@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '400800';
-include_once('./_common.php');
+include_once('_common.php');
 
 auth_check_menu($auth, $sub_menu, "w");
 
@@ -264,4 +264,4 @@ if ($w == '' && (isset($_POST['cp_sms_send']) || isset($_POST['cp_email_send']))
     }
 }
 
-goto_url('./couponlist.php');
+goto_url('./couponlist');

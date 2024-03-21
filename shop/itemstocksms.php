@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 
 $it_id = isset($_REQUEST['it_id']) ? safe_replace_regex($_REQUEST['it_id'], 'it_id') : '';
 
@@ -27,7 +27,7 @@ if (G5_IS_MOBILE) {
 <div id="sit_sms_new" class="new_win">
     <h1 id="win_title"><?php echo $g5['title']; ?></h1>
 
-    <form name="fstocksms" method="post" action="<?php echo G5_HTTPS_SHOP_URL; ?>/itemstocksmsupdate.php" onsubmit="return fstocksms_submit(this);"  autocomplete="off">
+    <form name="fstocksms" method="post" action="<?php echo G5_HTTPS_SHOP_URL; ?>/itemstocksmsupdate" onsubmit="return fstocksms_submit(this);"  autocomplete="off">
     <input type="hidden" name="it_id" value="<?php echo $it_id; ?>">
 
     <div class="form_01">

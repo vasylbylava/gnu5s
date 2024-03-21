@@ -2,7 +2,7 @@
 include_once('./_common.php');
 
 if (!$is_member)
-    alert('회원 전용 서비스 입니다.', G5_BBS_URL.'/login.php?url='.urlencode($url));
+    alert('회원 전용 서비스 입니다.', G5_BBS_URL.'/login?url='.urlencode($url));
 
 if ($w == "d")
 {

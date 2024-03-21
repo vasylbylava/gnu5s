@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 
 // print_r2($_POST); exit;
 
@@ -110,9 +110,9 @@ if($act == "buy")
     }
 
     if ($is_member) // 회원인 경우
-        goto_url(G5_SHOP_URL.'/orderform.php');
+        goto_url(G5_SHOP_URL.'/orderform');
     else
-        goto_url(G5_BBS_URL.'/login.php?url='.urlencode(G5_SHOP_URL.'/orderform.php'));
+        goto_url(G5_BBS_URL.'/login?url='.urlencode(G5_SHOP_URL.'/orderform'));
 }
 else if ($act == "alldelete") // 모두 삭제이면
 {
@@ -379,14 +379,14 @@ if ($sw_direct)
 {
     if ($is_member)
     {
-    	goto_url(G5_SHOP_URL."/orderform.php?sw_direct=$sw_direct");
+    	goto_url(G5_SHOP_URL."/orderform?sw_direct=$sw_direct");
     }
     else
     {
-    	goto_url(G5_BBS_URL."/login.php?url=".urlencode(G5_SHOP_URL."/orderform.php?sw_direct=$sw_direct"));
+    	goto_url(G5_BBS_URL."/login?url=".urlencode(G5_SHOP_URL."/orderform?sw_direct=$sw_direct"));
     }
 }
 else
 {
-    goto_url(G5_SHOP_URL.'/cart.php');
+    goto_url(G5_SHOP_URL.'/cart');
 }

@@ -26,7 +26,7 @@ if(!sql_num_rows($result))
 
 <h2>상품옵션수정</h2>
 <!-- 장바구니 옵션 시작 { -->
-<form name="foption" method="post" action="<?php echo G5_SHOP_URL; ?>/cartupdate.php" onsubmit="return formcheck(this);">
+<form name="foption" method="post" action="<?php echo G5_SHOP_URL; ?>/cartupdate" onsubmit="return formcheck(this);">
 <input type="hidden" name="act" value="optionmod">
 <input type="hidden" name="it_id[]" value="<?php echo $it['it_id']; ?>">
 <input type="hidden" id="it_price" value="<?php echo $row2['ct_price']; ?>">

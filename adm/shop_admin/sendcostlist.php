@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '400750';
-include_once('./_common.php');
+include_once('_common.php');
 
 auth_check_menu($auth, $sub_menu, "r");
 
@@ -35,7 +35,7 @@ include_once (G5_ADMIN_PATH.'/admin.head.php');
 <section id="scp_list">
     <h2>추가배송비 내역</h2>
 
-    <form name="fsendcost" id="fsendcost" method="post" action="./sendcostupdate.php" onsubmit="return fsendcost_submit(this);">
+    <form name="fsendcost" id="fsendcost" method="post" action="./sendcostupdate" onsubmit="return fsendcost_submit(this);">
     <input type="hidden" name="w" value="d">
     <input type="hidden" name="page" value="<?php echo $page; ?>">
     <input type="hidden" name="token" value="">
@@ -89,7 +89,7 @@ include_once (G5_ADMIN_PATH.'/admin.head.php');
 <section id="sendcost_postal">
     <h2 class="h2_frm">추가배송비 등록</h2>
 
-    <form name="fsendcost2" method="post" id="fsendcost2" action="./sendcostupdate.php" autocomplete="off">
+    <form name="fsendcost2" method="post" id="fsendcost2" action="./sendcostupdate" autocomplete="off">
     <input type="hidden" name="token" value="">
 
     <div class="tbl_frm01 tbl_wrap">

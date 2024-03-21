@@ -107,7 +107,7 @@ $result = sql_query($sql);
             <tr>
                 <?php if($k == 0) { ?>
                 <td class="td_itname" rowspan="<?php echo $rowspan; ?>">
-                    <a href="./itemform.php?w=u&amp;it_id=<?php echo $row['it_id']; ?>"><?php echo $image; ?> <?php echo stripslashes($row['it_name']); ?></a>
+                    <a href="./itemform?w=u&amp;it_id=<?php echo $row['it_id']; ?>"><?php echo $image; ?> <?php echo stripslashes($row['it_name']); ?></a>
                     <?php if($od['od_tax_flag'] && $row['ct_notax']) echo '[비과세상품]'; ?>
                 </td>
                 <?php } ?>

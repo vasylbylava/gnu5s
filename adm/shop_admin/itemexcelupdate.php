@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '400300';
-include_once('./_common.php');
+include_once('_common.php');
 
 // 상품이 많을 경우 대비 설정변경
 set_time_limit ( 0 );

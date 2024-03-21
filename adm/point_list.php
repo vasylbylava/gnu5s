@@ -49,7 +49,7 @@ $sql = " select po.*, mb.mb_name, mb.mb_nick, mb.mb_email, mb.mb_homepage, mb.mb
             limit {$from_record}, {$rows} ";
 $result = sql_query($sql);
 
-$listall = '<a href="' . $_SERVER['SCRIPT_NAME'] . '" class="ov_listall">전체목록</a>';
+$listall = '<a href="'.remove_query_string($_SERVER['REQUEST_URI']).'" class="ov_listall">전체목록</a>';
 
 $mb = array();
 if ($sfl == 'mb_id' && $stx) {

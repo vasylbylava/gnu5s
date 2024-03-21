@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '500120';
-include_once('./_common.php');
+include_once('_common.php');
 
 auth_check_menu($auth, $sub_menu, "r");
 
@@ -12,7 +12,7 @@ include_once(G5_PLUGIN_PATH.'/jquery-ui/datepicker.php');
 <div class="local_sch03 local_sch">
 
     <div>
-        <form name="forderprint" action="./orderprintresult.php" onsubmit="return forderprintcheck(this);" autocomplete="off">
+        <form name="forderprint" action="./orderprintresult" onsubmit="return forderprintcheck(this);" autocomplete="off">
         <input type="hidden" name="case" value="1">
 
         <strong class="sch_long">기간별 출력</strong>
@@ -44,7 +44,7 @@ include_once(G5_PLUGIN_PATH.'/jquery-ui/datepicker.php');
 
     <div class="sch_last">
 
-        <form name="forderprint" action="./orderprintresult.php" onsubmit="return forderprintcheck(this);" autocomplete="off" >
+        <form name="forderprint" action="./orderprintresult" onsubmit="return forderprintcheck(this);" autocomplete="off" >
         <input type="hidden" name="case" value="2">
         <strong class="sch_long">주문번호구간별 출력</strong>
 
@@ -77,7 +77,7 @@ include_once(G5_PLUGIN_PATH.'/jquery-ui/datepicker.php');
 </div>
 
 <div class="btn_fixed_top">
-    <a href="./orderlist.php" class="btn_01 btn ">주문내역</a>
+    <a href="./orderlist" class="btn_01 btn ">주문내역</a>
 </div>
 
 <div class="local_desc01 local_desc">

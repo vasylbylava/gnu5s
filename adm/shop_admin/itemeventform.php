@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '500300';
-include_once('./_common.php');
+include_once('_common.php');
 include_once(G5_EDITOR_LIB);
 
 auth_check_menu($auth, $sub_menu, "w");
@@ -79,7 +79,7 @@ if(!sql_query(" select ev_mobile_list_row from {$g5['g5_shop_event_table']} limi
 include_once (G5_ADMIN_PATH.'/admin.head.php');
 ?>
 
-<form name="feventform" action="./itemeventformupdate.php" onsubmit="return feventform_check(this);" method="post" enctype="MULTIPART/FORM-DATA">
+<form name="feventform" action="./itemeventformupdate" onsubmit="return feventform_check(this);" method="post" enctype="MULTIPART/FORM-DATA">
 <input type="hidden" name="w" value="<?php echo $w; ?>">
 <input type="hidden" name="ev_id" value="<?php echo $ev_id; ?>">
 <input type="hidden" name="ev_item" value="">
@@ -333,7 +333,7 @@ include_once (G5_ADMIN_PATH.'/admin.head.php');
 </div>
 
 <div class="btn_fixed_top">
-    <a href="./itemevent.php" class="btn btn_02">목록</a>
+    <a href="./itemevent" class="btn btn_02">목록</a>
     <input type="submit" value="확인" class="btn_submit btn" accesskey="s">
 </div>
 </form>
@@ -346,7 +346,7 @@ $(function() {
 
         $.ajax({
             type: "POST",
-            url: "../theme_config_load.php",
+            url: "../theme_config_load",
             cache: false,
             async: false,
             data: { type: 'shop_event' },
@@ -377,7 +377,7 @@ $(function() {
         }
 
         $("#sch_item_list").load(
-            "./itemeventsearch.php",
+            "./itemeventsearch",
             { w: "<?php echo $w; ?>", ev_id: "<?php echo $ev_id; ?>", ca_id: ca_id, it_name: it_name }
         );
     });

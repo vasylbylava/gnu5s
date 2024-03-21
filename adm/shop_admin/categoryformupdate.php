@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '400200';
-include_once('./_common.php');
+include_once('_common.php');
 
 auth_check_menu($auth, $sub_menu, "w");
 
@@ -253,7 +253,7 @@ if(function_exists('get_admin_captcha_by'))
 
 if ($w == "" || $w == "u")
 {
-    goto_url("./categoryform.php?w=u&amp;ca_id=$ca_id&amp;$qstr");
+    goto_url("./categoryform?w=u&amp;ca_id=$ca_id&amp;$qstr");
 } else {
-    goto_url("./categorylist.php?$qstr");
+    goto_url("./categorylist?$qstr");
 }

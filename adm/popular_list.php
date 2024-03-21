@@ -59,7 +59,7 @@ $sql = " select *
             limit {$from_record}, {$rows} ";
 $result = sql_query($sql);
 
-$listall = '<a href="' . $_SERVER['SCRIPT_NAME'] . '" class="ov_listall">전체목록</a>';
+$listall = '<a href="'.remove_query_string($_SERVER['REQUEST_URI']).'" class="ov_listall">전체목록</a>';
 
 $g5['title'] = '인기검색어관리';
 require_once 'admin.head.php';

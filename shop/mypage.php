@@ -1,8 +1,8 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 
 if (!$is_member)
-    goto_url(G5_BBS_URL."/login.php?url=".urlencode(G5_SHOP_URL."/mypage.php"));
+    goto_url(G5_BBS_URL."/login?url=".urlencode(G5_SHOP_URL."/mypage"));
 
 // 읽지 않은 쪽지수
 $memo_not_read = isset($member['mb_memo_cnt']) ? (int) $member['mb_memo_cnt'] : 0;
@@ -23,7 +23,7 @@ if(defined('G5_THEME_SHOP_PATH')) {
 }
 
 $g5['title'] = '마이페이지';
-include_once('./_head.php');
+include_once('_head.php');
 
 // 쿠폰
 $cp_count = 0;
@@ -49,16 +49,16 @@ for($k=0; $cp=sql_fetch_array($res); $k++) {
         <strong class="my_ov_name"><?php echo get_member_profile_img($member['mb_id']); ?> <?php echo $member['mb_name']; ?></strong>
         <dl class="cou_pt">
             <dt>보유포인트</dt>
-            <dd><a href="<?php echo G5_BBS_URL; ?>/point.php" target="_blank" class="win_point"><?php echo number_format($member['mb_point']); ?></a> 점</dd>
+            <dd><a href="<?php echo G5_BBS_URL; ?>/point" target="_blank" class="win_point"><?php echo number_format($member['mb_point']); ?></a> 점</dd>
             <dt>보유쿠폰</dt>
-            <dd><a href="<?php echo G5_SHOP_URL; ?>/coupon.php" target="_blank" class="win_coupon"><?php echo number_format($cp_count); ?></a></dd>
+            <dd><a href="<?php echo G5_SHOP_URL; ?>/coupon" target="_blank" class="win_coupon"><?php echo number_format($cp_count); ?></a></dd>
         </dl>
         <div id="smb_my_act">
             <ul>
                 <?php if ($is_admin == 'super') { ?><li><a href="<?php echo G5_ADMIN_URL; ?>/" class="btn_admin">관리자</a></li><?php } ?>
-                <li><a href="<?php echo G5_BBS_URL; ?>/memo.php" target="_blank" class="win_memo btn01">쪽지함</a></li>
-                <li><a href="<?php echo G5_BBS_URL; ?>/member_confirm.php?url=register_form.php" class="btn01">회원정보수정</a></li>
-                <li><a href="<?php echo G5_BBS_URL; ?>/member_confirm.php?url=member_leave.php" onclick="return member_leave();" class="btn01">회원탈퇴</a></li>
+                <li><a href="<?php echo G5_BBS_URL; ?>/memo" target="_blank" class="win_memo btn01">쪽지함</a></li>
+                <li><a href="<?php echo G5_BBS_URL; ?>/member_confirm?url=register_form" class="btn01">회원정보수정</a></li>
+                <li><a href="<?php echo G5_BBS_URL; ?>/member_confirm?url=member_leave.php" onclick="return member_leave();" class="btn01">회원탈퇴</a></li>
             </ul>
         </div>
 
@@ -157,4 +157,4 @@ function member_leave()
 <!-- } 마이페이지 끝 -->
 
 <?php
-include_once("./_tail.php");
+include_once("_tail.php");

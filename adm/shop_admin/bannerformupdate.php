@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '500500';
-include_once('./_common.php');
+include_once('_common.php');
 
 check_demo();
 
@@ -96,7 +96,7 @@ if ($w == "" || $w == "u")
 {
     if ($_FILES['bn_bimg']['name']) upload_file($_FILES['bn_bimg']['tmp_name'], $bn_id, G5_DATA_PATH."/banner");
 
-    goto_url("./bannerform.php?w=u&amp;bn_id=$bn_id");
+    goto_url("./bannerform?w=u&amp;bn_id=$bn_id");
 } else {
-    goto_url("./bannerlist.php");
+    goto_url("./bannerlist");
 }

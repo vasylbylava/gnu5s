@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 
 // 상품 리스트에서 다른 필드로 정렬을 하려면 아래의 배열 코드에서 해당 필드를 추가하세요.
 $sort = (isset($_REQUEST['sort']) && in_array($_REQUEST['sort'], array('it_name', 'it_sum_qty', 'it_price', 'it_use_avg', 'it_use_cnt', 'it_update_time'))) ? $_REQUEST['sort'] : '';
@@ -18,7 +18,7 @@ else if ($type === 5) $g5['title'] = '할인상품';
 else
     alert('상품유형이 아닙니다.');
 
-include_once('./_head.php');
+include_once('_head.php');
 
 // 한페이지에 출력하는 이미지수 = $list_mod * $list_row
 $list_mod   = $default['de_listtype_list_mod'];   // 한줄에 이미지 몇개씩 출력?
@@ -83,4 +83,4 @@ else
 $qstr .= '&amp;type='.$type.'&amp;sort='.$sort;
 echo get_paging($config['cf_write_pages'], $page, $total_page, "{$_SERVER['SCRIPT_NAME']}?$qstr&amp;page=");
 
-include_once('./_tail.php');
+include_once('_tail.php');

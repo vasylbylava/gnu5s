@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '500310';
-include_once('./_common.php');
+include_once('_common.php');
 
 check_demo();
 
@@ -27,4 +27,4 @@ for ($i=0; $i<$post_it_id_count; $i++)
 
 }
 
-goto_url('./itemeventlist.php?ev_id='.$ev_id.'&amp;sort1='.$sort1.'&amp;sort2='.$sort2.'&amp;sel_ca_id='.$sel_ca_id.'&amp;sel_field='.$sel_field.'&amp;search='.$search.'&amp;page='.$page);
+goto_url('./itemeventlist?ev_id='.$ev_id.'&amp;sort1='.$sort1.'&amp;sort2='.$sort2.'&amp;sel_ca_id='.$sel_ca_id.'&amp;sel_field='.$sel_field.'&amp;search='.$search.'&amp;page='.$page);

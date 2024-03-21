@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '400750';
-include_once('./_common.php');
+include_once('_common.php');
 
 check_demo();
 
@@ -43,4 +43,4 @@ if($w == 'd') {
     sql_query($sql);
 }
 
-goto_url('./sendcostlist.php?page='.$page);
+goto_url('./sendcostlist?page='.$page);

@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 
 if( isset($sfl) && ! in_array($sfl, array('b.it_name', 'a.it_id', 'a.iq_subject', 'a.iq_question', 'a.iq_name', 'a.mb_id')) ){
     //다른값이 들어가있다면 초기화
@@ -12,7 +12,7 @@ if (G5_IS_MOBILE) {
 }
 
 $g5['title'] = '상품문의';
-include_once('./_head.php');
+include_once('_head.php');
 
 $sql_common = " from `{$g5['g5_shop_item_qa_table']}` a join `{$g5['g5_shop_item_table']}` b on (a.it_id=b.it_id) ";
 $sql_search = " where (1) ";
@@ -70,4 +70,4 @@ if(!file_exists($itemqalist_skin)) {
     include_once($itemqalist_skin);
 }
 
-include_once('./_tail.php');
+include_once('_tail.php');

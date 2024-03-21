@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '500100';
-include_once('./_common.php');
+include_once('_common.php');
 
 auth_check_menu($auth, $sub_menu, "r");
 
@@ -59,7 +59,7 @@ $result = sql_query($sql);
 //$qstr = 'page='.$page.'&amp;sort1='.$sort1.'&amp;sort2='.$sort2;
 $qstr1 = $qstr.'&amp;fr_date='.$fr_date.'&amp;to_date='.$to_date.'&amp;sel_ca_id='.$sel_ca_id;
 
-$listall = '<a href="'.$_SERVER['SCRIPT_NAME'].'" class="ov_listall">전체목록</a>';
+$listall = '<a href="'.remove_query_string($_SERVER['REQUEST_URI']).'" class="ov_listall">전체목록</a>';
 ?>
 
 <div class="local_ov01 local_ov">
@@ -102,8 +102,8 @@ $listall = '<a href="'.$_SERVER['SCRIPT_NAME'].'" class="ov_listall">전체목�
 </div>
 
 <div class="btn_fixed_top">
-    <a href="./itemstocklist.php" class="btn_02 btn">상품재고관리</a>
-    <a href="./itemlist.php" class="btn_01 btn">상품등록</a>
+    <a href="./itemstocklist" class="btn_02 btn">상품재고관리</a>
+    <a href="./itemlist" class="btn_01 btn">상품등록</a>
 </div>
 
 <div class="tbl_head01 tbl_wrap">

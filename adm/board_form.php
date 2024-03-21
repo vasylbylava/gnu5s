@@ -1364,7 +1364,7 @@ $(function(){
 
         $.ajax({
             type: "POST",
-            url: "./theme_config_load.php",
+            url: "./theme_config_load",
             cache: false,
             async: false,
             data: { type: "board" },

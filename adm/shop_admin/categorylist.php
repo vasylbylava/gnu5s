@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '400200';
-include_once('./_common.php');
+include_once('_common.php');
 
 auth_check_menu($auth, $sub_menu, "r");
 
@@ -51,7 +51,7 @@ $sql  = " select *
              limit $from_record, $rows ";
 $result = sql_query($sql);
 
-$listall = '<a href="'.$_SERVER['SCRIPT_NAME'].'" class="ov_listall">전체목록</a>';
+$listall = '<a href="'.remove_query_string($_SERVER['REQUEST_URI']).'" class="ov_listall">전체목록</a>';
 ?>
 
 <div class="local_ov01 local_ov">
@@ -76,7 +76,7 @@ $listall = '<a href="'.$_SERVER['SCRIPT_NAME'].'" class="ov_listall">전체목�
 
 </form>
 
-<form name="fcategorylist" method="post" action="./categorylistupdate.php" autocomplete="off">
+<form name="fcategorylist" method="post" action="./categorylistupdate" autocomplete="off">
 <input type="hidden" name="sst" value="<?php echo $sst; ?>">
 <input type="hidden" name="sod" value="<?php echo $sod; ?>">
 <input type="hidden" name="sfl" value="<?php echo $sfl; ?>">
@@ -130,12 +130,12 @@ $listall = '<a href="'.$_SERVER['SCRIPT_NAME'].'" class="ov_listall">전체목�
         $s_level = '<div><label for="ca_name_'.$i.'" '.$class.'><span class="sound_only">'.$p_ca_name.''.($level+1).'단 분류</span></label></div>';
         $s_level_input_size = 25 - $level *2; // 하위 분류일 수록 입력칸 넓이 작아짐 - 지운아빠 2013-04-02
 
-        if ($level+2 < 6) $s_add = '<a href="./categoryform.php?ca_id='.$row['ca_id'].'&amp;'.$qstr.'" class="btn btn_03">추가</a> '; // 분류는 5단계까지만 가능
+        if ($level+2 < 6) $s_add = '<a href="./categoryform?ca_id='.$row['ca_id'].'&amp;'.$qstr.'" class="btn btn_03">추가</a> '; // 분류는 5단계까지만 가능
         else $s_add = '';
-        $s_upd = '<a href="./categoryform.php?w=u&amp;ca_id='.$row['ca_id'].'&amp;'.$qstr.'" class="btn btn_02"><span class="sound_only">'.get_text($row['ca_name']).' </span>수정</a> ';
+        $s_upd = '<a href="./categoryform?w=u&amp;ca_id='.$row['ca_id'].'&amp;'.$qstr.'" class="btn btn_02"><span class="sound_only">'.get_text($row['ca_name']).' </span>수정</a> ';
 
         if ($is_admin == 'super')
-            $s_del = '<a href="./categoryformupdate.php?w=d&amp;ca_id='.$row['ca_id'].'&amp;'.$qstr.'" onclick="return delete_confirm(this);" class="btn btn_02"><span class="sound_only">'.get_text($row['ca_name']).' </span>삭제</a> ';
+            $s_del = '<a href="./categoryformupdate?w=d&amp;ca_id='.$row['ca_id'].'&amp;'.$qstr.'" onclick="return delete_confirm(this);" class="btn btn_02"><span class="sound_only">'.get_text($row['ca_name']).' </span>삭제</a> ';
 
         // 해당 분류에 속한 상품의 수
         $sql1 = " select COUNT(*) as cnt from {$g5['g5_shop_item_table']}
@@ -171,7 +171,7 @@ $listall = '<a href="'.$_SERVER['SCRIPT_NAME'].'" class="ov_listall">전체목�
             <a href="<?php echo shop_category_url($row['ca_id']); ?>"><?php echo $row['ca_id']; ?></a>
         </td>
         <td headers="sct_cate" class="sct_name<?php echo $level; ?>"><?php echo $s_level; ?> <input type="text" name="ca_name[<?php echo $i; ?>]" value="<?php echo get_text($row['ca_name']); ?>" id="ca_name_<?php echo $i; ?>" required class="tbl_input full_input required"></td>
-        <td headers="sct_amount" class="td_amount"><a href="./itemlist.php?sca=<?php echo $row['ca_id']; ?>"><?php echo $row1['cnt']; ?></a></td>
+        <td headers="sct_amount" class="td_amount"><a href="./itemlist?sca=<?php echo $row['ca_id']; ?>"><?php echo $row1['cnt']; ?></a></td>
         <td headers="sct_hpcert" class="td_possible">
             <input type="checkbox" name="ca_cert_use[<?php echo $i; ?>]" value="1" id="ca_cert_use_yes<?php echo $i; ?>" <?php if($row['ca_cert_use']) echo 'checked="checked"'; ?>>
             <label for="ca_cert_use_yes<?php echo $i; ?>">사용</label>
@@ -255,7 +255,7 @@ $listall = '<a href="'.$_SERVER['SCRIPT_NAME'].'" class="ov_listall">전체목�
     <input type="submit" value="일괄수정" class="btn_02 btn">
 
     <?php if ($is_admin == 'super') {?>
-    <a href="./categoryform.php" id="cate_add" class="btn btn_01">분류 추가</a>
+    <a href="./categoryform" id="cate_add" class="btn btn_01">분류 추가</a>
     <?php } ?>
 </div>
 

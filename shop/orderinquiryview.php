@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 
 $od_id = isset($_REQUEST['od_id']) ? safe_replace_regex($_REQUEST['od_id'], 'od_id') : '';
 
@@ -46,7 +46,7 @@ if(defined('G5_THEME_SHOP_PATH')) {
 }
 
 $g5['title'] = '주문상세내역';
-include_once('./_head.php');
+include_once('_head.php');
 
 // LG 현금영수증 JS
 if($od['od_pg'] == 'lg') {
@@ -768,4 +768,4 @@ function fcancel_check(f)
 </script>
 
 <?php
-include_once('./_tail.php');
+include_once('_tail.php');

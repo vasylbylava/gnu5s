@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '400810';
-include_once('./_common.php');
+include_once('_common.php');
 
 auth_check_menu($auth, $sub_menu, "w");
 
@@ -121,7 +121,7 @@ if($w == '') {
     $cp = sql_fetch($sql);
 
     if(! (isset($cp['cz_id']) && $cp['cz_id']))
-        alert('쿠폰정보가 존재하지 않습니다.', './couponzonelist.php');
+        alert('쿠폰정보가 존재하지 않습니다.', './couponzonelist');
 
     if ((isset($_POST['cp_img_del']) && $_POST['cp_img_del']) && $cp['cz_file']) {
         @unlink(G5_DATA_PATH."/coupon/{$cp['cz_file']}");
@@ -150,4 +150,4 @@ if($_FILES['cp_img']['tmp_name']) {
     sql_query($sql);
 }
 
-goto_url('./couponzonelist.php?'.$qstr);
+goto_url('./couponzonelist?'.$qstr);
