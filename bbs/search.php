@@ -1,8 +1,8 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 
 $g5['title'] = '전체검색 결과';
-include_once('./_head.php');
+include_once('_head.php');
 
 $search_table = Array();
 $table_index = 0;
@@ -139,7 +139,7 @@ if ($stx) {
             $sch_all = "";
             if ($onetable == $g5_search['tables'][$i]) $sch_class = "class=sch_on";
             else $sch_all = "class=sch_on";
-            $str_board_list .= '<li><a href="'.$_SERVER['SCRIPT_NAME'].'?'.$search_query.'&amp;gr_id='.$gr_id.'&amp;onetable='.$g5_search['tables'][$i].'" '.$sch_class.'><strong>'.((G5_IS_MOBILE && $row2['bo_mobile_subject']) ? $row2['bo_mobile_subject'] : $row2['bo_subject']).'</strong><span class="cnt_cmt">'.$row['cnt'].'</span></a></li>';
+            $str_board_list .= '<li><a href="'.$_SERVER['REQUEST_URI'].'?'.$search_query.'&amp;gr_id='.$gr_id.'&amp;onetable='.$g5_search['tables'][$i].'" '.$sch_class.'><strong>'.((G5_IS_MOBILE && $row2['bo_mobile_subject']) ? $row2['bo_mobile_subject'] : $row2['bo_subject']).'</strong><span class="cnt_cmt">'.$row['cnt'].'</span></a></li>';
         }
     }
 
@@ -236,4 +236,4 @@ if (!$sop) $sop = 'or';
 
 include_once($search_skin_path.'/search.skin.php');
 
-include_once('./_tail.php');
+include_once('_tail.php');

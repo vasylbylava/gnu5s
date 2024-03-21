@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 
 //print_r2($_POST); exit;
 
@@ -156,4 +156,4 @@ foreach ($save_bo_table as $key=>$value) {
 
 run_event('bbs_new_delete', $chk_bn_id, $save_bo_table, $save_wr_id);
 
-goto_url("new.php?sfl=$sfl&stx=$stx&page=$page");
+goto_url("new?sfl=$sfl&stx=$stx&page=$page");

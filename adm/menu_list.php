@@ -1,6 +1,6 @@
 <?php
 $sub_menu = "100290";
-require_once './_common.php';
+require_once '_common.php';
 
 if ($is_admin != 'super') {
     alert('최고관리자만 접근 가능합니다.');
@@ -32,7 +32,7 @@ $sql = " select * from {$g5['menu_table']} order by me_id ";
 $result = sql_query($sql);
 
 $g5['title'] = "메뉴설정";
-require_once './admin.head.php';
+require_once 'admin.head.php';
 
 $colspan = 7;
 $sub_menu_info = '';
@@ -42,7 +42,7 @@ $sub_menu_info = '';
     <p><strong>주의!</strong> 메뉴설정 작업 후 반드시 <strong>확인</strong>을 누르셔야 저장됩니다.</p>
 </div>
 
-<form name="fmenulist" id="fmenulist" method="post" action="./menu_list_update.php" onsubmit="return fmenulist_submit(this);">
+<form name="fmenulist" id="fmenulist" method="post" action="./menu_list_update" onsubmit="return fmenulist_submit(this);">
     <input type="hidden" name="token" value="">
 
 
@@ -175,13 +175,13 @@ $sub_menu_info = '';
                 max_code = me_code;
         });
 
-        var url = "./menu_form.php?code=" + max_code + "&new=new";
+        var url = "./menu_form?code=" + max_code + "&new=new";
         window.open(url, "add_menu", "left=100,top=100,width=550,height=650,scrollbars=yes,resizable=yes");
         return false;
     }
 
     function add_submenu(code) {
-        var url = "./menu_form.php?code=" + code;
+        var url = "./menu_form?code=" + code;
         window.open(url, "add_menu", "left=100,top=100,width=550,height=650,scrollbars=yes,resizable=yes");
         return false;
     }
@@ -217,4 +217,4 @@ $sub_menu_info = '';
 </script>
 
 <?php
-require_once './admin.tail.php';
+require_once 'admin.tail.php';

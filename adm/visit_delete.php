@@ -1,11 +1,11 @@
 <?php
 $sub_menu = "200820";
-include_once('./_common.php');
+include_once('_common.php');
 
 auth_check_menu($auth, $sub_menu, 'r');
 
 $g5['title'] = '접속자로그삭제';
-include_once('./admin.head.php');
+include_once('admin.head.php');
 
 // 최소년도 구함
 $sql = " select min(vi_date) as min_date from {$g5['visit_table']} ";
@@ -22,7 +22,7 @@ if (!$min_year) {
     접속자 로그를 삭제할 년도와 방법을 선택해주십시오.
 </div>
 
-<form name="fvisitdelete" class="visit_del" method="post" action="./visit_delete_update.php" onsubmit="return form_submit(this);">
+<form name="fvisitdelete" class="visit_del" method="post" action="./visit_delete_update" onsubmit="return form_submit(this);">
     <div>
         <label for="year" class="sound_only">년도선택</label>
         <select name="year" id="year">
@@ -94,4 +94,4 @@ function form_submit(f)
 </script>
 
 <?php
-include_once('./admin.tail.php');
+include_once('admin.tail.php');

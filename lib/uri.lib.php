@@ -72,7 +72,7 @@ function get_pretty_url($folder, $no='', $query_string='', $action='')
 
     } else { // don't use shortten url
         if(in_array($folder, $boards)) {
-            $url = G5_BBS_URL. '/board.php?bo_table='. $folder;
+            $url = G5_BBS_URL. '/board?bo_table='. $folder;
             if($no) {
                 $url .= '&amp;wr_id='. $no;
             }
@@ -84,7 +84,7 @@ function get_pretty_url($folder, $no='', $query_string='', $action='')
                 $url .= $query_string;
             }
         } else {
-            $url = G5_BBS_URL. '/'.$folder.'.php';
+            $url = G5_BBS_URL. '/'.$folder;
             if($no) {
                 $url .= ($folder === 'content') ? '?co_id='. $no : '?'. $no;
             }
@@ -156,7 +156,7 @@ function short_url_clean($string_url, $add_qry=''){
 
         if( isset($url['host']) ){
 
-            $array_file_paths = run_replace('url_clean_page_paths', array('/'.G5_BBS_DIR.'/board.php', '/'.G5_BBS_DIR.'/write.php', '/'.G5_BBS_DIR.'/content.php'));
+            $array_file_paths = run_replace('url_clean_page_paths', array('/'.G5_BBS_DIR.'/board', '/'.G5_BBS_DIR.'/write', '/'.G5_BBS_DIR.'/content'));
 
             $str_path = isset($url['path']) ? $url['path'] : '';
             $http = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']=='on') ? 'https://' : 'http://';
@@ -367,13 +367,13 @@ function get_nginx_conf_rules($return_string = false)
         $rules[] = $add_rules;
     }
 
-    $rules[] = "rewrite ^{$base_path}content/([0-9a-zA-Z_]+)$ {$base_path}" . G5_BBS_DIR . "/content.php?co_id=$1&rewrite=1 break;";
-    $rules[] = "rewrite ^{$base_path}content/([^/]+)/$ {$base_path}" . G5_BBS_DIR . "/content.php?co_seo_title=$1&rewrite=1 break;";
-    $rules[] = "rewrite ^{$base_path}rss/([0-9a-zA-Z_]+)$ {$base_path}" . G5_BBS_DIR . "/rss.php?bo_table=$1 break;";
-    $rules[] = "rewrite ^{$base_path}([0-9a-zA-Z_]+)$ {$base_path}" . G5_BBS_DIR . "/board.php?bo_table=$1&rewrite=1 break;";
-    $rules[] = "rewrite ^{$base_path}([0-9a-zA-Z_]+)/write$ {$base_path}" . G5_BBS_DIR . "/write.php?bo_table=$1&rewrite=1 break;";
-    $rules[] = "rewrite ^{$base_path}([0-9a-zA-Z_]+)/([^/]+)/$ {$base_path}" . G5_BBS_DIR . "/board.php?bo_table=$1&wr_seo_title=$2&rewrite=1 break;";
-    $rules[] = "rewrite ^{$base_path}([0-9a-zA-Z_]+)/([0-9]+)$ {$base_path}" . G5_BBS_DIR . "/board.php?bo_table=$1&wr_id=$2&rewrite=1 break;";
+    $rules[] = "rewrite ^{$base_path}content/([0-9a-zA-Z_]+)$ {$base_path}" . G5_BBS_DIR . "/content?co_id=$1&rewrite=1 break;";
+    $rules[] = "rewrite ^{$base_path}content/([^/]+)/$ {$base_path}" . G5_BBS_DIR . "/content?co_seo_title=$1&rewrite=1 break;";
+    $rules[] = "rewrite ^{$base_path}rss/([0-9a-zA-Z_]+)$ {$base_path}" . G5_BBS_DIR . "/rss?bo_table=$1 break;";
+    $rules[] = "rewrite ^{$base_path}([0-9a-zA-Z_]+)$ {$base_path}" . G5_BBS_DIR . "/board?bo_table=$1&rewrite=1 break;";
+    $rules[] = "rewrite ^{$base_path}([0-9a-zA-Z_]+)/write$ {$base_path}" . G5_BBS_DIR . "/write?bo_table=$1&rewrite=1 break;";
+    $rules[] = "rewrite ^{$base_path}([0-9a-zA-Z_]+)/([^/]+)/$ {$base_path}" . G5_BBS_DIR . "/board?bo_table=$1&wr_seo_title=$2&rewrite=1 break;";
+    $rules[] = "rewrite ^{$base_path}([0-9a-zA-Z_]+)/([0-9]+)$ {$base_path}" . G5_BBS_DIR . "/board?bo_table=$1&wr_id=$2&rewrite=1 break;";
     $rules[] = '}';
     $rules[] = '#### ' . G5_VERSION . ' nginx rules END #####';
 
@@ -403,13 +403,13 @@ function get_mod_rewrite_rules($return_string = false)
         $rules[] = $add_rules;
     }
 
-    $rules[] = 'RewriteRule ^content/([0-9a-zA-Z_]+)$ ' . G5_BBS_DIR . '/content.php?co_id=$1&rewrite=1 [QSA,L]';
-    $rules[] = 'RewriteRule ^content/([^/]+)/$ ' . G5_BBS_DIR . '/content.php?co_seo_title=$1&rewrite=1 [QSA,L]';
-    $rules[] = 'RewriteRule ^rss/([0-9a-zA-Z_]+)$ ' . G5_BBS_DIR . '/rss.php?bo_table=$1 [QSA,L]';
-    $rules[] = 'RewriteRule ^([0-9a-zA-Z_]+)$ ' . G5_BBS_DIR . '/board.php?bo_table=$1&rewrite=1 [QSA,L]';
-    $rules[] = 'RewriteRule ^([0-9a-zA-Z_]+)/([^/]+)/$ ' . G5_BBS_DIR . '/board.php?bo_table=$1&wr_seo_title=$2&rewrite=1 [QSA,L]';
-    $rules[] = 'RewriteRule ^([0-9a-zA-Z_]+)/write$ ' . G5_BBS_DIR . '/write.php?bo_table=$1&rewrite=1 [QSA,L]';
-    $rules[] = 'RewriteRule ^([0-9a-zA-Z_]+)/([0-9]+)$ ' . G5_BBS_DIR . '/board.php?bo_table=$1&wr_id=$2&rewrite=1 [QSA,L]';
+    $rules[] = 'RewriteRule ^content/([0-9a-zA-Z_]+)$ ' . G5_BBS_DIR . '/content?co_id=$1&rewrite=1 [QSA,L]';
+    $rules[] = 'RewriteRule ^content/([^/]+)/$ ' . G5_BBS_DIR . '/content?co_seo_title=$1&rewrite=1 [QSA,L]';
+    $rules[] = 'RewriteRule ^rss/([0-9a-zA-Z_]+)$ ' . G5_BBS_DIR . '/rss?bo_table=$1 [QSA,L]';
+    $rules[] = 'RewriteRule ^([0-9a-zA-Z_]+)$ ' . G5_BBS_DIR . '/board?bo_table=$1&rewrite=1 [QSA,L]';
+    $rules[] = 'RewriteRule ^([0-9a-zA-Z_]+)/([^/]+)/$ ' . G5_BBS_DIR . '/board?bo_table=$1&wr_seo_title=$2&rewrite=1 [QSA,L]';
+    $rules[] = 'RewriteRule ^([0-9a-zA-Z_]+)/write$ ' . G5_BBS_DIR . '/write?bo_table=$1&rewrite=1 [QSA,L]';
+    $rules[] = 'RewriteRule ^([0-9a-zA-Z_]+)/([0-9]+)$ ' . G5_BBS_DIR . '/board?bo_table=$1&wr_id=$2&rewrite=1 [QSA,L]';
     $rules[] = '</IfModule>';
     $rules[] = '#### ' . G5_VERSION . ' rewrite END #####';
 

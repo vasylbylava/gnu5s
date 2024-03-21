@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '200300';
-require_once './_common.php';
+require_once '_common.php';
 
 auth_check_menu($auth, $sub_menu, 'r');
 
@@ -17,7 +17,7 @@ $sql = " select * {$sql_common} order by ma_id desc ";
 $result = sql_query($sql);
 
 $g5['title'] = '회원메일발송';
-require_once './admin.head.php';
+require_once 'admin.head.php';
 
 $colspan = 7;
 ?>
@@ -31,7 +31,7 @@ $colspan = 7;
 </div>
 
 
-<form name="fmaillist" id="fmaillist" action="./mail_delete.php" method="post">
+<form name="fmaillist" id="fmaillist" action="./mail_delete" method="post">
     <div class="tbl_head01 tbl_wrap">
         <table>
             <caption><?php echo $g5['title']; ?> 목록</caption>
@@ -49,7 +49,7 @@ $colspan = 7;
             <tbody>
                 <?php
                 for ($i = 0; $row = sql_fetch_array($result); $i++) {
-                    $s_vie = '<a href="./mail_preview.php?ma_id=' . $row['ma_id'] . '" target="_blank" class="btn btn_03">미리보기</a>';
+                    $s_vie = '<a href="./mail_preview?ma_id=' . $row['ma_id'] . '" target="_blank" class="btn btn_03">미리보기</a>';
 
                     $num = number_format($total_count - ($page - 1) * $config['cf_page_rows'] - $i);
 
@@ -62,10 +62,10 @@ $colspan = 7;
                             <input type="checkbox" id="chk_<?php echo $i ?>" name="chk[]" value="<?php echo $row['ma_id'] ?>">
                         </td>
                         <td class="td_num_c"><?php echo $num ?></td>
-                        <td class="td_left"><a href="./mail_form.php?w=u&amp;ma_id=<?php echo $row['ma_id'] ?>"><?php echo $row['ma_subject'] ?></a></td>
+                        <td class="td_left"><a href="./mail_form?w=u&amp;ma_id=<?php echo $row['ma_id'] ?>"><?php echo $row['ma_subject'] ?></a></td>
                         <td class="td_datetime"><?php echo $row['ma_time'] ?></td>
-                        <td class="td_test"><a href="./mail_test.php?ma_id=<?php echo $row['ma_id'] ?>">테스트</a></td>
-                        <td class="td_send"><a href="./mail_select_form.php?ma_id=<?php echo $row['ma_id'] ?>">보내기</a></td>
+                        <td class="td_test"><a href="./mail_test?ma_id=<?php echo $row['ma_id'] ?>">테스트</a></td>
+                        <td class="td_send"><a href="./mail_select_form?ma_id=<?php echo $row['ma_id'] ?>">보내기</a></td>
                         <td class="td_mng"><?php echo $s_vie ?></td>
                     </tr>
 
@@ -80,7 +80,7 @@ $colspan = 7;
     </div>
     <div class="btn_fixed_top">
         <input type="submit" value="선택삭제" class="btn btn_02">
-        <a href="./mail_form.php" id="mail_add" class="btn btn_01">메일내용추가</a>
+        <a href="./mail_form" id="mail_add" class="btn btn_01">메일내용추가</a>
     </div>
 </form>
 
@@ -102,4 +102,4 @@ $colspan = 7;
 </script>
 
 <?php
-require_once './admin.tail.php';
+require_once 'admin.tail.php';

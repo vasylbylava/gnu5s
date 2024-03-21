@@ -1,11 +1,11 @@
 <?php
 $sub_menu = '100410';
-include_once('./_common.php');
+include_once('_common.php');
 
 auth_check_menu($auth, $sub_menu, 'r');
 
 $g5['title'] = 'DB 업그레이드';
-include_once('./admin.head.php');
+include_once('admin.head.php');
 
 $is_check = false;
 
@@ -231,4 +231,4 @@ $db_upgrade_msg = $is_check ? 'DB 업그레이드가 완료되었습니다.' : '
 </div>
 
 <?php
-include_once ('./admin.tail.php');
+include_once ('admin.tail.php');

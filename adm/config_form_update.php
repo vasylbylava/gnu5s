@@ -1,6 +1,6 @@
 <?php
 $sub_menu = "100100";
-require_once './_common.php';
+require_once '_common.php';
 
 check_demo();
 
@@ -348,4 +348,4 @@ run_event('admin_config_form_update');
 
 update_rewrite_rules();
 
-goto_url('./config_form.php', false);
+goto_url('./config_form', false);

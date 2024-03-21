@@ -14,6 +14,11 @@ if( version_compare( PHP_VERSION, '5.2.17' , '<' ) ){
     die(sprintf('PHP 5.2.17 or higher required. Your PHP version is %s', PHP_VERSION));
 }
 
+// 이 코드를 해결할 마땅한 방법이 없네
+global $config, $member, $board, $group, $g5, $qaconfig, $g5_debug;
+global $menu, $auth_menu, $is_admin, $is_member, $auth;
+global $g5_object;
+
 //==========================================================================================================================
 // extract($_GET); 명령으로 인해 page.php?_POST[var1]=data1&_POST[var2]=data2 와 같은 코드가 _POST 변수로 사용되는 것을 막음
 // 081029 : letsgolee 님께서 도움 주셨습니다.
@@ -39,7 +44,8 @@ function g5_path()
     $tilde_remove = preg_replace('/^\/\~[^\/]+(.*)$/', '$1', $server_script_name); 
     $document_root = str_replace($tilde_remove, '', $server_script_filename); 
     $pattern = '/.*?' . preg_quote($document_root, '/') . '/i';
-    $root = preg_replace($pattern, '', $result['path']); 
+    // $root = preg_replace($pattern, '', $result['path']); 
+    $root = ''; 
     $port = ($_SERVER['SERVER_PORT'] == 80 || $_SERVER['SERVER_PORT'] == 443) ? '' : ':'.$_SERVER['SERVER_PORT']; 
     $http = 'http' . ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']=='on') ? 's' : '') . '://'; 
     $user = str_replace(preg_replace($pattern, '', $server_script_filename), '', $server_script_name); 
@@ -174,15 +180,15 @@ if (file_exists($dbconfig_file)) {
 <head>
 <meta charset="utf-8">
 <title>오류! <?php echo G5_VERSION ?> 설치하기</title>
-<link rel="stylesheet" href="install/install.css">
+<link rel="stylesheet" href="<?php echo G5_URL; ?>/static/install/install.css">
 </head>
 <body>
 
 <div id="ins_bar">
-    <span id="bar_img">GNUBOARD5</span>
+    <span id="bar_img">GNUBOARD5s</span>
     <span id="bar_txt">Message</span>
 </div>
-<h1>그누보드5를 먼저 설치해주십시오.</h1>
+<h1>그누보드5s를 먼저 설치해주십시오.</h1>
 <div class="ins_inner">
     <p>다음 파일을 찾을 수 없습니다.</p>
     <ul>
@@ -194,8 +200,8 @@ if (file_exists($dbconfig_file)) {
     </div>
 </div>
 <div id="ins_ft">
-    <strong>GNUBOARD5</strong>
-    <p>GPL! OPEN SOURCE GNUBOARD</p>
+    <strong>GNUBOARD5s</strong>
+    <p>MIT! OPEN SOURCE GNUBOARD</p>
 </div>
 
 </body>
@@ -268,7 +274,7 @@ if( ! class_exists('XenoPostToForm') ){
         public static function php52_request_check(){
             $cookie_session_name = self::g5_session_name();
             if (isset($_REQUEST[$cookie_session_name]) && $_REQUEST[$cookie_session_name] != session_id())
-                goto_url(G5_BBS_URL.'/logout.php');
+                goto_url(G5_BBS_URL.'/logout');
         }
 
         public static function check() {
@@ -684,7 +690,7 @@ if(defined('_THEME_PREVIEW_') && _THEME_PREVIEW_ === true)
     $config['cf_theme'] = isset($_GET['theme']) ? trim($_GET['theme']) : '';
 
 if(isset($config['cf_theme']) && trim($config['cf_theme'])) {
-    $theme_path = G5_PATH.'/'.G5_THEME_DIR.'/'.$config['cf_theme'];
+    $theme_path = G5_PUBLIC_PATH.'/'.G5_THEME_DIR.'/'.$config['cf_theme'];
     if(is_dir($theme_path)) {
         define('G5_THEME_PATH',        $theme_path);
         define('G5_THEME_URL',         G5_URL.'/'.G5_THEME_DIR.'/'.$config['cf_theme']);

@@ -1,6 +1,6 @@
 <?php
 $sub_menu = "200900";
-require_once './_common.php';
+require_once '_common.php';
 
 $w = $_POST['w'];
 if ($w == 'u' || $w == 'd') {
@@ -98,7 +98,7 @@ $row = sql_fetch(" select max(po_id) as max_po_id from {$g5['poll_table']} ");
 sql_query(" update {$g5['config_table']} set cf_max_po_id = '{$row['max_po_id']}' ");
 
 if ($w == 'd') {
-    goto_url('./poll_list.php?' . $qstr);
+    goto_url('./poll_list?' . $qstr);
 } else {
-    goto_url('./poll_form.php?w=u&po_id=' . $po_id . '&amp;' . $qstr);
+    goto_url('./poll_form?w=u&po_id=' . $po_id . '&amp;' . $qstr);
 }

@@ -2,7 +2,7 @@
 if (!defined('_GNUBOARD_')) exit;
 
 include_once(G5_LIB_PATH.'/visit.lib.php');
-include_once('./admin.head.php');
+include_once('admin.head.php');
 include_once(G5_PLUGIN_PATH.'/jquery-ui/datepicker.php');
 
 if (empty($fr_date) || ! preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", $fr_date) ) $fr_date = G5_TIME_YMD;
@@ -25,18 +25,18 @@ $query_string = $qstr ? '?'.$qstr : '';
 </form>
 
 <ul class="anchor">
-    <li><a href="./visit_list.php<?php echo $query_string ?>">접속자</a></li>
-    <li><a href="./visit_domain.php<?php echo $query_string ?>">도메인</a></li>
-    <li><a href="./visit_browser.php<?php echo $query_string ?>">브라우저</a></li>
-    <li><a href="./visit_os.php<?php echo $query_string ?>">운영체제</a></li>
+    <li><a href="./visit_list<?php echo $query_string ?>">접속자</a></li>
+    <li><a href="./visit_domain<?php echo $query_string ?>">도메인</a></li>
+    <li><a href="./visit_browser<?php echo $query_string ?>">브라우저</a></li>
+    <li><a href="./visit_os<?php echo $query_string ?>">운영체제</a></li>
     <?php if(version_compare(phpversion(), '5.3.0', '>=') && defined('G5_BROWSCAP_USE') && G5_BROWSCAP_USE) { ?>
-    <li><a href="./visit_device.php<?php echo $query_string ?>">접속기기</a></li>
+    <li><a href="./visit_device<?php echo $query_string ?>">접속기기</a></li>
     <?php } ?>
-    <li><a href="./visit_hour.php<?php echo $query_string ?>">시간</a></li>
-    <li><a href="./visit_week.php<?php echo $query_string ?>">요일</a></li>
-    <li><a href="./visit_date.php<?php echo $query_string ?>">일</a></li>
-    <li><a href="./visit_month.php<?php echo $query_string ?>">월</a></li>
-    <li><a href="./visit_year.php<?php echo $query_string ?>">년</a></li>
+    <li><a href="./visit_hour<?php echo $query_string ?>">시간</a></li>
+    <li><a href="./visit_week<?php echo $query_string ?>">요일</a></li>
+    <li><a href="./visit_date<?php echo $query_string ?>">일</a></li>
+    <li><a href="./visit_month<?php echo $query_string ?>">월</a></li>
+    <li><a href="./visit_year<?php echo $query_string ?>">년</a></li>
 </ul>
 
 <script>

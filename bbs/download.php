@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 
 // clean the output buffer
 ob_end_clean();
@@ -34,7 +34,7 @@ if (function_exists('download_file_nonce_is_valid') && !defined('G5_DOWNLOAD_NON
 $js = (isset($_GET['js'])) ? $_GET['js'] : '';
 if($js != 'on' && $board['bo_download_point'] < 0) {
     $msg = $file['bf_source'].' 파일을 다운로드 하시면 포인트가 차감('.number_format($board['bo_download_point']).'점)됩니다.\\n포인트는 게시물당 한번만 차감되며 다음에 다시 다운로드 하셔도 중복하여 차감하지 않습니다.\\n그래도 다운로드 하시겠습니까?';
-    $url1 = G5_BBS_URL.'/download.php?'.clean_query_string($_SERVER['QUERY_STRING'], false).'&js=on';
+    $url1 = G5_BBS_URL.'/download?'.clean_query_string($_SERVER['QUERY_STRING'], false).'&js=on';
     $url2 = isset($_SERVER['HTTP_REFERER']) ? clean_xss_tags($_SERVER['HTTP_REFERER']) : '';
     
     if( $url2 && stripos($url2, $_SERVER['REQUEST_URI']) !== false ){

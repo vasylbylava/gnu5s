@@ -1,6 +1,6 @@
 <?php
 $sub_menu = "100200";
-require_once './_common.php';
+require_once '_common.php';
 require_once G5_LIB_PATH . '/mailer.lib.php';
 
 $au_menu = isset($_POST['au_menu']) ? preg_replace('/[^0-9a-z_]/i', '', $_POST['au_menu']) : '';
@@ -52,4 +52,4 @@ if (str_replace('-', '', G5_TIME_YMD) !== get_session('adm_auth_update')) {
 
 run_event('adm_auth_update', $mb);
 
-goto_url('./auth_list.php?' . $qstr);
+goto_url('./auth_list?' . $qstr);

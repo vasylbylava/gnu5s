@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '300100';
-require_once './_common.php';
+require_once '_common.php';
 
 auth_check_menu($auth, $sub_menu, 'w');
 
@@ -9,7 +9,7 @@ if (!$board['bo_table']) {
 }
 
 $g5['title'] = $board['bo_subject'] . ' 게시판 썸네일 삭제';
-require_once './admin.head.php';
+require_once 'admin.head.php';
 ?>
 
 <div class="local_desc02 local_desc">
@@ -47,7 +47,7 @@ if (is_dir($dir)) {
 }
 ?>
 
-<div class="btn_confirm01 btn_confirm"><a href="./board_form.php?w=u&amp;bo_table=<?php echo $bo_table; ?>&amp;<?php echo $qstr; ?>">게시판 수정으로 돌아가기</a></div>
+<div class="btn_confirm01 btn_confirm"><a href="./board_form?w=u&amp;bo_table=<?php echo $bo_table; ?>&amp;<?php echo $qstr; ?>">게시판 수정으로 돌아가기</a></div>
 
 <?php
-require_once './admin.tail.php';
+require_once 'admin.tail.php';

@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '300600';
-require_once './_common.php';
+require_once '_common.php';
 require_once G5_EDITOR_LIB;
 
 auth_check_menu($auth, $sub_menu, "w");
@@ -79,7 +79,7 @@ if ($w == "u") {
 require_once G5_ADMIN_PATH . '/admin.head.php';
 ?>
 
-<form name="frmcontentform" action="./contentformupdate.php" onsubmit="return frmcontentform_check(this);" method="post" enctype="MULTIPART/FORM-DATA">
+<form name="frmcontentform" action="./contentformupdate" onsubmit="return frmcontentform_check(this);" method="post" enctype="MULTIPART/FORM-DATA">
     <input type="hidden" name="w" value="<?php echo $w; ?>">
     <input type="hidden" name="co_html" value="1">
     <input type="hidden" name="token" value="">
@@ -223,7 +223,7 @@ require_once G5_ADMIN_PATH . '/admin.head.php';
     </div>
 
     <div class="btn_fixed_top">
-        <a href="./contentlist.php" class="btn btn_02">목록</a>
+        <a href="./contentlist" class="btn btn_02">목록</a>
         <input type="submit" value="확인" class="btn btn_submit" accesskey="s">
     </div>
 
@@ -238,7 +238,7 @@ require_once G5_ADMIN_PATH . '/admin.head.php';
     function use_captcha_check() {
         $.ajax({
             type: "POST",
-            url: g5_admin_url + "/ajax.use_captcha.php",
+            url: g5_admin_url + "/ajax.use_captcha",
             data: {
                 admin_use_captcha: "1"
             },

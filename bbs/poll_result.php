@@ -96,10 +96,10 @@ if(preg_match('#^theme/(.+)$#', $skin_dir, $match)) {
         $poll_skin_path = G5_THEME_MOBILE_PATH.'/'.G5_SKIN_DIR.'/poll/'.$match[1];
         if(!is_dir($poll_skin_path))
             $poll_skin_path = G5_THEME_PATH.'/'.G5_SKIN_DIR.'/poll/'.$match[1];
-        $poll_skin_url = str_replace(G5_PATH, G5_URL, $poll_skin_path);
+        $poll_skin_url = str_replace(G5_PUBLIC_PATH, G5_URL, $poll_skin_path);
     } else {
         $poll_skin_path = G5_THEME_PATH.'/'.G5_SKIN_DIR.'/poll/'.$match[1];
-        $poll_skin_url = str_replace(G5_PATH, G5_URL, $poll_skin_path);
+        $poll_skin_url = str_replace(G5_PUBLIC_PATH, G5_URL, $poll_skin_path);
     }
     //$skin_dir = $match[1];
 } else {

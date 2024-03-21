@@ -1,6 +1,6 @@
 <?php
 $sub_menu = "300200";
-require_once './_common.php';
+require_once '_common.php';
 
 if ($w == 'u') {
     check_demo();
@@ -96,4 +96,4 @@ if ($w == '') {
 
 run_event('admin_boardgroup_form_update', $gr_id, $w);
 
-goto_url('./boardgroup_form.php?w=u&amp;gr_id=' . $gr_id . '&amp;' . $qstr);
+goto_url('./boardgroup_form?w=u&amp;gr_id=' . $gr_id . '&amp;' . $qstr);

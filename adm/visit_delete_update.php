@@ -1,6 +1,6 @@
 <?php
 $sub_menu = "200820";
-include_once('./_common.php');
+include_once('_common.php');
 
 check_demo();
 
@@ -56,4 +56,4 @@ $sql = " select count(*) as cnt from {$g5['visit_table']} ";
 $row = sql_fetch($sql);
 $total_count2 = $row['cnt'];
 
-alert('총 '.number_format($total_count).'건 중 '.number_format($total_count - $total_count2).'건 삭제 완료', './visit_delete.php');
+alert('총 '.number_format($total_count).'건 중 '.number_format($total_count - $total_count2).'건 삭제 완료', './visit_delete');

@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 include_once(G5_CAPTCHA_PATH.'/captcha.lib.php');
 include_once(G5_LIB_PATH.'/register.lib.php');
 include_once(G5_LIB_PATH.'/mailer.lib.php');
@@ -590,7 +590,7 @@ if ($msg)
 run_event('register_form_update_after', $mb_id, $w);
 
 if ($w == '') {
-    goto_url(G5_HTTP_BBS_URL.'/register_result.php');
+    goto_url(G5_HTTP_BBS_URL.'/register_result');
 } else if ($w == 'u') {
     $row  = sql_fetch(" select mb_password from {$g5['member_table']} where mb_id = '{$member['mb_id']}' ");
     $tmp_password = $row['mb_password'];
@@ -606,7 +606,7 @@ if ($w == '') {
         <meta charset="utf-8">
         <title>회원정보수정</title>
         <body>
-        <form name="fregisterupdate" method="post" action="'.G5_HTTP_BBS_URL.'/register_form.php">
+        <form name="fregisterupdate" method="post" action="'.G5_HTTP_BBS_URL.'/register_form">
         <input type="hidden" name="w" value="u">
         <input type="hidden" name="mb_id" value="'.$mb_id.'">
         <input type="hidden" name="mb_password" value="'.$tmp_password.'">

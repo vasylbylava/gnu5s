@@ -116,7 +116,7 @@ function get_theme_dir()
 {
     $result_array = array();
 
-    $dirname = G5_PATH . '/' . G5_THEME_DIR . '/';
+    $dirname = G5_PUBLIC_PATH.'/'.G5_THEME_DIR.'/';
     $handle = opendir($dirname);
     while ($file = readdir($handle)) {
         if ($file == '.' || $file == '..') {
@@ -141,7 +141,7 @@ function get_theme_dir()
 function get_theme_info($dir)
 {
     $info = array();
-    $path = G5_PATH . '/' . G5_THEME_DIR . '/' . $dir;
+    $path = G5_PUBLIC_PATH.'/'.G5_THEME_DIR.'/' . $dir;
 
     if (is_dir($path)) {
         $screenshot = $path . '/screenshot.png';
@@ -150,7 +150,7 @@ function get_theme_info($dir)
             $size = @getimagesize($screenshot);
 
             if ($size[2] == 3) {
-                $screenshot_url = str_replace(G5_PATH, G5_URL, $screenshot);
+                $screenshot_url = str_replace(G5_PUBLIC_PATH, G5_URL, $screenshot);
             }
         }
 
@@ -194,7 +194,7 @@ function get_theme_config_value($dir, $key = '*')
 {
     $tconfig = array();
 
-    $theme_config_file = G5_PATH . '/' . G5_THEME_DIR . '/' . $dir . '/theme.config.php';
+    $theme_config_file = G5_PUBLIC_PATH.'/'.G5_THEME_DIR.'/'.$dir.'/theme.config.php';
     if (is_file($theme_config_file)) {
         include $theme_config_file;
         // 22.05.26 Undefined Variable $theme_config;
@@ -603,7 +603,7 @@ function admin_menu_find_by($call, $search_key)
 
 // 접근 권한 검사
 if (!$member['mb_id']) {
-    alert('로그인 하십시오.', G5_BBS_URL . '/login.php?url=' . urlencode(correct_goto_url(G5_ADMIN_URL)));
+    alert('로그인 하십시오.', G5_BBS_URL . '/login?url=' . urlencode(correct_goto_url(G5_ADMIN_URL)));
 } else if ($is_admin != 'super') {
     $auth = array();
     $sql = " select au_menu, au_auth from {$g5['auth_table']} where mb_id = '{$member['mb_id']}' ";
@@ -636,9 +636,12 @@ if (isset($auth) && is_array($auth)) {
 }
 
 // 가변 메뉴
-unset($auth_menu);
-unset($menu);
-unset($amenu);
+// unset($auth_menu);
+// unset($menu);
+// unset($amenu);
+
+
+
 $tmp = dir(G5_ADMIN_PATH);
 $menu_files = array();
 while ($entry = $tmp->read()) {

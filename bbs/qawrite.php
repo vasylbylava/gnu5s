@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 include_once(G5_EDITOR_LIB);
 
 if($w != '' && $w != 'u' && $w != 'r') {
@@ -17,7 +17,7 @@ $token = _token();
 set_session('ss_qa_write_token', $token);
 
 $g5['title'] = $qaconfig['qa_title'];
-include_once('./qahead.php');
+include_once('qahead.php');
 
 $skin_file = $qa_skin_path.'/write.skin.php';
 
@@ -137,11 +137,11 @@ if(is_file($skin_file)) {
 
     $list_href = G5_BBS_URL.'/qalist.php'.preg_replace('/^&amp;/', '?', $qstr);
 
-    $action_url = https_url(G5_BBS_DIR).'/qawrite_update.php';
+    $action_url = https_url(G5_BBS_DIR).'/qawrite_update';
 
     include_once($skin_file);
 } else {
     echo '<div>'.str_replace(G5_PATH.'/', '', $skin_file).'이 존재하지 않습니다.</div>';
 }
 
-include_once('./qatail.php');
+include_once('qatail.php');

@@ -1,6 +1,6 @@
 <?php
 $sub_menu = "200300";
-require_once './_common.php';
+require_once '_common.php';
 
 if (!$config['cf_email_use']) {
     alert('환경설정에서 \'메일발송 사용\'에 체크하셔야 메일을 발송할 수 있습니다.');
@@ -54,14 +54,14 @@ $mb_id1_to = isset($mb_id1_to) ? clean_xss_tags($mb_id1_to, 1, 1, 30) : '';
 $mb_email = isset($mb_email) ? clean_xss_tags($mb_email, 1, 1, 100) : '';
 
 $g5['title'] = '회원메일발송';
-require_once './admin.head.php';
+require_once 'admin.head.php';
 ?>
 
 <div class="local_ov01 local_ov">
     전체회원 <?php echo number_format($tot_cnt) ?>명 , 탈퇴대기회원 <?php echo number_format($finish_cnt) ?>명, 정상회원 <?php echo number_format($tot_cnt - $finish_cnt) ?>명 중 메일 발송 대상 선택
 </div>
 
-<form name="frmsendmailselectform" id="frmsendmailselectform" action="./mail_select_list.php" method="post" autocomplete="off">
+<form name="frmsendmailselectform" id="frmsendmailselectform" action="./mail_select_list" method="post" autocomplete="off">
     <input type="hidden" name="ma_id" value="<?php echo $ma_id ?>">
 
     <div class="tbl_frm01 tbl_wrap">
@@ -136,4 +136,4 @@ require_once './admin.head.php';
 </form>
 
 <?php
-require_once './admin.tail.php';
+require_once 'admin.tail.php';

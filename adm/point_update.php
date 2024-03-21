@@ -1,6 +1,6 @@
 <?php
 $sub_menu = "200200";
-require_once './_common.php';
+require_once '_common.php';
 
 auth_check_menu($auth, $sub_menu, 'w');
 
@@ -23,4 +23,4 @@ if (($po_point < 0) && ($po_point * (-1) > $mb['mb_point'])) {
 
 insert_point($mb_id, $po_point, $po_content, '@passive', $mb_id, $member['mb_id'] . '-' . uniqid(''), $expire);
 
-goto_url('./point_list.php?' . $qstr);
+goto_url('./point_list?' . $qstr);

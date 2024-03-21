@@ -345,7 +345,7 @@ function get_file($bo_table, $wr_id)
     {
         $no = (int) $row['bf_no'];
         $bf_content = $row['bf_content'] ? html_purifier($row['bf_content']) : '';
-        $file[$no]['href'] = G5_BBS_URL."/download.php?bo_table=$bo_table&amp;wr_id=$wr_id&amp;no=$no&amp;nonce=$nonce" . $qstr;
+        $file[$no]['href'] = G5_BBS_URL."/download?bo_table=$bo_table&amp;wr_id=$wr_id&amp;no=$no&amp;nonce=$nonce" . $qstr;
         $file[$no]['download'] = $row['bf_download'];
         // 4.00.11 - 파일 path 추가
         $file[$no]['path'] = G5_DATA_URL.'/file/'.$bo_table;
@@ -491,7 +491,7 @@ function get_list($write_row, $board, $skin_url, $subject_len=40)
     // 링크
     for ($i=1; $i<=G5_LINK_COUNT; $i++) {
         $list['link'][$i] = set_http(get_text($list["wr_link{$i}"]));
-        $list['link_href'][$i] = G5_BBS_URL.'/link.php?bo_table='.$board['bo_table'].'&amp;wr_id='.$list['wr_id'].'&amp;no='.$i.$qstr;
+        $list['link_href'][$i] = G5_BBS_URL.'/link?bo_table='.$board['bo_table'].'&amp;wr_id='.$list['wr_id'].'&amp;no='.$i.$qstr;
         $list['link_hit'][$i] = (int)$list["wr_link{$i}_hit"];
     }
 
@@ -1433,11 +1433,11 @@ function get_sideview($mb_id, $name='', $email='', $homepage='')
     }
 
     if ($mb_id) {
-        $menus['memo'] = '<a href="' . G5_BBS_URL . '/memo_form.php?me_recv_mb_id=' . $mb_id . '" rel="nofollow" onclick="win_memo(this.href); return false;">쪽지보내기</a>';
+        $menus['memo'] = '<a href="' . G5_BBS_URL . '/memo_form?me_recv_mb_id=' . $mb_id . '" rel="nofollow" onclick="win_memo(this.href); return false;">쪽지보내기</a>';
     }
 
     if ($email) {
-        $menus['email'] = '<a href="' . G5_BBS_URL . '/formmail.php?mb_id=' . $mb_id . '&amp;name=' . urlencode($name) . '&amp;email=' . $email . '" onclick="win_email(this.href); return false;" rel="nofollow">메일보내기</a>';
+        $menus['email'] = '<a href="' . G5_BBS_URL . '/formmail?mb_id=' . $mb_id . '&amp;name=' . urlencode($name) . '&amp;email=' . $email . '" onclick="win_email(this.href); return false;" rel="nofollow">메일보내기</a>';
     }
 
     if ($homepage) {
@@ -3817,7 +3817,7 @@ function get_skin_path($dir, $skin)
         $theme_path = '';
         $cf_theme = trim($config['cf_theme']);
 
-        $theme_path = G5_PATH.'/'.G5_THEME_DIR.'/'.$cf_theme;
+        $theme_path = G5_PUBLIC_PATH.'/'.G5_THEME_DIR.'/'.$cf_theme;
         if(G5_IS_MOBILE) {
             $skin_path = $theme_path.'/'.G5_MOBILE_DIR.'/'.G5_SKIN_DIR.'/'.$dir.'/'.$match[1];
             if(!is_dir($skin_path))
@@ -3840,7 +3840,7 @@ function get_skin_url($dir, $skin)
 {
     $skin_path = get_skin_path($dir, $skin);
 
-    return str_replace(G5_PATH, G5_URL, $skin_path);
+    return str_replace(G5_PUBLIC_PATH, G5_URL, $skin_path);
 }
 
 // 발신번호 유효성 체크
@@ -3970,7 +3970,7 @@ function get_member_profile_img($mb_id='', $width='', $height='', $alt='profile_
             $no_profile_img = (defined('G5_THEME_NO_PROFILE_IMG') && G5_THEME_NO_PROFILE_IMG) ? G5_THEME_NO_PROFILE_IMG : G5_NO_PROFILE_IMG;
             $tmp = array();
             preg_match( '/src="([^"]*)"/i', $no_profile_img, $tmp );
-            $no_profile_cache = $src = isset($tmp[1]) ? $tmp[1] : G5_IMG_URL.'/no_profile.gif';
+            $no_profile_cache = $src = isset($tmp[1]) ? $tmp[1] : G5_URL.'/static/img/no_profile.gif';
         }
     }
 

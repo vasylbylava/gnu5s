@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 
 $html_title = '링크 &gt; '.conv_subject($write['wr_subject'], 255);
 

@@ -1,6 +1,6 @@
 <?php
 $sub_menu = "200300";
-require_once './_common.php';
+require_once '_common.php';
 
 auth_check_menu($auth, $sub_menu, 'r');
 
@@ -78,10 +78,10 @@ $ma_last_option .= "||gr_id={$gr_id}";
 sql_query(" update {$g5['mail_table']} set ma_last_option = '{$ma_last_option}' where ma_id = '{$ma_id}' ");
 
 $g5['title'] = "메일발송 대상 회원";
-require_once './admin.head.php';
+require_once 'admin.head.php';
 ?>
 
-<form name="fmailselectlist" id="fmailselectlist" method="post" action="./mail_select_update.php">
+<form name="fmailselectlist" id="fmailselectlist" method="post" action="./mail_select_update">
     <input type="hidden" name="token" value="">
     <input type="hidden" name="ma_id" value="<?php echo get_text($ma_id); ?>">
 
@@ -132,4 +132,4 @@ require_once './admin.head.php';
 </form>
 
 <?php
-require_once './admin.tail.php';
+require_once 'admin.tail.php';

@@ -1,6 +1,6 @@
 <?php
 $sub_menu = "100510";
-require_once './_common.php';
+require_once '_common.php';
 
 if (!(version_compare(phpversion(), '5.3.0', '>=') && defined('G5_BROWSCAP_USE') && G5_BROWSCAP_USE)) {
     alert('사용할 수 없는 기능입니다.', correct_goto_url(G5_ADMIN_URL));
@@ -11,7 +11,7 @@ if ($is_admin != 'super') {
 }
 
 $g5['title'] = 'Browscap 업데이트';
-require_once './admin.head.php';
+require_once 'admin.head.php';
 ?>
 
 <div id="processing">
@@ -25,7 +25,7 @@ require_once './admin.head.php';
             $("#processing").html('<div class="update_processing"></div><p>Browscap 정보를 업데이트 중입니다.</p>');
 
             $.ajax({
-                url: "./browscap_update.php",
+                url: "./browscap_update",
                 async: true,
                 cache: false,
                 dataType: "html",
@@ -43,4 +43,4 @@ require_once './admin.head.php';
 </script>
 
 <?php
-require_once './admin.tail.php';
+require_once 'admin.tail.php';

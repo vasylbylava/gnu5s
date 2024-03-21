@@ -1,6 +1,6 @@
 <?php
 $sub_menu = "200100";
-require_once './_common.php';
+require_once '_common.php';
 
 auth_check_menu($auth, $sub_menu, 'w');
 
@@ -208,13 +208,13 @@ if ($mb['mb_intercept_date']) {
     $g5['title'] .= "";
 }
 $g5['title'] .= '회원 ' . $html_title;
-require_once './admin.head.php';
+require_once 'admin.head.php';
 
 // add_javascript('js 구문', 출력순서); 숫자가 작을 수록 먼저 출력됨
 add_javascript(G5_POSTCODE_JS, 0);    //다음 주소 js
 ?>
 
-<form name="fmember" id="fmember" action="./member_form_update.php" onsubmit="return fmember_submit(this);" method="post" enctype="multipart/form-data">
+<form name="fmember" id="fmember" action="./member_form_update" onsubmit="return fmember_submit(this);" method="post" enctype="multipart/form-data">
     <input type="hidden" name="w" value="<?php echo $w ?>">
     <input type="hidden" name="sfl" value="<?php echo $sfl ?>">
     <input type="hidden" name="stx" value="<?php echo $stx ?>">
@@ -237,7 +237,7 @@ add_javascript(G5_POSTCODE_JS, 0);    //다음 주소 js
                     <th scope="row"><label for="mb_id">아이디<?php echo $sound_only ?></label></th>
                     <td>
                         <input type="text" name="mb_id" value="<?php echo $mb['mb_id'] ?>" id="mb_id" <?php echo $required_mb_id ?> class="frm_input <?php echo $required_mb_id_class ?>" size="15" maxlength="20">
-                        <?php if ($w == 'u') { ?><a href="./boardgroupmember_form.php?mb_id=<?php echo $mb['mb_id'] ?>" class="btn_frmline">접근가능그룹보기</a><?php } ?>
+                        <?php if ($w == 'u') { ?><a href="./boardgroupmember_form?mb_id=<?php echo $mb['mb_id'] ?>" class="btn_frmline">접근가능그룹보기</a><?php } ?>
                     </td>
                     <th scope="row"><label for="mb_password">비밀번호<?php echo $sound_only ?></label></th>
                     <td>
@@ -264,7 +264,7 @@ add_javascript(G5_POSTCODE_JS, 0);    //다음 주소 js
                     <th scope="row"><label for="mb_level">회원 권한</label></th>
                     <td><?php echo get_member_level_select('mb_level', 1, $member['mb_level'], $mb['mb_level']) ?></td>
                     <th scope="row">포인트</th>
-                    <td><a href="./point_list.php?sfl=mb_id&amp;stx=<?php echo $mb['mb_id'] ?>" target="_blank"><?php echo number_format($mb['mb_point']) ?></a> 점</td>
+                    <td><a href="./point_list?sfl=mb_id&amp;stx=<?php echo $mb['mb_id'] ?>" target="_blank"><?php echo number_format($mb['mb_point']) ?></a> 점</td>
                 </tr>
                 <tr>
                     <th scope="row"><label for="mb_email">E-mail<strong class="sound_only">필수</strong></label></th>
@@ -502,7 +502,7 @@ add_javascript(G5_POSTCODE_JS, 0);    //다음 주소 js
                                                     <span class="provider_name"><?php echo $provider_name;   //서비스이름 ?> ( <?php echo $account['displayname']; ?> )</span>
                                                     <span class="account_hidden" style="display:none"><?php echo $account['mb_id']; ?></span>
                                                 </div>
-                                                <div class="btn_info"><a href="<?php echo G5_SOCIAL_LOGIN_URL . '/unlink.php?mp_no=' . $account['mp_no'] ?>" class="social_unlink" data-provider="<?php echo $account['mp_no']; ?>">연동해제</a> <span class="sound_only"><?php echo substr($account['mp_register_day'], 2, 14); ?></span></div>
+                                                <div class="btn_info"><a href="<?php echo G5_SOCIAL_LOGIN_URL . '/unlink?mp_no=' . $account['mp_no'] ?>" class="social_unlink" data-provider="<?php echo $account['mp_no']; ?>">연동해제</a> <span class="sound_only"><?php echo substr($account['mp_register_day'], 2, 14); ?></span></div>
                                             </div>
                                         <?php } //end foreach ?>
                                     </li>
@@ -516,7 +516,7 @@ add_javascript(G5_POSTCODE_JS, 0);    //다음 주소 js
                                                 return false;
                                             }
 
-                                            var ajax_url = "<?php echo G5_SOCIAL_LOGIN_URL . '/unlink.php' ?>";
+                                            var ajax_url = "<?php echo G5_SOCIAL_LOGIN_URL . '/unlink' ?>";
                                             var mb_id = '',
                                                 mp_no = $(this).attr("data-provider"),
                                                 $mp_el = $(this).parents(".account_provider");
@@ -577,7 +577,7 @@ add_javascript(G5_POSTCODE_JS, 0);    //다음 주소 js
     </div>
 
     <div class="btn_fixed_top">
-        <a href="./member_list.php?<?php echo $qstr ?>" class="btn btn_02">목록</a>
+        <a href="./member_list?<?php echo $qstr ?>" class="btn btn_02">목록</a>
         <input type="submit" value="확인" class="btn_submit btn" accesskey='s'>
     </div>
 </form>
@@ -627,4 +627,4 @@ add_javascript(G5_POSTCODE_JS, 0);    //다음 주소 js
 <?php
 run_event('admin_member_form_after', $mb, $w);
 
-require_once './admin.tail.php';
+require_once 'admin.tail.php';

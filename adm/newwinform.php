@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '100310';
-require_once './_common.php';
+require_once '_common.php';
 require_once G5_EDITOR_LIB;
 
 auth_check_menu($auth, $sub_menu, "w");
@@ -42,7 +42,7 @@ $g5['title'] = $html_title;
 require_once G5_ADMIN_PATH . '/admin.head.php';
 ?>
 
-<form name="frmnewwin" action="./newwinformupdate.php" onsubmit="return frmnewwin_check(this);" method="post">
+<form name="frmnewwin" action="./newwinformupdate" onsubmit="return frmnewwin_check(this);" method="post">
     <input type="hidden" name="w" value="<?php echo $w; ?>">
     <input type="hidden" name="nw_id" value="<?php echo $nw_id; ?>">
     <input type="hidden" name="token" value="">
@@ -145,7 +145,7 @@ require_once G5_ADMIN_PATH . '/admin.head.php';
     </div>
 
     <div class="btn_fixed_top">
-        <a href="./newwinlist.php" class=" btn btn_02">목록</a>
+        <a href="./newwinlist" class=" btn btn_02">목록</a>
         <input type="submit" value="확인" class="btn_submit btn" accesskey="s">
     </div>
 </form>

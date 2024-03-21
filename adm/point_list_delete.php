@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '200200';
-require_once './_common.php';
+require_once '_common.php';
 
 check_demo();
 
@@ -59,4 +59,4 @@ for ($i = 0; $i < $count; $i++) {
     sql_query($sql);
 }
 
-goto_url('./point_list.php?' . $qstr);
+goto_url('./point_list?' . $qstr);

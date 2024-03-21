@@ -1,6 +1,6 @@
 <?php
 $sub_menu = "200200";
-require_once './_common.php';
+require_once '_common.php';
 
 auth_check_menu($auth, $sub_menu, 'r');
 
@@ -57,7 +57,7 @@ if ($sfl == 'mb_id' && $stx) {
 }
 
 $g5['title'] = '포인트관리';
-require_once './admin.head.php';
+require_once 'admin.head.php';
 
 $colspan = 9;
 
@@ -97,7 +97,7 @@ if (strstr($sfl, "mb_id")) {
     <input type="submit" class="btn_submit" value="검색">
 </form>
 
-<form name="fpointlist" id="fpointlist" method="post" action="./point_list_delete.php" onsubmit="return fpointlist_submit(this);">
+<form name="fpointlist" id="fpointlist" method="post" action="./point_list_delete" onsubmit="return fpointlist_submit(this);">
     <input type="hidden" name="sst" value="<?php echo $sst ?>">
     <input type="hidden" name="sod" value="<?php echo $sod ?>">
     <input type="hidden" name="sfl" value="<?php echo $sfl ?>">
@@ -190,7 +190,7 @@ if (strstr($sfl, "mb_id")) {
 <section id="point_mng">
     <h2 class="h2_frm">개별회원 포인트 증감 설정</h2>
 
-    <form name="fpointlist2" method="post" id="fpointlist2" action="./point_update.php" autocomplete="off">
+    <form name="fpointlist2" method="post" id="fpointlist2" action="./point_update" autocomplete="off">
         <input type="hidden" name="sfl" value="<?php echo $sfl ?>">
         <input type="hidden" name="stx" value="<?php echo $stx ?>">
         <input type="hidden" name="sst" value="<?php echo $sst ?>">
@@ -253,4 +253,4 @@ if (strstr($sfl, "mb_id")) {
 </script>
 
 <?php
-require_once './admin.tail.php';
+require_once 'admin.tail.php';

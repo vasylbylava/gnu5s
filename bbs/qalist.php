@@ -1,8 +1,8 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 
 if($is_guest)
-    alert('회원이시라면 로그인 후 이용해 보십시오.', './login.php?url='.urlencode(G5_BBS_URL.'/qalist.php'));
+    alert('회원이시라면 로그인 후 이용해 보십시오.', './login?url='.urlencode(G5_BBS_URL.'/qalist'));
 
 $qaconfig = get_qa_config();
 
@@ -13,7 +13,7 @@ if( $is_admin ){
 }
 
 $g5['title'] = $qaconfig['qa_title'];
-include_once('./qahead.php');
+include_once('qahead.php');
 
 $skin_file = $qa_skin_path.'/list.skin.php';
 $is_auth = $is_admin ? true : false;
@@ -114,7 +114,7 @@ if(is_file($skin_file)) {
             $list[$i]['subject'] = search_font($stx, $list[$i]['subject']);
         }
 
-        $list[$i]['view_href'] = G5_BBS_URL.'/qaview.php?qa_id='.$row['qa_id'].$qstr;
+        $list[$i]['view_href'] = G5_BBS_URL.'/qaview?qa_id='.$row['qa_id'].$qstr;
 
         $list[$i]['icon_file'] = '';
         if(trim($row['qa_file1']) || trim($row['qa_file2']))
@@ -132,11 +132,11 @@ if(is_file($skin_file)) {
     $admin_href = '';
     if($is_admin) {
         $is_checkbox = true;
-        $admin_href = G5_ADMIN_URL.'/qa_config.php';
+        $admin_href = G5_ADMIN_URL.'/qa_config';
     }
 
-    $list_href = G5_BBS_URL.'/qalist.php';
-    $write_href = G5_BBS_URL.'/qawrite.php';
+    $list_href = G5_BBS_URL.'/qalist';
+    $write_href = G5_BBS_URL.'/qawrite';
 
     $list_pages = preg_replace('/(\.php)(&amp;|&)/i', '$1?', get_paging(G5_IS_MOBILE ? $config['cf_mobile_pages'] : $config['cf_write_pages'], $page, $total_page, './qalist.php'.$qstr.'&amp;page='));
 
@@ -146,4 +146,4 @@ if(is_file($skin_file)) {
     echo '<div>'.str_replace(G5_PATH.'/', '', $skin_file).'이 존재하지 않습니다.</div>';
 }
 
-include_once('./qatail.php');
+include_once('qatail.php');

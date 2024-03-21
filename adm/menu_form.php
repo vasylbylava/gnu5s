@@ -1,6 +1,6 @@
 <?php
 $sub_menu = "100290";
-require_once './_common.php';
+require_once '_common.php';
 
 if ($is_admin != 'super') {
     alert_close('최고관리자만 접근 가능합니다.');
@@ -45,7 +45,7 @@ if ($new == 'new' || !$code) {
 <script>
     $(function() {
         $("#menu_result").load(
-            "./menu_form_search.php"
+            "./menu_form_search"
         );
 
         function link_checks_all_chage() {
@@ -80,7 +80,7 @@ if ($new == 'new' || !$code) {
             var dfd = new $.Deferred();
 
             $("#menu_result").empty().load(
-                "./menu_form_search.php", {
+                "./menu_form_search", {
                     type: type
                 },
                 function() {

@@ -1,12 +1,12 @@
 <?php
 $sub_menu = '100920';
-include_once('./_common.php');
+include_once('_common.php');
 
 if ($is_admin != 'super')
     alert('최고관리자만 접근 가능합니다.', G5_URL);
 
 $g5['title'] = '썸네일 일괄삭제';
-include_once('./admin.head.php');
+include_once('admin.head.php');
 ?>
 
 <div class="local_desc02 local_desc">
@@ -68,4 +68,4 @@ echo '<div class="local_desc01 local_desc"><p><strong>썸네일 '.$cnt.'건의 �
 ?>
 
 <?php
-include_once('./admin.tail.php');
+include_once('admin.tail.php');

@@ -1,8 +1,8 @@
 <?php
 $sub_menu = '100000';
-require_once './_common.php';
+require_once '_common.php';
 
-@require_once './safe_check.php';
+@require_once 'safe_check.php';
 
 if (function_exists('social_log_file_delete')) {
     //소셜로그인 디버그 파일 24시간 지난것은 삭제
@@ -10,7 +10,7 @@ if (function_exists('social_log_file_delete')) {
 }
 
 $g5['title'] = '관리자메인';
-require_once './admin.head.php';
+require_once 'admin.head.php';
 
 $new_member_rows = 5;
 $new_point_rows = 5;
@@ -335,4 +335,4 @@ $addtional_content_after = run_replace('adm_index_addtional_content_after', '', 
 if ($addtional_content_after) {
     echo $addtional_content_after;
 }
-require_once './admin.tail.php';
+require_once 'admin.tail.php';

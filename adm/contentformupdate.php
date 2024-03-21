@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '300600';
-require_once './_common.php';
+require_once '_common.php';
 
 if ($w == "u" || $w == "d") {
     check_demo();
@@ -148,10 +148,10 @@ if ($w == "" || $w == "u") {
     }
 
     if ($error_msg) {
-        alert($error_msg, "./contentform.php?w=u&amp;co_id=$co_id");
+        alert($error_msg, "./contentform?w=u&amp;co_id=$co_id");
     } else {
-        goto_url("./contentform.php?w=u&amp;co_id=$co_id");
+        goto_url("./contentform?w=u&amp;co_id=$co_id");
     }
 } else {
-    goto_url("./contentlist.php");
+    goto_url("./contentlist");
 }

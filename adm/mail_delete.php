@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '200300';
-require_once './_common.php';
+require_once '_common.php';
 
 check_demo();
 
@@ -22,4 +22,4 @@ for ($i = 0; $i < $post_count_chk; $i++) {
     run_event('admin_mail_deleted', $ma_id);
 }
 
-goto_url('./mail_list.php');
+goto_url('./mail_list');

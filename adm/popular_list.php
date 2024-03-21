@@ -1,6 +1,6 @@
 <?php
 $sub_menu = "300300";
-require_once './_common.php';
+require_once '_common.php';
 
 auth_check_menu($auth, $sub_menu, 'r');
 
@@ -62,7 +62,7 @@ $result = sql_query($sql);
 $listall = '<a href="' . $_SERVER['SCRIPT_NAME'] . '" class="ov_listall">전체목록</a>';
 
 $g5['title'] = '인기검색어관리';
-require_once './admin.head.php';
+require_once 'admin.head.php';
 
 $colspan = 4;
 ?>
@@ -167,4 +167,4 @@ $colspan = 4;
 </script>
 
 <?php
-require_once './admin.tail.php';
+require_once 'admin.tail.php';

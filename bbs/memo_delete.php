@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 
 if (!$is_member)
     alert('회원만 이용하실 수 있습니다.');
@@ -34,4 +34,4 @@ if (!$row['me_read_datetime'][0]) // 메모 받기전이면
 
 run_event('memo_delete', $me_id, $row);
 
-goto_url('./memo.php?kind='.$kind);
+goto_url('./memo?kind='.$kind);

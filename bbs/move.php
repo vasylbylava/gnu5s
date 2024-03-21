@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 
 $sw = isset($_REQUEST['sw']) ? clean_xss_tags($_REQUEST['sw'], 1, 1) : '';
 
@@ -52,7 +52,7 @@ for ($i=0; $row=sql_fetch_array($result); $i++)
 
 <div id="copymove" class="new_win">
     <h1 id="win_title"><?php echo $g5['title'] ?></h1>
-    <form name="fboardmoveall" method="post" action="./move_update.php" onsubmit="return fboardmoveall_submit(this);">
+    <form name="fboardmoveall" method="post" action="./move_update" onsubmit="return fboardmoveall_submit(this);">
     <input type="hidden" name="sw" value="<?php echo $sw ?>">
     <input type="hidden" name="bo_table" value="<?php echo $bo_table ?>">
     <input type="hidden" name="wr_id_list" value="<?php echo $wr_id_list ?>">
@@ -159,7 +159,7 @@ function fboardmoveall_submit(f)
 
     document.getElementById('btn_submit').disabled = true;
 
-    f.action = './move_update.php';
+    f.action = './move_update';
     return true;
 }
 </script>

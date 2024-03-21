@@ -1,6 +1,6 @@
 <?php
 $sub_menu = "300100";
-require_once './_common.php';
+require_once '_common.php';
 
 check_demo();
 
@@ -86,11 +86,11 @@ if ($act_button === "선택수정") {
         $tmp_bo_table = isset($_POST['board_table'][$k]) ? trim(clean_xss_tags($_POST['board_table'][$k], 1, 1)) : '';
 
         if (preg_match("/^[A-Za-z0-9_]+$/", $tmp_bo_table)) {
-            include './board_delete.inc.php';
+            include 'board_delete.inc.php';
         }
     }
 }
 
 run_event('admin_board_list_update', $act_button, $chk, $board_table, $qstr);
 
-goto_url('./board_list.php?' . $qstr);
+goto_url('./board_list?' . $qstr);

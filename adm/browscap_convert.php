@@ -1,6 +1,6 @@
 <?php
 $sub_menu = "100520";
-require_once './_common.php';
+require_once '_common.php';
 
 if (!(version_compare(phpversion(), '5.3.0', '>=') && defined('G5_BROWSCAP_USE') && G5_BROWSCAP_USE)) {
     alert('사용할 수 없는 기능입니다.', correct_goto_url(G5_ADMIN_URL));
@@ -16,7 +16,7 @@ if (!$rows) {
 }
 
 $g5['title'] = '접속로그 변환';
-require_once './admin.head.php';
+require_once 'admin.head.php';
 ?>
 
 <div id="processing">
@@ -31,7 +31,7 @@ require_once './admin.head.php';
 
             $.ajax({
                 method: "GET",
-                url: "./browscap_converter.php",
+                url: "./browscap_converter",
                 data: {
                     rows: "<?php echo strval($rows); ?>"
                 },
@@ -47,4 +47,4 @@ require_once './admin.head.php';
 </script>
 
 <?php
-require_once './admin.tail.php';
+require_once 'admin.tail.php';

@@ -1,6 +1,6 @@
 <?php
 $sub_menu = "100290";
-require_once './_common.php';
+require_once '_common.php';
 
 check_demo();
 
@@ -76,4 +76,4 @@ for ($i = 0; $i < $count; $i++) {
 
 run_event('admin_menu_list_update');
 
-goto_url('./menu_list.php');
+goto_url('./menu_list');

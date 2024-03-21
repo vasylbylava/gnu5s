@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '100310';
-require_once './_common.php';
+require_once '_common.php';
 
 $nw_id = isset($_REQUEST['nw_id']) ? (string)preg_replace('/[^0-9]/', '', $_REQUEST['nw_id']) : 0;
 
@@ -72,7 +72,7 @@ if ($w == "") {
 }
 
 if ($w == "d") {
-    goto_url('./newwinlist.php');
+    goto_url('./newwinlist');
 } else {
-    goto_url("./newwinform.php?w=u&amp;nw_id=$nw_id");
+    goto_url("./newwinform?w=u&amp;nw_id=$nw_id");
 }

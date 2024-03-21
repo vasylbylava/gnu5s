@@ -23,10 +23,10 @@ function visit($skin_dir='basic')
             $visit_skin_path = G5_THEME_MOBILE_PATH.'/'.G5_SKIN_DIR.'/visit/'.$match[1];
             if(!is_dir($visit_skin_path))
                 $visit_skin_path = G5_THEME_PATH.'/'.G5_SKIN_DIR.'/visit/'.$match[1];
-            $visit_skin_url = str_replace(G5_PATH, G5_URL, $visit_skin_path);
+            $visit_skin_url = str_replace(G5_PUBLIC_PATH, G5_URL, $visit_skin_path);
         } else {
             $visit_skin_path = G5_THEME_PATH.'/'.G5_SKIN_DIR.'/visit/'.$match[1];
-            $visit_skin_url = str_replace(G5_PATH, G5_URL, $visit_skin_path);
+            $visit_skin_url = str_replace(G5_PUBLIC_PATH, G5_URL, $visit_skin_path);
         }
         $skin_dir = $match[1];
     } else {

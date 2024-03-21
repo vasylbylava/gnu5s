@@ -1,6 +1,6 @@
 <?php
 $sub_menu = "300100";
-require_once './_common.php';
+require_once '_common.php';
 
 auth_check_menu($auth, $sub_menu, 'r');
 
@@ -51,7 +51,7 @@ $result = sql_query($sql);
 $listall = '<a href="' . $_SERVER['SCRIPT_NAME'] . '" class="ov_listall">전체목록</a>';
 
 $g5['title'] = '게시판관리';
-require_once './admin.head.php';
+require_once 'admin.head.php';
 
 $colspan = 15;
 ?>
@@ -73,7 +73,7 @@ $colspan = 15;
     <input type="submit" value="검색" class="btn_submit">
 </form>
 
-<form name="fboardlist" id="fboardlist" action="./board_list_update.php" onsubmit="return fboardlist_submit(this);" method="post">
+<form name="fboardlist" id="fboardlist" action="./board_list_update" onsubmit="return fboardlist_submit(this);" method="post">
     <input type="hidden" name="sst" value="<?php echo $sst ?>">
     <input type="hidden" name="sod" value="<?php echo $sod ?>">
     <input type="hidden" name="sfl" value="<?php echo $sfl ?>">
@@ -109,8 +109,8 @@ $colspan = 15;
             <tbody>
                 <?php
                 for ($i = 0; $row = sql_fetch_array($result); $i++) {
-                    $one_update = '<a href="./board_form.php?w=u&amp;bo_table=' . $row['bo_table'] . '&amp;' . $qstr . '" class="btn btn_03">수정</a>';
-                    $one_copy = '<a href="./board_copy.php?bo_table=' . $row['bo_table'] . '" class="board_copy btn btn_02" target="win_board_copy">복사</a>';
+                    $one_update = '<a href="./board_form?w=u&amp;bo_table=' . $row['bo_table'] . '&amp;' . $qstr . '" class="btn btn_03">수정</a>';
+                    $one_copy = '<a href="./board_copy?bo_table=' . $row['bo_table'] . '" class="board_copy btn btn_02" target="win_board_copy">복사</a>';
 
                     $bg = 'bg' . ($i % 2);
                 ?>
@@ -198,7 +198,7 @@ $colspan = 15;
         <input type="submit" name="act_button" value="선택수정" onclick="document.pressed=this.value" class="btn_02 btn">
         <?php if ($is_admin == 'super') { ?>
             <input type="submit" name="act_button" value="선택삭제" onclick="document.pressed=this.value" class="btn_02 btn">
-            <a href="./board_form.php" id="bo_add" class="btn_01 btn">게시판 추가</a>
+            <a href="./board_form" id="bo_add" class="btn_01 btn">게시판 추가</a>
         <?php } ?>
     </div>
 
@@ -231,4 +231,4 @@ $colspan = 15;
 </script>
 
 <?php
-require_once './admin.tail.php';
+require_once 'admin.tail.php';

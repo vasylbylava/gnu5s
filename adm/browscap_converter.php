@@ -1,6 +1,6 @@
 <?php
 ini_set('memory_limit', '-1');
-require_once './_common.php';
+require_once '_common.php';
 
 // clean the output buffer
 ob_end_clean();

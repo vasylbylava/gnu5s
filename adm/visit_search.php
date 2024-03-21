@@ -1,12 +1,12 @@
 <?php
 $sub_menu = '200810';
-include_once('./_common.php');
+include_once('_common.php');
 include_once(G5_LIB_PATH.'/visit.lib.php');
 
 auth_check_menu($auth, $sub_menu, 'r');
 
 $g5['title'] = '접속자검색';
-include_once('./admin.head.php');
+include_once('admin.head.php');
 include_once(G5_PLUGIN_PATH.'/jquery-ui/datepicker.php');
 
 $colspan = 6;
@@ -151,4 +151,4 @@ function fvisit_submit(f)
 </script>
 
 <?php
-include_once('./admin.tail.php');
+include_once('admin.tail.php');

@@ -58,7 +58,7 @@ if($config['cf_add_meta'])
 <?php
 if (defined('G5_IS_ADMIN')) {
     if(!defined('_THEME_PREVIEW_'))
-        echo '<link rel="stylesheet" href="'.run_replace('head_css_url', G5_ADMIN_URL.'/css/admin.css?ver='.G5_CSS_VER, G5_URL).'">'.PHP_EOL;
+        echo '<link rel="stylesheet" href="'.run_replace('head_css_url', G5_URL.'/static/adm/css/admin.css?ver='.G5_CSS_VER, G5_URL).'">'.PHP_EOL;
 } else {
     $shop_css = '';
     if (defined('_SHOP_')) $shop_css = '_shop';
@@ -66,7 +66,7 @@ if (defined('G5_IS_ADMIN')) {
 }
 ?>
 <!--[if lte IE 8]>
-<script src="<?php echo G5_JS_URL ?>/html5.js"></script>
+<script src="<?php echo G5_URL ?>/static/js/html5.js"></script>
 <![endif]-->
 <script>
 // 자바스크립트에서 사용하는 전역변수 선언
@@ -87,22 +87,22 @@ var g5_admin_url = "<?php echo G5_ADMIN_URL; ?>";
 <?php } ?>
 </script>
 <?php
-add_javascript('<script src="'.G5_JS_URL.'/jquery-1.12.4.min.js"></script>', 0);
-add_javascript('<script src="'.G5_JS_URL.'/jquery-migrate-1.4.1.min.js"></script>', 0);
+add_javascript('<script src="'.G5_URL.'/static/js/jquery-1.12.4.min.js"></script>', 0);
+add_javascript('<script src="'.G5_URL.'/static/js/jquery-migrate-1.4.1.min.js"></script>', 0);
 if (defined('_SHOP_')) {
     if(!G5_IS_MOBILE) {
-        add_javascript('<script src="'.G5_JS_URL.'/jquery.shop.menu.js?ver='.G5_JS_VER.'"></script>', 0);
+        add_javascript('<script src="'.G5_URL.'/static/js/jquery.shop.menu.js?ver='.G5_JS_VER.'"></script>', 0);
     }
 } else {
-    add_javascript('<script src="'.G5_JS_URL.'/jquery.menu.js?ver='.G5_JS_VER.'"></script>', 0);
+    add_javascript('<script src="'.G5_URL.'/static/js/jquery.menu.js?ver='.G5_JS_VER.'"></script>', 0);
 }
-add_javascript('<script src="'.G5_JS_URL.'/common.js?ver='.G5_JS_VER.'"></script>', 0);
-add_javascript('<script src="'.G5_JS_URL.'/wrest.js?ver='.G5_JS_VER.'"></script>', 0);
-add_javascript('<script src="'.G5_JS_URL.'/placeholders.min.js"></script>', 0);
-add_stylesheet('<link rel="stylesheet" href="'.G5_JS_URL.'/font-awesome/css/font-awesome.min.css">', 0);
+add_javascript('<script src="'.G5_URL.'/static/js/common.js?ver='.G5_JS_VER.'"></script>', 0);
+add_javascript('<script src="'.G5_URL.'/static/js/wrest.js?ver='.G5_JS_VER.'"></script>', 0);
+add_javascript('<script src="'.G5_URL.'/static/js/placeholders.min.js"></script>', 0);
+add_stylesheet('<link rel="stylesheet" href="'.G5_URL.'/static/js/font-awesome/css/font-awesome.min.css">', 0);
 
 if(G5_IS_MOBILE) {
-    add_javascript('<script src="'.G5_JS_URL.'/modernizr.custom.70111.js"></script>', 1); // overflow scroll 감지
+    add_javascript('<script src="'.G5_URL.'/static/js/modernizr.custom.70111.js"></script>', 1); // overflow scroll 감지
 }
 if(!defined('G5_IS_ADMIN'))
     echo $config['cf_add_script'];
@@ -117,5 +117,5 @@ if ($is_member) { // 회원이라면 로그인 중이라는 메세지를 출력�
     else if ($is_admin == 'board') $sr_admin_msg = "게시판관리자 ";
 
     echo '<div id="hd_login_msg">'.$sr_admin_msg.get_text($member['mb_nick']).'님 로그인 중 ';
-    echo '<a href="'.G5_BBS_URL.'/logout.php">로그아웃</a></div>';
+    echo '<a href="'.G5_BBS_URL.'/logout">로그아웃</a></div>';
 }

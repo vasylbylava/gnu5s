@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 
 if(!$bo_table)
    die(json_encode(array('error'=>'게시판 정보가 올바르지 않습니다.', 'url'=>G5_URL)));

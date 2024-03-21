@@ -34,4 +34,4 @@ for ($i = 0; $i < $count; $i++) {
     run_event('adm_auth_delete_member', $mb_id, $au_menu);
 }
 
-goto_url('./auth_list.php?' . $qstr);
+goto_url('./auth_list?' . $qstr);

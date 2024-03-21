@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 
 if (!$board['bo_table']) {
    alert('존재하지 않는 게시판입니다.', G5_URL);
@@ -12,7 +12,7 @@ if (isset($write['wr_is_comment']) && $write['wr_is_comment']) {
 }
 
 if (!$bo_table) {
-    $msg = "bo_table 값이 넘어오지 않았습니다.\\n\\nboard.php?bo_table=code 와 같은 방식으로 넘겨 주세요.";
+    $msg = "bo_table 값이 넘어오지 않았습니다.\\n\\nboard/bo_table 와 같은 방식으로 넘겨 주세요.";
     alert($msg);
 }
 
@@ -140,7 +140,7 @@ if ((isset($wr_id) && $wr_id) || (isset($wr_seo_title) && $wr_seo_title)) {
         if ($member['mb_id'])
             alert('목록을 볼 권한이 없습니다.', G5_URL);
         else
-            alert('목록을 볼 권한이 없습니다.\\n\\n회원이시라면 로그인 후 이용해 보십시오.', G5_BBS_URL.'/login.php?'.$qstr.'&url='.urlencode(G5_BBS_URL.'/board.php?bo_table='.$bo_table.($qstr?'&amp;':'')));
+            alert('목록을 볼 권한이 없습니다.\\n\\n회원이시라면 로그인 후 이용해 보십시오.', G5_BBS_URL.'/login?'.$qstr.'&url='.urlencode(G5_BBS_URL.'/board?bo_table='.$bo_table.($qstr?'&amp;':'')));
     }
 
     // 본인확인을 사용한다면
@@ -216,7 +216,7 @@ if ($board['bo_use_nogood'])
 $admin_href = "";
 // 최고관리자 또는 그룹관리자라면
 if ($member['mb_id'] && ($is_admin === 'super' || $group['gr_admin'] === $member['mb_id']))
-    $admin_href = G5_ADMIN_URL.'/board_form.php?w=u&amp;bo_table='.$bo_table;
+    $admin_href = G5_ADMIN_URL.'/board_form?w=u&amp;bo_table='.$bo_table;
 
 include_once(G5_BBS_PATH.'/board_head.php');
 

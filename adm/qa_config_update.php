@@ -1,6 +1,6 @@
 <?php
 $sub_menu = "300500";
-require_once './_common.php';
+require_once '_common.php';
 
 check_demo();
 
@@ -115,7 +115,7 @@ if (function_exists('get_admin_captcha_by')) {
 }
 
 if ($error_msg) {
-    alert($error_msg, './qa_config.php');
+    alert($error_msg, './qa_config');
 } else {
-    goto_url('./qa_config.php');
+    goto_url('./qa_config');
 }

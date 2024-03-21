@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '100300';
-include_once('./_common.php');
+include_once('_common.php');
 
 auth_check_menu($auth, $sub_menu, 'r');
 
@@ -10,7 +10,7 @@ if (!$config['cf_email_use'])
 include_once(G5_LIB_PATH.'/mailer.lib.php');
 
 $g5['title'] = '메일 테스트';
-include_once('./admin.head.php');
+include_once('admin.head.php');
 
 if (isset($_POST['email'])) {
     $_POST['email'] = strip_tags($_POST['email']);
@@ -77,4 +77,4 @@ if (isset($_POST['email'])) {
 </section>
 
 <?php
-include_once('./admin.tail.php');
+include_once('admin.tail.php');

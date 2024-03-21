@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 
 run_event('bbs_good_before', $bo_table, $wr_id, $good);
 

@@ -14,7 +14,7 @@ function get_social_skin_path(){
         $cf_theme = trim($config['cf_theme']);
         $dir = G5_SOCIAL_LOGIN_DIR;
 
-        $theme_path = G5_PATH.'/'.G5_THEME_DIR.'/'.$cf_theme;
+        $theme_path = G5_PATH.'/public/'.G5_THEME_DIR.'/'.$cf_theme;
 
         if(G5_IS_MOBILE) {
             $skin_path = $theme_path.'/'.G5_MOBILE_DIR.'/'.G5_SKIN_DIR.'/'.$dir;
@@ -25,9 +25,9 @@ function get_social_skin_path(){
         }
     }
 
-    if( ! ($skin_path && is_dir($skin_path)) ){
-        $skin_path = G5_SOCIAL_SKIN_PATH;
-    }
+    // if( ! ($skin_path && is_dir($skin_path)) ){
+    //     $skin_path = G5_SOCIAL_SKIN_PATH;
+    // }
 
     return $skin_path;
 }
@@ -36,7 +36,7 @@ function get_social_skin_url(){
 
     $skin_path = get_social_skin_path();
 
-    return str_replace(G5_PATH, G5_URL, $skin_path);
+    return str_replace(G5_PUBLIC_PATH, G5_URL, $skin_path);
 }
 
 function get_social_convert_id($identifier, $service)
@@ -61,7 +61,7 @@ function social_return_from_provider_page( $provider, $login_action_url, $mb_id,
 
     $ref = $_SERVER['HTTP_REFERER'];
 
-    if( !G5_SOCIAL_USE_POPUP || strpos($ref, 'login_check.php') !== false ){
+    if( !G5_SOCIAL_USE_POPUP || strpos($ref, 'login_check') !== false ){
         if( get_session('social_login_redirect') ){
             unset($_SESSION['social_login_redirect']);
             goto_url(G5_BBS_URL.'/login.php?url='.urlencode($url));
@@ -504,10 +504,10 @@ function social_check_login_before($p_service=''){
             exit;
         }
 
-        $register_url = G5_BBS_URL.'/register_form.php?provider='.$provider_name;
-        $register_action_url = G5_BBS_URL.'/register_form_update.php';
+        $register_url = G5_BBS_URL.'/register_form?provider='.$provider_name;
+        $register_action_url = G5_BBS_URL.'/register_form_update';
 
-        $login_action_url = G5_HTTPS_BBS_URL."/login_check.php";
+        $login_action_url = G5_HTTPS_BBS_URL."/login_check";
         $mylink = (isset($_REQUEST['mylink']) && !empty($_REQUEST['mylink'])) ? 1 : 0;
 
         //소셜로 이미 가입 했다면 로그인 처리 합니다.
@@ -752,7 +752,7 @@ function social_member_comfirm_redirect(){
             
             social_login_session_clear(1);
 
-            $url = G5_BBS_URL.'/register_form.php';
+            $url = G5_BBS_URL.'/register_form';
 
             $social_token = social_nonce_create($provider_name);
             set_session('social_link_token', $social_token);

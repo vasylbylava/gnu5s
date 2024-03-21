@@ -1,6 +1,6 @@
 <?php
 $sub_menu = "300100";
-include_once('./_common.php');
+include_once('_common.php');
 
 if ($w == 'u') {
     check_demo();
@@ -542,4 +542,4 @@ if (function_exists('get_admin_captcha_by')) {
 
 run_event('admin_board_form_update', $bo_table, $w);
 
-goto_url("./board_form.php?w=u&bo_table={$bo_table}&amp;{$qstr}");
+goto_url("./board_form?w=u&bo_table={$bo_table}&amp;{$qstr}");

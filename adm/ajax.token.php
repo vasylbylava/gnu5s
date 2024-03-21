@@ -1,5 +1,5 @@
 <?php
-require_once './_common.php';
+require_once '_common.php';
 
 set_session('ss_admin_token', '');
 

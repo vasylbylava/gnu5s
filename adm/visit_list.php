@@ -1,6 +1,6 @@
 <?php
 $sub_menu = "200800";
-include_once('./_common.php');
+include_once('_common.php');
 
 auth_check_menu($auth, $sub_menu, 'r');
 
@@ -8,7 +8,7 @@ $fr_date = isset($_REQUEST['fr_date']) ? preg_replace('/[^0-9 :\-]/i', '', $_REQ
 $to_date = isset($_REQUEST['to_date']) ? preg_replace('/[^0-9 :\-]/i', '', $_REQUEST['to_date']) : G5_TIME_YMD;
 
 $g5['title'] = '접속자집계';
-include_once('./visit.sub.php');
+include_once('visit.sub.php');
 
 $colspan = 6;
 
@@ -117,4 +117,4 @@ $qstr .= "&amp;page=";
 $pagelist = get_paging($config['cf_write_pages'], $page, $total_page, "{$_SERVER['SCRIPT_NAME']}?$qstr");
 echo $pagelist;
 
-include_once('./admin.tail.php');
+include_once('admin.tail.php');

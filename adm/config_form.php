@@ -1,6 +1,6 @@
 <?php
 $sub_menu = "100100";
-require_once './_common.php';
+require_once '_common.php';
 
 auth_check_menu($auth, $sub_menu, 'r');
 
@@ -417,7 +417,7 @@ if (!$config['cf_mobile_faq_skin']) {
 }
 
 $g5['title'] = '환경설정';
-require_once './admin.head.php';
+require_once 'admin.head.php';
 
 $pg_anchor = '<ul class="anchor">
     <li><a href="#anc_cf_basic">기본환경</a></li>
@@ -1027,7 +1027,7 @@ if ($config['cf_sms_use'] && $config['cf_icode_id'] && $config['cf_icode_pw']) {
                         <td class="cf_cert_service">
                             <span class="sitecode">SRA</span>
                             <input type="text" name="cf_cert_kg_mid" value="<?php echo get_sanitize_input($config['cf_cert_kg_mid']); ?>" id="cf_cert_kg_mid" class="frm_input" size="10" minlength="7" maxlength="7">
-                            <a href="http://sir.kr/main/service/inicis_cert_form.php" target="_blank" class="btn_frmline">KG이니시스 통합인증(간편인증) 신청페이지</a>
+                            <a href="http://sir.kr/main/service/inicis_cert_form" target="_blank" class="btn_frmline">KG이니시스 통합인증(간편인증) 신청페이지</a>
                         </td>
                     </tr>
                     <tr>
@@ -1048,7 +1048,7 @@ if ($config['cf_sms_use'] && $config['cf_icode_id'] && $config['cf_icode_pw']) {
                         <td class="cf_cert_service">
                             <?php echo help('SM으로 시작하는 5자리 사이트 코드중 뒤의 3자리만 입력해 주십시오.<br>서비스에 가입되어 있지 않다면, 본인확인 서비스 신청페이지에서 서비스 신청 후 사이트코드를 발급 받으실 수 있습니다.') ?>
                             <span class="sitecode">SM</span>
-                            <input type="text" name="cf_cert_kcp_cd" value="<?php echo get_sanitize_input($config['cf_cert_kcp_cd']); ?>" id="cf_cert_kcp_cd" class="frm_input" size="3"> <a href="http://sir.kr/main/service/p_cert.php" target="_blank" class="btn_frmline">NHN KCP 휴대폰 본인확인 서비스 신청페이지</a>
+                            <input type="text" name="cf_cert_kcp_cd" value="<?php echo get_sanitize_input($config['cf_cert_kcp_cd']); ?>" id="cf_cert_kcp_cd" class="frm_input" size="3"> <a href="http://sir.kr/main/service/p_cert" target="_blank" class="btn_frmline">NHN KCP 휴대폰 본인확인 서비스 신청페이지</a>
                         </td>
                     </tr>
                     <tr>
@@ -1571,7 +1571,7 @@ if ($config['cf_sms_use'] && $config['cf_icode_id'] && $config['cf_icode_pw']) {
 
             $.ajax({
                 type: "POST",
-                url: "./theme_config_load.php",
+                url: "./theme_config_load",
                 cache: false,
                 async: false,
                 data: {
@@ -1620,7 +1620,7 @@ if ($config['cf_sms_use'] && $config['cf_icode_id'] && $config['cf_icode_pw']) {
             }
         }
 
-        f.action = "./config_form_update.php";
+        f.action = "./config_form_update";
         return true;
     }
 </script>
@@ -1706,4 +1706,4 @@ if (stripos($config['cf_image_extension'], "webp") !== false) {
     }
 }
 
-require_once './admin.tail.php';
+require_once 'admin.tail.php';

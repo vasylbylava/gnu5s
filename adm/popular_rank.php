@@ -1,6 +1,6 @@
 <?php
 $sub_menu = "300400";
-require_once './_common.php';
+require_once '_common.php';
 
 auth_check_menu($auth, $sub_menu, 'r');
 
@@ -38,7 +38,7 @@ $result = sql_query($sql);
 $listall = '<a href="' . $_SERVER['SCRIPT_NAME'] . '" class="ov_listall">전체목록</a>';
 
 $g5['title'] = '인기검색어순위';
-require_once './admin.head.php';
+require_once 'admin.head.php';
 require_once G5_PLUGIN_PATH . '/jquery-ui/datepicker.php';
 
 $colspan = 3;
@@ -119,4 +119,4 @@ $colspan = 3;
 <?php
 echo get_paging(G5_IS_MOBILE ? $config['cf_mobile_pages'] : $config['cf_write_pages'], $page, $total_page, "{$_SERVER['SCRIPT_NAME']}?$qstr&amp;page=");
 
-require_once './admin.tail.php';
+require_once 'admin.tail.php';

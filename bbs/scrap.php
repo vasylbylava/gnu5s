@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 
 if (!$is_member)
     alert_close('회원만 조회하실 수 있습니다.');

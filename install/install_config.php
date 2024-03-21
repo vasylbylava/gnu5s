@@ -11,7 +11,7 @@ header('Pragma: no-cache'); // HTTP/1.0
 $g5_path['path'] = '..';
 include_once ('../config.php');
 $title = G5_VERSION." 초기환경설정 2/3";
-include_once ('./install.inc.php');
+include_once ('install.inc.php');
 
 if (!isset($_POST['agree']) || $_POST['agree'] != '동의함') {
     echo "<div class=\"ins_inner\"><p>라이센스(License) 내용에 동의하셔야 설치를 계속하실 수 있습니다.</p>".PHP_EOL;
@@ -24,7 +24,7 @@ $ajax_token = md5($tmp_str.$_SERVER['REMOTE_ADDR'].dirname(dirname(__FILE__).'/'
 ?>
 
 
-<form id="frm_install" method="post" action="./install_db.php" autocomplete="off" onsubmit="return frm_install_submit(this)">
+<form id="frm_install" method="post" action="./install_db" autocomplete="off" onsubmit="return frm_install_submit(this)">
 
 <div class="ins_inner">
     <table class="ins_frm">
@@ -65,25 +65,25 @@ $ajax_token = md5($tmp_str.$_SERVER['REMOTE_ADDR'].dirname(dirname(__FILE__).'/'
             <span>TABLE명 접두사는 영문자, 숫자, _ 만 입력 가능합니다.</span>
         </td>
     </tr>
-    <tr>
+    <!-- <tr>
         <th scope="row"><label for="">쇼핑몰TABLE명 접두사</label></th>
         <td>
             <span>쇼핑몰TABLE명 접두사는 영문자, 숫자, _ 만 입력 가능합니다.</span>
             <input name="g5_shop_prefix" type="text" value="g5_shop_" id="g5_shop_prefix">
         </td>
-    </tr>
+    </tr> -->
     <tr>
         <th scope="row"><label for=""><?php echo G5_VERSION; ?> 재설치</label></th>
         <td>
             <input name="g5_install" type="checkbox" value="1" id="g5_install">재설치
         </td>
     </tr>
-    <tr>
+    <!-- <tr>
         <th scope="row"><label for="">쇼핑몰설치</label></th>
         <td>
             <input name="g5_shop_install" type="checkbox" value="1" id="g5_shop_install" checked="checked">설치
         </td>
-    </tr>
+    </tr> -->
     </tbody>
     </table>
 
@@ -222,4 +222,4 @@ function frm_install_submit(f)
 </script>
 
 <?php
-include_once ('./install.inc2.php');
+include_once ('install.inc2.php');

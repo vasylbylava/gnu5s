@@ -1,6 +1,6 @@
 <?php
 $sub_menu = "200900";
-require_once './_common.php';
+require_once '_common.php';
 
 check_demo();
 
@@ -24,4 +24,4 @@ for ($i = 0; $i < $count; $i++) {
     sql_query($sql);
 }
 
-goto_url('./poll_list.php?' . $qstr);
+goto_url('./poll_list?' . $qstr);

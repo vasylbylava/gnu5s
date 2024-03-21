@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '300100';
-require_once './_common.php';
+require_once '_common.php';
 
 check_demo();
 
@@ -230,4 +230,4 @@ delete_cache_latest($target_table);
 
 echo "<script>opener.document.location.reload();</script>";
 
-alert("복사에 성공 했습니다.", './board_copy.php?bo_table=' . $bo_table . '&amp;' . $qstr);
+alert("복사에 성공 했습니다.", './board_copy?bo_table=' . $bo_table . '&amp;' . $qstr);

@@ -1,6 +1,6 @@
 <?php
 $sub_menu = "200900";
-require_once './_common.php';
+require_once '_common.php';
 
 auth_check_menu($auth, $sub_menu, 'w');
 
@@ -28,10 +28,10 @@ if (!isset($po['po_use'])) {
 }
 
 $g5['title'] = $html_title;
-require_once './admin.head.php';
+require_once 'admin.head.php';
 ?>
 
-<form name="fpoll" id="fpoll" action="./poll_form_update.php" method="post" enctype="multipart/form-data">
+<form name="fpoll" id="fpoll" action="./poll_form_update" method="post" enctype="multipart/form-data">
     <input type="hidden" name="po_id" value="<?php echo $po_id ?>">
     <input type="hidden" name="w" value="<?php echo $w ?>">
     <input type="hidden" name="sfl" value="<?php echo $sfl ?>">
@@ -121,11 +121,11 @@ require_once './admin.head.php';
     </div>
 
     <div class="btn_fixed_top ">
-        <a href="./poll_list.php?<?php echo $qstr ?>" class="btn_02 btn">목록</a>
+        <a href="./poll_list?<?php echo $qstr ?>" class="btn_02 btn">목록</a>
         <input type="submit" value="확인" class="btn_submit btn" accesskey="s">
     </div>
 
 </form>
 
 <?php
-require_once './admin.tail.php';
+require_once 'admin.tail.php';

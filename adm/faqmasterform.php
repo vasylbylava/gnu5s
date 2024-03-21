@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '300700';
-require_once './_common.php';
+require_once '_common.php';
 require_once G5_EDITOR_LIB;
 
 auth_check_menu($auth, $sub_menu, "w");
@@ -38,7 +38,7 @@ if (!sql_query(" select fm_mobile_head_html from {$g5['faq_master_table']} limit
 require_once G5_ADMIN_PATH . '/admin.head.php';
 ?>
 
-<form name="frmfaqmasterform" action="./faqmasterformupdate.php" onsubmit="return frmfaqmasterform_check(this);" method="post" enctype="MULTIPART/FORM-DATA">
+<form name="frmfaqmasterform" action="./faqmasterformupdate" onsubmit="return frmfaqmasterform_check(this);" method="post" enctype="MULTIPART/FORM-DATA">
     <input type="hidden" name="w" value="<?php echo $w; ?>">
     <input type="hidden" name="fm_id" value="<?php echo $fm_id; ?>">
     <input type="hidden" name="token" value="">
@@ -63,8 +63,8 @@ require_once G5_ADMIN_PATH . '/admin.head.php';
                     <td>
                         <input type="text" value="<?php echo get_text($fm['fm_subject']); ?>" name="fm_subject" id="fm_subject" required class="frm_input required" size="70">
                         <?php if ($w == 'u') { ?>
-                            <a href="<?php echo G5_BBS_URL; ?>/faq.php?fm_id=<?php echo $fm_id; ?>" class="btn_frmline">보기</a>
-                            <a href="./faqlist.php?fm_id=<?php echo $fm_id; ?>" class="btn_frmline">상세보기</a>
+                            <a href="<?php echo G5_BBS_URL; ?>/faq?fm_id=<?php echo $fm_id; ?>" class="btn_frmline">보기</a>
+                            <a href="./faqlist?fm_id=<?php echo $fm_id; ?>" class="btn_frmline">상세보기</a>
                         <?php } ?>
                     </td>
                 </tr>
@@ -154,7 +154,7 @@ require_once G5_ADMIN_PATH . '/admin.head.php';
     </div>
 
     <div class="btn_fixed_top">
-        <a href="./faqmasterlist.php" class="btn btn_02">목록</a>
+        <a href="./faqmasterlist" class="btn btn_02">목록</a>
         <input type="submit" value="확인" class="btn_submit btn" accesskey="s">
     </div>
 

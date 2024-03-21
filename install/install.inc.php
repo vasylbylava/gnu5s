@@ -9,12 +9,12 @@ if (! (isset($title) && $title)) $title = G5_VERSION." 설치";
 <head>
 <meta charset="utf-8">
 <title><?php echo $title; ?></title>
-<link rel="stylesheet" href="install.css">
+<link rel="stylesheet" href="<?php G5_URL ?>/static/install/install.css">
 </head>
 <body>
 
 <div id="ins_bar">
-    <span id="bar_img">GNUBOARD5</span>
+    <span id="bar_img">GNUBOARD5s</span>
     <span id="bar_txt">INSTALLATION</span>
 </div>
 

@@ -92,6 +92,9 @@ if (isset($g5_path['path'])) {
     define('G5_PATH', '');
 }
 
+// 웹상에서 접근가능한 디렉토리, 카페24의 경우 www 입니다.
+define('G5_PUBLIC_DIR',     'www');
+
 define('G5_ADMIN_URL',      G5_URL.'/'.G5_ADMIN_DIR);
 define('G5_BBS_URL',        G5_URL.'/'.G5_BBS_DIR);
 define('G5_CSS_URL',        G5_URL.'/'.G5_CSS_DIR);
@@ -103,21 +106,22 @@ define('G5_PLUGIN_URL',     G5_URL.'/'.G5_PLUGIN_DIR);
 define('G5_EDITOR_URL',     G5_PLUGIN_URL.'/'.G5_EDITOR_DIR);
 define('G5_OKNAME_URL',     G5_PLUGIN_URL.'/'.G5_OKNAME_DIR);
 define('G5_KCPCERT_URL',    G5_PLUGIN_URL.'/'.G5_KCPCERT_DIR);
-define('G5_INICERT_URL',     G5_PLUGIN_URL.'/'.G5_INICERT_DIR);
+define('G5_INICERT_URL',    G5_PLUGIN_URL.'/'.G5_INICERT_DIR);
 define('G5_LGXPAY_URL',     G5_PLUGIN_URL.'/'.G5_LGXPAY_DIR);
 define('G5_SNS_URL',        G5_PLUGIN_URL.'/'.G5_SNS_DIR);
 define('G5_SYNDI_URL',      G5_PLUGIN_URL.'/'.G5_SYNDI_DIR);
 define('G5_MOBILE_URL',     G5_URL.'/'.G5_MOBILE_DIR);
 
 // PATH 는 서버상에서의 절대경로
+define('G5_PUBLIC_PATH',    G5_PATH.'/'.G5_PUBLIC_DIR);
 define('G5_ADMIN_PATH',     G5_PATH.'/'.G5_ADMIN_DIR);
 define('G5_BBS_PATH',       G5_PATH.'/'.G5_BBS_DIR);
 define('G5_DATA_PATH',      G5_PATH.'/'.G5_DATA_DIR);
 define('G5_EXTEND_PATH',    G5_PATH.'/'.G5_EXTEND_DIR);
 define('G5_LIB_PATH',       G5_PATH.'/'.G5_LIB_DIR);
 define('G5_PLUGIN_PATH',    G5_PATH.'/'.G5_PLUGIN_DIR);
-define('G5_SKIN_PATH',      G5_PATH.'/'.G5_SKIN_DIR);
-define('G5_MOBILE_PATH',    G5_PATH.'/'.G5_MOBILE_DIR);
+define('G5_SKIN_PATH',      G5_PATH.'/'.G5_PUBLIC_DIR.'/'.G5_SKIN_DIR);
+define('G5_MOBILE_PATH',    G5_PATH.'/'.G5_PUBLIC_DIR.'/'.G5_MOBILE_DIR);
 define('G5_SESSION_PATH',   G5_DATA_PATH.'/'.G5_SESSION_DIR);
 define('G5_EDITOR_PATH',    G5_PLUGIN_PATH.'/'.G5_EDITOR_DIR);
 define('G5_OKNAME_PATH',    G5_PLUGIN_PATH.'/'.G5_OKNAME_DIR);
@@ -140,8 +144,8 @@ define('G5_PHPMAILER_PATH', G5_PLUGIN_PATH.'/'.G5_PHPMAILER_DIR);
 //------------------------------------------------------------------------------
 define('G5_SET_DEVICE', 'both');
 
-define('G5_USE_MOBILE', true); // 모바일 홈페이지를 사용하지 않을 경우 false 로 설정
-define('G5_USE_CACHE',  true); // 최신글등에 cache 기능 사용 여부
+define('G5_USE_MOBILE', false); // 모바일 홈페이지를 사용하지 않을 경우 false 로 설정
+define('G5_USE_CACHE',  false); // 최신글등에 cache 기능 사용 여부
 
 
 /********************

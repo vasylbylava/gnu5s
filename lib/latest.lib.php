@@ -6,7 +6,7 @@ if (!defined('_GNUBOARD_')) exit;
 // $cache_time 캐시 갱신시간
 function latest($skin_dir='', $bo_table, $rows=10, $subject_len=40, $cache_time=1, $options='')
 {
-    global $g5;
+    global $config, $g5;
 
     if (!$skin_dir) $skin_dir = 'basic';
     
@@ -17,10 +17,10 @@ function latest($skin_dir='', $bo_table, $rows=10, $subject_len=40, $cache_time=
             $latest_skin_path = G5_THEME_MOBILE_PATH.'/'.G5_SKIN_DIR.'/latest/'.$match[1];
             if(!is_dir($latest_skin_path))
                 $latest_skin_path = G5_THEME_PATH.'/'.G5_SKIN_DIR.'/latest/'.$match[1];
-            $latest_skin_url = str_replace(G5_PATH, G5_URL, $latest_skin_path);
+            $latest_skin_url = str_replace(G5_PUBLIC_PATH, G5_URL, $latest_skin_path);
         } else {
             $latest_skin_path = G5_THEME_PATH.'/'.G5_SKIN_DIR.'/latest/'.$match[1];
-            $latest_skin_url = str_replace(G5_PATH, G5_URL, $latest_skin_path);
+            $latest_skin_url = str_replace(G5_PUBLIC_PATH, G5_URL, $latest_skin_path);
         }
         $skin_dir = $match[1];
     } else {
@@ -28,8 +28,8 @@ function latest($skin_dir='', $bo_table, $rows=10, $subject_len=40, $cache_time=
             $latest_skin_path = G5_MOBILE_PATH.'/'.G5_SKIN_DIR.'/latest/'.$skin_dir;
             $latest_skin_url  = G5_MOBILE_URL.'/'.G5_SKIN_DIR.'/latest/'.$skin_dir;
         } else {
-            $latest_skin_path = G5_SKIN_PATH.'/latest/'.$skin_dir;
-            $latest_skin_url  = G5_SKIN_URL.'/latest/'.$skin_dir;
+            $latest_skin_path = G5_THEME_PATH.'/'.G5_SKIN_DIR.'/latest/'.$skin_dir;
+            $latest_skin_url  = G5_THEME_URL.'/'.G5_SKIN_DIR.'/latest/'.$skin_dir;
         }
     }
 
@@ -83,7 +83,7 @@ function latest($skin_dir='', $bo_table, $rows=10, $subject_len=40, $cache_time=
                     $img_content = '<img src="'.$thumb['src'].'" alt="'.$thumb['alt'].'" width="'.$thumb_width.'" height="'.$thumb_height.'">';
                     $list[$i]['img_thumbnail'] = '<a href="'.$list[$i]['href'].'" class="lt_img">'.$img_content.'</a>';
                 // } else {
-                //     $img_content = '<img src="'. G5_IMG_URL.'/no_img.png'.'" alt="'.$thumb['alt'].'" width="'.$thumb_width.'" height="'.$thumb_height.'" class="no_img">';
+                //     $img_content = '<img src="'. G5_URL.'/static/img/no_img.png'.'" alt="'.$thumb['alt'].'" width="'.$thumb_width.'" height="'.$thumb_height.'" class="no_img">';
                 }
             }
 

@@ -1,5 +1,5 @@
 <?php
-require_once './_common.php';
+require_once '_common.php';
 
 if ($is_admin != 'super') {
     die('최고관리자만 접근 가능합니다.');
@@ -52,7 +52,7 @@ if ($sql) {
         <?php }
         switch ($type) {
             case 'group':
-                $link = G5_BBS_URL . '/group.php?gr_id=' . $row['id'];
+                $link = G5_BBS_URL . '/group?gr_id=' . $row['id'];
                 break;
             case 'board':
                 $link = get_pretty_url($row['id']);

@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '300700';
-require_once './_common.php';
+require_once '_common.php';
 
 if ($w == "u" || $w == "d") {
     check_demo();
@@ -83,7 +83,7 @@ if ($w == "" || $w == "u") {
         @chmod($dest_path, G5_FILE_PERMISSION);
     }
 
-    goto_url("./faqmasterform.php?w=u&amp;fm_id=$fm_id");
+    goto_url("./faqmasterform?w=u&amp;fm_id=$fm_id");
 } else {
-    goto_url("./faqmasterlist.php");
+    goto_url("./faqmasterlist");
 }

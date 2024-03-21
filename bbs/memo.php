@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 
 if ($is_guest)
     alert_close('회원만 이용하실 수 있습니다.');
@@ -76,11 +76,11 @@ for ($i=0; $row=sql_fetch_array($result); $i++)
     $list[$i]['name'] = $name;
     $list[$i]['send_datetime'] = $send_datetime;
     $list[$i]['read_datetime'] = $read_datetime;
-    $list[$i]['view_href'] = './memo_view.php?me_id='.$row['me_id'].'&amp;kind='.$kind.'&amp;page='.$page;
-    $list[$i]['del_href'] = './memo_delete.php?me_id='.$row['me_id'].'&amp;token='.$token.'&amp;kind='.$kind;
+    $list[$i]['view_href'] = './memo_view?me_id='.$row['me_id'].'&amp;kind='.$kind.'&amp;page='.$page;
+    $list[$i]['del_href'] = './memo_delete?me_id='.$row['me_id'].'&amp;token='.$token.'&amp;kind='.$kind;
 }
 
-$write_pages = get_paging(G5_IS_MOBILE ? $config['cf_mobile_pages'] : $config['cf_write_pages'], $page, $total_page, "./memo.php?kind=$kind".$qstr."&amp;page=");
+$write_pages = get_paging(G5_IS_MOBILE ? $config['cf_mobile_pages'] : $config['cf_write_pages'], $page, $total_page, "./memo?kind=$kind".$qstr."&amp;page=");
 
 include_once($member_skin_path.'/memo.skin.php');
 

@@ -17,7 +17,7 @@ if (!$file['qa_file'.$no])
     alert_close('파일 정보가 존재하지 않습니다.');
 
 if($is_guest) {
-    alert('다운로드 권한이 없습니다.\\n회원이시라면 로그인 후 이용해 보십시오.', G5_BBS_URL.'/login.php?url='.urlencode(G5_BBS_URL.'/qaview.php?qa_id='.$qa_id));
+    alert('다운로드 권한이 없습니다.\\n회원이시라면 로그인 후 이용해 보십시오.', G5_BBS_URL.'/login?url='.urlencode(G5_BBS_URL.'/qaview?qa_id='.$qa_id));
 }
 
 $filepath = G5_DATA_PATH.'/qa/'.$file['qa_file'.$no];

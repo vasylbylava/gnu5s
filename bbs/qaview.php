@@ -1,11 +1,11 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 include_once(G5_EDITOR_LIB);
 
 $qa_id = isset($_REQUEST['qa_id']) ? (int) $_REQUEST['qa_id'] : 0;
 
 if($is_guest)
-    alert('회원이시라면 로그인 후 이용해 보십시오.', './login.php?url='.urlencode(G5_BBS_URL.'/qaview.php?qa_id='.$qa_id));
+    alert('회원이시라면 로그인 후 이용해 보십시오.', './login?url='.urlencode(G5_BBS_URL.'/qaview?qa_id='.$qa_id));
 
 $qaconfig = get_qa_config();
 $content = '';
@@ -15,7 +15,7 @@ set_session('ss_qa_delete_token', $token);
 set_session('ss_qa_write_token', $token);
 
 $g5['title'] = $qaconfig['qa_title'];
-include_once('./qahead.php');
+include_once('qahead.php');
 
 $skin_file = $qa_skin_path.'/view.skin.php';
 
@@ -61,7 +61,7 @@ if(is_file($skin_file)) {
     $prev_href = '';
     if (isset($prev['qa_id']) && $prev['qa_id']) {
         $prev_qa_subject = get_text(cut_str($prev['qa_subject'], 255));
-        $prev_href = G5_BBS_URL.'/qaview.php?qa_id='.$prev['qa_id'].$qstr;
+        $prev_href = G5_BBS_URL.'/qaview?qa_id='.$prev['qa_id'].$qstr;
     }
 
     // 다음글
@@ -71,7 +71,7 @@ if(is_file($skin_file)) {
     $next_href = '';
     if (isset($next['qa_id']) && $next['qa_id']) {
         $next_qa_subject = get_text(cut_str($next['qa_subject'], 255));
-        $next_href = G5_BBS_URL.'/qaview.php?qa_id='.$next['qa_id'].$qstr;
+        $next_href = G5_BBS_URL.'/qaview?qa_id='.$next['qa_id'].$qstr;
     }
 
 
@@ -94,30 +94,30 @@ if(is_file($skin_file)) {
         $rel_list[$i]['subject'] = conv_subject($row['qa_subject'], $subject_len, '…');
         $rel_list[$i]['name'] = get_text($row['qa_name']);
         $rel_list[$i]['date'] = substr($row['qa_datetime'], 2, 8);
-        $rel_list[$i]['view_href'] = G5_BBS_URL.'/qaview.php?qa_id='.$row['qa_id'].$qstr;
+        $rel_list[$i]['view_href'] = G5_BBS_URL.'/qaview?qa_id='.$row['qa_id'].$qstr;
         $rel_count++;
     }
     $view['rel_count'] = $rel_count;
 
     $update_href = '';
     $delete_href = '';
-    $write_href = G5_BBS_URL.'/qawrite.php';
-    $rewrite_href = G5_BBS_URL.'/qawrite.php?w=r&amp;qa_id='.$view['qa_id'];
-    $list_href = G5_BBS_URL.'/qalist.php'.preg_replace('/^&amp;/', '?', $qstr);
+    $write_href = G5_BBS_URL.'/qawrite';
+    $rewrite_href = G5_BBS_URL.'/qawrite?w=r&amp;qa_id='.$view['qa_id'];
+    $list_href = G5_BBS_URL.'/qalist'.preg_replace('/^&amp;/', '?', $qstr);
 
     /*
     if($view['qa_type']) {
         if($is_admin)
-            $update_href = G5_BBS_URL.'/qawrite.php?w=u&amp;qa_id='.$view['qa_id'].$qstr;
+            $update_href = G5_BBS_URL.'/qawrite?w=u&amp;qa_id='.$view['qa_id'].$qstr;
     } else {
         if($view['qa_status'] == 0)
-            $update_href = G5_BBS_URL.'/qawrite.php?w=u&amp;qa_id='.$view['qa_id'].$qstr;
+            $update_href = G5_BBS_URL.'/qawrite?w=u&amp;qa_id='.$view['qa_id'].$qstr;
     }
     */
 
     if(($view['qa_type'] && $is_admin) || (!$view['qa_type'] && $view['qa_status'] == 0)) {
-        $update_href = G5_BBS_URL.'/qawrite.php?w=u&amp;qa_id='.$view['qa_id'].$qstr;
-        $delete_href = G5_BBS_URL.'/qadelete.php?qa_id='.$view['qa_id'].'&amp;token='.$token.$qstr;
+        $update_href = G5_BBS_URL.'/qawrite?w=u&amp;qa_id='.$view['qa_id'].$qstr;
+        $delete_href = G5_BBS_URL.'/qadelete?qa_id='.$view['qa_id'].'&amp;token='.$token.$qstr;
     }
 
     // 질문글이고 등록된 답변이 있다면
@@ -132,8 +132,8 @@ if(is_file($skin_file)) {
         $answer = sql_fetch($sql);
 
         if($is_admin) {
-            $answer_update_href = G5_BBS_URL.'/qawrite.php?w=u&amp;qa_id='.$answer['qa_id'].$qstr;
-            $answer_delete_href = G5_BBS_URL.'/qadelete.php?qa_id='.$answer['qa_id'].'&amp;token='.$token.$qstr;
+            $answer_update_href = G5_BBS_URL.'/qawrite?w=u&amp;qa_id='.$answer['qa_id'].$qstr;
+            $answer_delete_href = G5_BBS_URL.'/qadelete?qa_id='.$answer['qa_id'].'&amp;token='.$token.$qstr;
         }
 
         $ss_name = 'ss_qa_view_'.$answer['qa_id'];
@@ -149,14 +149,14 @@ if(is_file($skin_file)) {
 
         for ($i=1; $i<=2; $i++) {
             if(preg_match("/\.({$config['cf_image_extension']})$/i", $answer['qa_file'.$i])) {
-                $attr_href = run_replace('thumb_view_image_href', G5_BBS_URL.'/view_image.php?fn='.urlencode('/'.G5_DATA_DIR.'/qa/'.$answer['qa_file'.$i]), '/'.G5_DATA_DIR.'/qa/'.$answer['qa_file'.$i], '', '', '', '');
+                $attr_href = run_replace('thumb_view_image_href', G5_BBS_URL.'/view_image?fn='.urlencode('/'.G5_DATA_DIR.'/qa/'.$answer['qa_file'.$i]), '/'.G5_DATA_DIR.'/qa/'.$answer['qa_file'.$i], '', '', '', '');
                 $answer['img_file'][] = '<a href="'.$attr_href.'" target="_blank" class="view_image"><img src="'.G5_DATA_URL.'/qa/'.$answer['qa_file'.$i].'"></a>';
                 $answer['img_count']++;
                 continue;
             }
 
             if ($answer['qa_file'.$i]) {
-                $answer['download_href'][] = G5_BBS_URL.'/qadownload.php?qa_id='.$answer['qa_id'].'&amp;no='.$i;
+                $answer['download_href'][] = G5_BBS_URL.'/qadownload?qa_id='.$answer['qa_id'].'&amp;no='.$i;
                 $answer['download_source'][] = $answer['qa_source'.$i];
                 $answer['download_count']++;
             }
@@ -188,14 +188,14 @@ if(is_file($skin_file)) {
 
     for ($i=1; $i<=2; $i++) {
         if(preg_match("/\.({$config['cf_image_extension']})$/i", $view['qa_file'.$i])) {
-            $attr_href = run_replace('thumb_view_image_href', G5_BBS_URL.'/view_image.php?fn='.urlencode('/'.G5_DATA_DIR.'/qa/'.$view['qa_file'.$i]), '/'.G5_DATA_DIR.'/qa/'.$view['qa_file'.$i], '', '', '', '');
+            $attr_href = run_replace('thumb_view_image_href', G5_BBS_URL.'/view_image?fn='.urlencode('/'.G5_DATA_DIR.'/qa/'.$view['qa_file'.$i]), '/'.G5_DATA_DIR.'/qa/'.$view['qa_file'.$i], '', '', '', '');
             $view['img_file'][] = '<a href="'.$attr_href.'" target="_blank" class="view_image"><img src="'.G5_DATA_URL.'/qa/'.$view['qa_file'.$i].'"></a>';
             $view['img_count']++;
             continue;
         }
 
         if ($view['qa_file'.$i]) {
-            $view['download_href'][] = G5_BBS_URL.'/qadownload.php?qa_id='.$view['qa_id'].'&amp;no='.$i;
+            $view['download_href'][] = G5_BBS_URL.'/qadownload?qa_id='.$view['qa_id'].'&amp;no='.$i;
             $view['download_source'][] = $view['qa_source'.$i];
             $view['download_count']++;
         }
@@ -216,4 +216,4 @@ if(is_file($skin_file)) {
     echo '<div>'.str_replace(G5_PATH.'/', '', $skin_file).'이 존재하지 않습니다.</div>';
 }
 
-include_once('./qatail.php');
+include_once('qatail.php');

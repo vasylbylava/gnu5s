@@ -1,6 +1,6 @@
 <?php
 $sub_menu = "100200";
-require_once './_common.php';
+require_once '_common.php';
 
 if ($is_admin != 'super') {
     alert('최고관리자만 접근 가능합니다.');
@@ -49,7 +49,7 @@ $result = sql_query($sql);
 $listall = '<a href="' . $_SERVER['SCRIPT_NAME'] . '" class="ov_listall btn_ov02">전체목록</a>';
 
 $g5['title'] = "관리권한설정";
-require_once './admin.head.php';
+require_once 'admin.head.php';
 
 $colspan = 5;
 ?>
@@ -164,7 +164,7 @@ $pagelist = get_paging(G5_IS_MOBILE ? $config['cf_mobile_pages'] : $config['cf_w
 echo $pagelist;
 ?>
 
-<form name="fauthlist2" id="fauthlist2" action="./auth_update.php" method="post" autocomplete="off" onsubmit="return fauth_add_submit(this);">
+<form name="fauthlist2" id="fauthlist2" action="./auth_update" method="post" autocomplete="off" onsubmit="return fauth_add_submit(this);">
     <input type="hidden" name="sfl" value="<?php echo $sfl ?>">
     <input type="hidden" name="stx" value="<?php echo $stx ?>">
     <input type="hidden" name="sst" value="<?php echo $sst ?>">
@@ -269,4 +269,4 @@ echo $pagelist;
 </script>
 
 <?php
-require_once './admin.tail.php';
+require_once 'admin.tail.php';

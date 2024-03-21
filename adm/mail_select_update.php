@@ -1,6 +1,6 @@
 <?php
 $sub_menu = "200300";
-require_once './_common.php';
+require_once '_common.php';
 
 auth_check_menu($auth, $sub_menu, 'w');
 
@@ -10,7 +10,7 @@ check_demo();
 
 check_admin_token();
 
-require_once './admin.head.php';
+require_once 'admin.head.php';
 require_once G5_LIB_PATH . '/mailer.lib.php';
 
 $countgap = 10; // 몇건씩 보낼지 설정
@@ -25,7 +25,7 @@ echo "</span>";
 <span id="cont"></span>
 
 <?php
-require_once './admin.tail.php';
+require_once 'admin.tail.php';
 
 flush();
 ob_flush();

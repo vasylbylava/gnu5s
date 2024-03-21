@@ -15,10 +15,10 @@ function connect($skin_dir='basic')
             $connect_skin_path = G5_THEME_MOBILE_PATH.'/'.G5_SKIN_DIR.'/connect/'.$match[1];
             if(!is_dir($connect_skin_path))
                 $connect_skin_path = G5_THEME_PATH.'/'.G5_SKIN_DIR.'/connect/'.$match[1];
-            $connect_skin_url = str_replace(G5_PATH, G5_URL, $connect_skin_path);
+            $connect_skin_url = str_replace(G5_PUBLIC_PATH, G5_URL, $connect_skin_path);
         } else {
             $connect_skin_path = G5_THEME_PATH.'/'.G5_SKIN_DIR.'/connect/'.$match[1];
-            $connect_skin_url = str_replace(G5_PATH, G5_URL, $connect_skin_path);
+            $connect_skin_url = str_replace(G5_PUBLIC_PATH, G5_URL, $connect_skin_path);
         }
         $skin_dir = $match[1];
     } else {

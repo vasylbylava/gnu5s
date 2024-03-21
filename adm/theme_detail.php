@@ -1,6 +1,6 @@
 <?php
 $sub_menu = "100280";
-include_once('./_common.php');
+include_once('_common.php');
 
 if ($is_admin != 'super')
     die('최고관리자만 접근 가능합니다.');
@@ -54,7 +54,7 @@ if($info['license_uri']) {
             </tr>
         </table>
         <div class="theme_dt_btn">
-        <a href="./theme_preview.php?theme=<?php echo $theme; ?>" class="theme_pr btn_03" target="theme_preview">미리보기</a>
+        <a href="./theme_preview?theme=<?php echo $theme; ?>" class="theme_pr btn_03" target="theme_preview">미리보기</a>
         <button type="button" class="close_btn">닫기</button>
         </div>
     </div>

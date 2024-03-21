@@ -1,6 +1,6 @@
 <?php
 $sub_menu = "200100";
-require_once "./_common.php";
+require_once "_common.php";
 require_once G5_LIB_PATH . "/register.lib.php";
 require_once G5_LIB_PATH . '/thumbnail.lib.php';
 
@@ -310,4 +310,4 @@ if (function_exists('get_admin_captcha_by')) {
 
 run_event('admin_member_form_update', $w, $mb_id);
 
-goto_url('./member_form.php?' . $qstr . '&amp;w=u&amp;mb_id=' . $mb_id, false);
+goto_url('./member_form?' . $qstr . '&amp;w=u&amp;mb_id=' . $mb_id, false);

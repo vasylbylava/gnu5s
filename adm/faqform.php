@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '300700';
-include_once('./_common.php');
+include_once('_common.php');
 include_once(G5_EDITOR_LIB);
 
 auth_check_menu($auth, $sub_menu, "w");
@@ -32,7 +32,7 @@ $g5['title'] = $html_title.' 관리';
 include_once (G5_ADMIN_PATH.'/admin.head.php');
 ?>
 
-<form name="frmfaqform" action="./faqformupdate.php" onsubmit="return frmfaqform_check(this);" method="post">
+<form name="frmfaqform" action="./faqformupdate" onsubmit="return frmfaqform_check(this);" method="post">
 <input type="hidden" name="w" value="<?php echo $w; ?>">
 <input type="hidden" name="fm_id" value="<?php echo $fm_id; ?>">
 <input type="hidden" name="fa_id" value="<?php echo $fa_id; ?>">
@@ -68,7 +68,7 @@ include_once (G5_ADMIN_PATH.'/admin.head.php');
 
 <div class="btn_fixed_top">
     <input type="submit" value="확인" class="btn_submit btn" accesskey="s">
-    <a href="./faqlist.php?fm_id=<?php echo $fm_id; ?>" class="btn btn_02">목록</a>
+    <a href="./faqlist?fm_id=<?php echo $fm_id; ?>" class="btn btn_02">목록</a>
 </div>
 
 </form>

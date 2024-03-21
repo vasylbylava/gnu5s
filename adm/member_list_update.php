@@ -1,6 +1,6 @@
 <?php
 $sub_menu = "200100";
-require_once './_common.php';
+require_once '_common.php';
 
 check_demo();
 
@@ -83,4 +83,4 @@ if ($msg) {
 
 run_event('admin_member_list_update', $_POST['act_button'], $mb_datas);
 
-goto_url('./member_list.php?' . $qstr);
+goto_url('./member_list?' . $qstr);

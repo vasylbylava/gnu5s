@@ -1,6 +1,6 @@
 <?php
 $sub_menu = "200300";
-require_once './_common.php';
+require_once '_common.php';
 require_once G5_EDITOR_LIB;
 
 auth_check_menu($auth, $sub_menu, 'r');
@@ -24,14 +24,14 @@ if ($w == 'u') {
 }
 
 $g5['title'] = $html_title;
-require_once './admin.head.php';
+require_once 'admin.head.php';
 ?>
 
 <div class="local_desc">
     <p>메일 내용에 {이름} , {닉네임} , {회원아이디} , {이메일} 처럼 내용에 삽입하면 해당 내용에 맞게 변환하여 메일을 발송합니다.</p>
 </div>
 
-<form name="fmailform" id="fmailform" action="./mail_update.php" onsubmit="return fmailform_check(this);" method="post">
+<form name="fmailform" id="fmailform" action="./mail_update" onsubmit="return fmailform_check(this);" method="post">
     <input type="hidden" name="w" value="<?php echo $w ?>" id="w">
     <input type="hidden" name="ma_id" value="<?php echo $ma['ma_id'] ?>" id="ma_id">
     <input type="hidden" name="token" value="" id="token">
@@ -85,4 +85,4 @@ require_once './admin.head.php';
 </script>
 
 <?php
-require_once './admin.tail.php';
+require_once 'admin.tail.php';

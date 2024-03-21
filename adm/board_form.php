@@ -1,6 +1,6 @@
 <?php
 $sub_menu = "300100";
-require_once './_common.php';
+require_once '_common.php';
 require_once G5_EDITOR_LIB;
 
 auth_check_menu($auth, $sub_menu, 'w');
@@ -8,7 +8,7 @@ auth_check_menu($auth, $sub_menu, 'w');
 $sql = " select count(*) as cnt from {$g5['group_table']} ";
 $row = sql_fetch($sql);
 if (!$row['cnt']) {
-    alert('게시판그룹이 한개 이상 생성되어야 합니다.', './boardgroup_form.php');
+    alert('게시판그룹이 한개 이상 생성되어야 합니다.', './boardgroup_form');
 }
 
 $html_title = '게시판';
@@ -205,7 +205,7 @@ if ($is_admin != 'super') {
 }
 
 $g5['title'] = $html_title;
-require_once './admin.head.php';
+require_once 'admin.head.php';
 
 $pg_anchor = '<ul class="anchor">
     <li><a href="#anc_bo_basic">기본 설정</a></li>
@@ -218,7 +218,7 @@ $pg_anchor = '<ul class="anchor">
 
 ?>
 
-<form name="fboardform" id="fboardform" action="./board_form_update.php" onsubmit="return fboardform_submit(this)" method="post" enctype="multipart/form-data">
+<form name="fboardform" id="fboardform" action="./board_form_update" onsubmit="return fboardform_submit(this)" method="post" enctype="multipart/form-data">
 <input type="hidden" name="w" value="<?php echo $w ?>">
 <input type="hidden" name="sfl" value="<?php echo $sfl ?>">
 <input type="hidden" name="stx" value="<?php echo $stx ?>">
@@ -248,7 +248,7 @@ $pg_anchor = '<ul class="anchor">
                     영문자, 숫자, _ 만 가능 (공백없이 20자 이내)
                 <?php } else { ?>
                     <a href="<?php echo get_pretty_url($board['bo_table']) ?>" class="btn_frmline">게시판 바로가기</a>
-                    <a href="./board_list.php?<?php echo $qstr;?>" class="btn_frmline">목록으로</a>
+                    <a href="./board_list?<?php echo $qstr;?>" class="btn_frmline">목록으로</a>
                 <?php } ?>
             </td>
         </tr>
@@ -257,7 +257,7 @@ $pg_anchor = '<ul class="anchor">
             <td colspan="2">
                 <?php echo get_group_select('gr_id', $board['gr_id'], 'required'); ?>
                 <?php if ($w=='u') { ?>
-                    <a href="javascript:document.location.href='./board_list.php?sfl=a.gr_id&stx='+document.fboardform.gr_id.value;" class="btn_frmline">동일그룹 게시판목록</a>
+                    <a href="javascript:document.location.href='./board_list?sfl=a.gr_id&stx='+document.fboardform.gr_id.value;" class="btn_frmline">동일그룹 게시판목록</a>
                 <?php } ?>
             </td>
         </tr>
@@ -1342,9 +1342,9 @@ $pg_anchor = '<ul class="anchor">
 
 <div class="btn_fixed_top">
     <?php if ($bo_table && $w) { ?>
-        <a href="./board_copy.php?bo_table=<?php echo $board['bo_table']; ?>" id="board_copy" target="win_board_copy" class=" btn_02 btn">게시판복사</a>
+        <a href="./board_copy?bo_table=<?php echo $board['bo_table']; ?>" id="board_copy" target="win_board_copy" class=" btn_02 btn">게시판복사</a>
         <a href="<?php echo get_pretty_url($board['bo_table']); ?>" class=" btn_02 btn">게시판 바로가기</a>
-        <a href="./board_thumbnail_delete.php?bo_table=<?php echo $board['bo_table'].'&amp;'.$qstr;?>" onclick="return delete_confirm2('게시판 썸네일 파일을 삭제하시겠습니까?');" class="btn_02 btn">게시판 썸네일 삭제</a>
+        <a href="./board_thumbnail_delete?bo_table=<?php echo $board['bo_table'].'&amp;'.$qstr;?>" onclick="return delete_confirm2('게시판 썸네일 파일을 삭제하시겠습니까?');" class="btn_02 btn">게시판 썸네일 삭제</a>
     <?php } ?>
     <input type="submit" value="확인" class="btn_submi btn btn_01" accesskey="s">
 </div>
@@ -1391,7 +1391,7 @@ $(function(){
 });
 
 function board_copy(bo_table) {
-    window.open("./board_copy.php?bo_table="+bo_table, "BoardCopy", "left=10,top=10,width=500,height=200");
+    window.open("./board_copy?bo_table="+bo_table, "BoardCopy", "left=10,top=10,width=500,height=200");
 }
 
 function set_point(f) {
@@ -1496,4 +1496,4 @@ function fboardform_submit(f)
 </script>
 
 <?php
-require_once './admin.tail.php';
+require_once 'admin.tail.php';

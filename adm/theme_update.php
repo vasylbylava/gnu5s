@@ -1,6 +1,6 @@
 <?php
 $sub_menu = "100280";
-include_once('./_common.php');
+include_once('_common.php');
 
 if ($is_admin != 'super')
     die('최고관리자만 접근 가능합니다.');

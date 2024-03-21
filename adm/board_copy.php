@@ -1,6 +1,6 @@
 <?php
 $sub_menu = "300100";
-require_once "./_common.php";
+require_once "_common.php";
 
 auth_check_menu($auth, $sub_menu, 'w');
 
@@ -14,12 +14,12 @@ if (empty($bo_table)) {
 <script>
     var g5_admin_csrf_token_key = "<?php echo (function_exists('admin_csrf_token_key')) ? admin_csrf_token_key() : ''; ?>";
 </script>
-<script src="<?php echo G5_ADMIN_URL ?>/admin.js?ver=<?php echo G5_JS_VER; ?>"></script>
+<script src="<?php echo G5_URL ?>/static/adm/admin.js?ver=<?php echo G5_JS_VER; ?>"></script>
 
 <div class="new_win">
     <h1><?php echo $g5['title']; ?></h1>
 
-    <form name="fboardcopy" id="fboardcopy" action="./board_copy_update.php" onsubmit="return fboardcopy_check(this);" method="post">
+    <form name="fboardcopy" id="fboardcopy" action="./board_copy_update" onsubmit="return fboardcopy_check(this);" method="post">
         <input type="hidden" name="bo_table" value="<?php echo $bo_table ?>" id="bo_table">
         <input type="hidden" name="token" value="">
         <div class=" new_win_con">

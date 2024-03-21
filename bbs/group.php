@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 
 if(defined('G5_THEME_PATH')) {
     $group_file = G5_THEME_PATH.'/group.php';
@@ -19,7 +19,7 @@ if(!$is_admin && $group['gr_device'] == 'mobile')
     alert($group['gr_subject'].' 그룹은 모바일에서만 접근할 수 있습니다.');
 
 $g5['title'] = $group['gr_subject'];
-include_once('./_head.php');
+include_once('_head.php');
 include_once(G5_LIB_PATH.'/latest.lib.php');
 ?>
 
@@ -55,4 +55,4 @@ for ($i=0; $row=sql_fetch_array($result); $i++) {
 <!-- 메인화면 최신글 끝 -->
 </div>
 <?php
-include_once('./_tail.php');
+include_once('_tail.php');

@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 
 if($is_guest)
     alert('회원이시라면 로그인 후 이용해 주십시오.', G5_URL);
@@ -93,4 +93,4 @@ for($i=0; $i<$count; $i++) {
  */
 run_event('qa_delete', $tmp_array, $deleted);
 
-goto_url(G5_BBS_URL.'/qalist.php'.preg_replace('/^&amp;/', '?', $qstr));
+goto_url(G5_BBS_URL.'/qalist'.preg_replace('/^&amp;/', '?', $qstr));

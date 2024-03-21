@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 
 //dbconfig파일에 $g5['faq_table'] , $g5['faq_master_table'] 배열변수가 있는지 체크
 if( !isset($g5['faq_table']) || !isset($g5['faq_master_table']) ){
@@ -32,7 +32,7 @@ $g5['title'] = $fm['fm_subject'];
 
 $skin_file = $faq_skin_path.'/list.skin.php';
 
-include_once('./_head.php');
+include_once('_head.php');
 
 if(is_file($skin_file)) {
     $admin_href = '';
@@ -53,7 +53,7 @@ if(is_file($skin_file)) {
         }
     }
 
-    $category_href = G5_BBS_URL.'/faq.php';
+    $category_href = G5_BBS_URL.'/faq';
     $category_stx = '';
     $faq_list = array();
 
@@ -97,4 +97,4 @@ if(is_file($skin_file)) {
     echo '<p>'.str_replace(G5_PATH.'/', '', $skin_file).'이 존재하지 않습니다.</p>';
 }
 
-include_once('./_tail.php');
+include_once('_tail.php');

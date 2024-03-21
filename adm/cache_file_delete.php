@@ -1,12 +1,12 @@
 <?php
 $sub_menu = '100900';
-require_once './_common.php';
+require_once '_common.php';
 
 if ($is_admin != 'super') {
     alert('최고관리자만 접근 가능합니다.', G5_URL);
 }
 
-@require_once './safe_check.php';
+@require_once 'safe_check.php';
 if (function_exists('social_log_file_delete')) {
     social_log_file_delete();
 }
@@ -14,7 +14,7 @@ if (function_exists('social_log_file_delete')) {
 run_event('adm_cache_file_delete_before');
 
 $g5['title'] = '캐시파일 일괄삭제';
-require_once './admin.head.php';
+require_once 'admin.head.php';
 ?>
 
 <div class="local_desc02 local_desc">
@@ -58,4 +58,4 @@ echo '<div class="local_desc01 local_desc"><p><strong>최신글 캐시파일 ' .
 ?>
 
 <?php
-require_once './admin.tail.php';
+require_once 'admin.tail.php';

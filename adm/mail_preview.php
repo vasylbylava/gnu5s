@@ -1,6 +1,6 @@
 <?php
 $sub_menu = "200300";
-require_once './_common.php';
+require_once '_common.php';
 require_once G5_LIB_PATH . '/mailer.lib.php';
 
 auth_check_menu($auth, $sub_menu, 'r');

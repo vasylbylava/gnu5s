@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '300700';
-include_once('./_common.php');
+include_once('_common.php');
 
 if ($w == "u" || $w == "d")
     check_demo();
@@ -49,6 +49,6 @@ else if ($w == "d")
 }
 
 if ($w == 'd')
-    goto_url("./faqlist.php?fm_id=$fm_id");
+    goto_url("./faqlist?fm_id=$fm_id");
 else
-    goto_url("./faqform.php?w=u&amp;fm_id=$fm_id&amp;fa_id=$fa_id");
+    goto_url("./faqform?w=u&amp;fm_id=$fm_id&amp;fa_id=$fa_id");

@@ -1,6 +1,6 @@
 <?php
 $sub_menu = "200900";
-require_once './_common.php';
+require_once '_common.php';
 
 auth_check_menu($auth, $sub_menu, 'r');
 
@@ -47,7 +47,7 @@ $result = sql_query($sql);
 $listall = '<a href="' . $_SERVER['SCRIPT_NAME'] . '" class="ov_listall">전체목록</a>';
 
 $g5['title'] = '투표관리';
-require_once './admin.head.php';
+require_once 'admin.head.php';
 
 $colspan = 8;
 ?>
@@ -70,7 +70,7 @@ $colspan = 8;
 </form>
 
 
-<form name="fpolllist" id="fpolllist" action="./poll_delete.php" method="post">
+<form name="fpolllist" id="fpolllist" action="./poll_delete" method="post">
     <input type="hidden" name="sst" value="<?php echo $sst ?>">
     <input type="hidden" name="sod" value="<?php echo $sod ?>">
     <input type="hidden" name="sfl" value="<?php echo $sfl ?>">
@@ -104,7 +104,7 @@ $colspan = 8;
                     $po_etc = ($row['po_etc']) ? "사용" : "미사용";
                     $po_use = ($row['po_use']) ? "사용" : "미사용";
 
-                    $s_mod = '<a href="./poll_form.php?' . $qstr . '&amp;w=u&amp;po_id=' . $row['po_id'] . '" class="btn btn_03">수정</a>';
+                    $s_mod = '<a href="./poll_form?' . $qstr . '&amp;w=u&amp;po_id=' . $row['po_id'] . '" class="btn btn_03">수정</a>';
 
                     $bg = 'bg' . ($i % 2);
                     ?>
@@ -136,7 +136,7 @@ $colspan = 8;
 
     <div class="btn_fixed_top">
         <input type="submit" value="선택삭제" class="btn btn_02">
-        <a href="./poll_form.php" id="poll_add" class="btn btn_01">투표 추가</a>
+        <a href="./poll_form" id="poll_add" class="btn btn_01">투표 추가</a>
     </div>
 </form>
 
@@ -160,4 +160,4 @@ $colspan = 8;
 </script>
 
 <?php
-require_once './admin.tail.php';
+require_once 'admin.tail.php';

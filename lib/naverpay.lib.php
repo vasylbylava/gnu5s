@@ -207,7 +207,7 @@ function get_naverpay_item_image_url($it_id)
             if($size[2] < 1 || $size[2] > 3)
                 continue;
 
-            $url = str_replace(G5_PATH, G5_URL, $file);
+            $url = str_replace(G5_PUBLIC_PATH, G5_URL, $file);
 
             if( isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] == 'on' || $_SERVER['HTTPS'] == 1) ){
                 $url = preg_replace('#^https:#', '', $url);

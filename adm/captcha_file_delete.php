@@ -1,13 +1,13 @@
 <?php
 $sub_menu = '100910';
-require_once './_common.php';
+require_once '_common.php';
 
 if ($is_admin != 'super') {
     alert('최고관리자만 접근 가능합니다.', G5_URL);
 }
 
 $g5['title'] = '캡챠파일 일괄삭제';
-require_once './admin.head.php';
+require_once 'admin.head.php';
 ?>
 
 <div class="local_desc02 local_desc">
@@ -53,4 +53,4 @@ echo '<div class="local_desc01 local_desc"><p><strong>캡챠파일 ' . $cnt . '�
 ?>
 
 <?php
-require_once './admin.tail.php';
+require_once 'admin.tail.php';

@@ -1,33 +1,33 @@
 <?php
 $sub_menu = '300820';
-include_once('./_common.php');
+include_once('_common.php');
 
 check_demo();
 
 auth_check_menu($auth, $sub_menu, 'r');
 
 $g5['title'] = '글,댓글 현황';
-include_once ('./admin.head.php');
+include_once ('admin.head.php');
 
 $graph = isset($_GET['graph']) ? clean_xss_tags($_GET['graph'], 1, 1) : '';
 $period = isset($_GET['period']) ? clean_xss_tags($_GET['period'], 1, 1) : '';
 
 // http://www.jqplot.com/
-add_stylesheet('<link rel="stylesheet" href="'.G5_PLUGIN_URL.'/jqplot/jquery.jqplot.css">', 1);
-add_javascript('<script src="'.G5_PLUGIN_URL.'/jqplot/jquery.jqplot.js"></script>', 1);
-add_javascript('<script src="'.G5_PLUGIN_URL.'/jqplot/plugins/jqplot.canvasTextRenderer.min.js"></script>', 1);
-add_javascript('<script src="'.G5_PLUGIN_URL.'/jqplot/plugins/jqplot.categoryAxisRenderer.min.js"></script>', 1);
-add_javascript('<script src="'.G5_PLUGIN_URL.'/jqplot/plugins/jqplot.pointLabels.min.js"></script>', 1);
-add_javascript('<!--[if lt IE 9]><script src="'.G5_PLUGIN_URL.'/jqplot/excanvas.js"></script><![endif]-->', 1);
+add_stylesheet('<link rel="stylesheet" href="'.G5_URL . '/static/plugin/jqplot/jquery.jqplot.css">', 1);
+add_javascript('<script src="'.G5_URL . '/static/plugin/jqplot/jquery.jqplot.js"></script>', 1);
+add_javascript('<script src="'.G5_URL . '/static/plugin/jqplot/plugins/jqplot.canvasTextRenderer.min.js"></script>', 1);
+add_javascript('<script src="'.G5_URL . '/static/plugin/jqplot/plugins/jqplot.categoryAxisRenderer.min.js"></script>', 1);
+add_javascript('<script src="'.G5_URL . '/static/plugin/jqplot/plugins/jqplot.pointLabels.min.js"></script>', 1);
+add_javascript('<!--[if lt IE 9]><script src="'.G5_URL . '/static/plugin/jqplot/excanvas.js"></script><![endif]-->', 1);
 
 if (!($graph == 'line' || $graph == 'bar'))
     $graph = 'line';
 
 if ($graph == 'bar') {
     // 바 타입으로 사용하는 코드입니다.
-    add_javascript('<script src="'.G5_PLUGIN_URL.'/jqplot/jqplot.barRenderer.min.js"></script>', 1);
-    add_javascript('<script src="'.G5_PLUGIN_URL.'/jqplot/jqplot.categoryAxisRenderer.min.js"></script>', 1);
-    add_javascript('<script src="'.G5_PLUGIN_URL.'/jqplot/jqplot.pointLabels.min.js"></script>', 1);
+    add_javascript('<script src="'.G5_URL . '/static/plugin/jqplot/jqplot.barRenderer.min.js"></script>', 1);
+    add_javascript('<script src="'.G5_URL . '/static/plugin/jqplot/jqplot.categoryAxisRenderer.min.js"></script>', 1);
+    add_javascript('<script src="'.G5_URL . '/static/plugin/jqplot/jqplot.pointLabels.min.js"></script>', 1);
 }
 
 $period_array = array(
@@ -210,4 +210,4 @@ $(document).ready(function(){
 ?>
 </div>
 <?php
-include_once ('./admin.tail.php');
+include_once ('admin.tail.php');
