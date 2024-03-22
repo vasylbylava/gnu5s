@@ -29,7 +29,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
     <div id="hd_wrapper">
 
         <div id="logo">
-            <a href="<?php echo G5_URL ?>"><img src="<?php echo G5_IMG_URL ?>/m_logo.png" alt="<?php echo $config['cf_title']; ?>"></a>
+            <a href="<?php echo G5_URL ?>"><img src="<?php echo G5_URL ?>/static/img/logo/gnuboard.png" alt="<?php echo $config['cf_title']; ?>"></a>
         </div>
 
         <button type="button" id="gnb_open" class="hd_opener"><i class="fa fa-bars" aria-hidden="true"></i><span class="sound_only"> 메뉴열기</span></button>
@@ -77,8 +77,8 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
             <ul id="hd_nb">
             	<li class="hd_nb1"><a href="<?php echo G5_BBS_URL ?>/faq" id="snb_faq"><i class="fa fa-question" aria-hidden="true"></i>FAQ</a></li>
                 <li class="hd_nb2"><a href="<?php echo G5_BBS_URL ?>/qalist" id="snb_qa"><i class="fa fa-comments" aria-hidden="true"></i>1:1문의</a></li>
-                <li class="hd_nb3"><a href="<?php echo G5_BBS_URL ?>/current_connect.php" id="snb_cnt"><i class="fa fa-users" aria-hidden="true"></i>접속자 <span><?php echo connect('theme/basic'); // 현재 접속자수 ?></span></a></li>
-                <li class="hd_nb4"><a href="<?php echo G5_BBS_URL ?>/new.php" id="snb_new"><i class="fa fa-history" aria-hidden="true"></i>새글</a></li>   
+                <li class="hd_nb3"><a href="<?php echo G5_BBS_URL ?>/current_connect" id="snb_cnt"><i class="fa fa-users" aria-hidden="true"></i>접속자 <span><?php echo connect('theme/basic'); // 현재 접속자수 ?></span></a></li>
+                <li class="hd_nb4"><a href="<?php echo G5_BBS_URL ?>/new" id="snb_new"><i class="fa fa-history" aria-hidden="true"></i>새글</a></li>   
             </ul>
         </div>
 

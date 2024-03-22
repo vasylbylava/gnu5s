@@ -13,9 +13,9 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
     </h1>
     <div class="new_win_con2">
         <ul class="win_ul">
-            <li class="<?php if ($kind == 'recv') {  ?>selected<?php }  ?>"><a href="./memo.php?kind=recv">받은쪽지</a></li>
-            <li class="<?php if ($kind == 'send') {  ?>selected<?php }  ?>"><a href="./memo.php?kind=send">보낸쪽지</a></li>
-            <li><a href="./memo_form.php">쪽지쓰기</a></li>
+            <li class="<?php if ($kind == 'recv') {  ?>selected<?php }  ?>"><a href="./memo?kind=recv">받은쪽지</a></li>
+            <li class="<?php if ($kind == 'send') {  ?>selected<?php }  ?>"><a href="./memo?kind=send">보낸쪽지</a></li>
+            <li><a href="./memo_form">쪽지쓰기</a></li>
         </ul>
         
         <div class="memo_list">

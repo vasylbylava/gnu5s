@@ -48,6 +48,8 @@ input, textarea {
   -webkit-appearance: none;
   -webkit-border-radius: 0;
 }
+input[type=checkbox] {-webkit-appearance: checkbox}
+input[type=radio] {-webkit-appearance: radio}
 
 /* 팝업레이어 */
 #hd_pop {z-index:1000;position:relative;margin:0 auto;width:100%;height:0px}
@@ -219,15 +221,15 @@ box-shadow: 0 0 6px rgba(0,0,0,0.2);}
 #m_sod_frm_paysel ul {margin:0 0 ;background:#fff;padding:10px;border:1px solid #e3e5e8}
 #m_sod_frm_paysel ul:after {display:block;visibility:hidden;clear:both;content:""}
 #m_sod_frm_paysel li {float:left;padding:5px;width:46%;height:35px}
-#m_sod_frm_paysel .KPAY{background:url('../../../img/kpay.png') no-repeat;width:37px;height:15px;overflow:hidden;text-indent:-999px;display:inline-block;background-size:100%}
-#m_sod_frm_paysel .PAYNOW{background:url('../../../img/paynow.png') no-repeat;width:46px;height:15px;overflow:hidden;text-indent:-999px;display:inline-block;background-size:100%;}
-#m_sod_frm_paysel .PAYCO{background:url('../../../img/payco.png') no-repeat 1px;width:50px;height:15px;overflow:hidden;text-indent:-999px;display:inline-block;background-size:100%}
-#m_sod_frm_paysel .inicis_lpay{background:url('../../../img/lpay_logo.png') no-repeat;width:35px;height:12px;overflow:hidden;text-indent:-999px;display:inline-block;background-size:100%;}
-#m_sod_frm_paysel .inicis_kakaopay{background:url('../../../img/kakao.png') no-repeat 50% 50% #ffeb00;border-radius:30px;height:26px;width:74px;display:inline-block;overflow:hidden;text-indent:-999px;background-size:36px auto}
-#m_sod_frm_paysel .kakaopay_icon{background:url('../../../img/ico-mobile-kakaopay.png') no-repeat #fff;height:23px;width:63px;display:inline-block;overflow:hidden;text-indent:-999px;background-size:45px auto;background-position: 10% 40%}
-#m_sod_frm_paysel .naverpay_icon{background:url('../../../img/ico-mobile-naverpay.png') no-repeat #fff;height:23px;width:60px;display:inline-block;overflow:hidden;text-indent:-999px;background-size:45px auto;background-position: 0% 30%}
-#m_sod_frm_paysel .applepay_icon{background:url('../../../img/ico-mobile-applepay.png') no-repeat #fff;height:30px;width:60px;display:inline-block;overflow:hidden;text-indent:-999px;background-size:43px auto}
-#m_sod_frm_paysel .samsung_pay{margin-left:-23px;background:url('../../../img/samsungpay.png') no-repeat 24px 3px;height:25px;width:106px;display:inline-block;overflow:hidden;text-indent:-999px}
+#m_sod_frm_paysel .KPAY{background:url('../img/kpay.png') no-repeat;width:37px;height:15px;overflow:hidden;text-indent:-999px;display:inline-block;background-size:100%}
+#m_sod_frm_paysel .PAYNOW{background:url('../img/paynow.png') no-repeat;width:46px;height:15px;overflow:hidden;text-indent:-999px;display:inline-block;background-size:100%;}
+#m_sod_frm_paysel .PAYCO{background:url('../img/payco.png') no-repeat 1px;width:50px;height:15px;overflow:hidden;text-indent:-999px;display:inline-block;background-size:100%}
+#m_sod_frm_paysel .inicis_lpay{background:url('../img/lpay_logo.png') no-repeat;width:35px;height:12px;overflow:hidden;text-indent:-999px;display:inline-block;background-size:100%;}
+#m_sod_frm_paysel .inicis_kakaopay{background:url('../img/kakao.png') no-repeat 50% 50% #ffeb00;border-radius:30px;height:26px;width:74px;display:inline-block;overflow:hidden;text-indent:-999px;background-size:36px auto}
+#m_sod_frm_paysel .kakaopay_icon{background:url('../img/ico-mobile-kakaopay.png') no-repeat #fff;height:23px;width:63px;display:inline-block;overflow:hidden;text-indent:-999px;background-size:45px auto;background-position: 10% 40%}
+#m_sod_frm_paysel .naverpay_icon{background:url('../img/ico-mobile-naverpay.png') no-repeat #fff;height:23px;width:60px;display:inline-block;overflow:hidden;text-indent:-999px;background-size:45px auto;background-position: 0% 30%}
+#m_sod_frm_paysel .applepay_icon{background:url('../img/ico-mobile-applepay.png') no-repeat #fff;height:30px;width:60px;display:inline-block;overflow:hidden;text-indent:-999px;background-size:43px auto}
+#m_sod_frm_paysel .samsung_pay{margin-left:-23px;background:url('../img/samsungpay.png') no-repeat 24px 3px;height:25px;width:106px;display:inline-block;overflow:hidden;text-indent:-999px}
 
 #sod_frm_pay{padding:10px;;border-top:1px solid #f3f3f3}
 #sod_frm_pay h2{margin:10px 0;font-size:1.25em}
@@ -539,8 +541,8 @@ box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
 #captcha {position:relative}
 #captcha legend {position:absolute;margin:0;padding:0;font-size:0;line-height:0;text-indent:-9999em;overflow:hidden}
 #captcha #captcha_img {height:40px;border:1px solid #898989;vertical-align:top;padding:0;margin:0}
-#captcha #captcha_mp3 {margin:0;padding:0;width:40px;height:40px;border:0;background:transparent;vertical-align:middle;overflow:hidden;cursor:pointer;width:40px;height:40px;background:url('../../../img/captcha.png') no-repeat;text-indent:-999px;border-radius:3px}
-#captcha #captcha_reload {margin:0;padding:0;width:40px;height:40px;border:0;background:transparent;vertical-align:middle;overflow:hidden;cursor:pointer;background:url('../../../img/captcha.png') no-repeat  0 -40px;text-indent:-999px;border-radius:3px}
+#captcha #captcha_mp3 {margin:0;padding:0;width:40px;height:40px;border:0;background:transparent;vertical-align:middle;overflow:hidden;cursor:pointer;width:40px;height:40px;background:url('../img/captcha.png') no-repeat;text-indent:-999px;border-radius:3px}
+#captcha #captcha_reload {margin:0;padding:0;width:40px;height:40px;border:0;background:transparent;vertical-align:middle;overflow:hidden;cursor:pointer;background:url('../img/captcha.png') no-repeat  0 -40px;text-indent:-999px;border-radius:3px}
 #captcha #captcha_key {margin:0 0 0 3px;padding:0 5px;width:90px;height:40px;border:1px solid #ccc;background:#fff;font-size:1.333em;font-weight:bold;text-align:center;border-radius:3px;vertical-align:top}
 #captcha #captcha_info {display:block;margin:3px 0 5px;font-size:0.95em;letter-spacing:-0.1em}
 
@@ -826,12 +828,12 @@ box-shadow:0 0 8px rgba(65,98,255,0.8)}
 #sod_frm_paysel {}
 #sod_frm_paysel legend {position:absolute;font-size:0;line-height:0;overflow:hidden}
 
-#sod_frm_paysel .KPAY{background:url('../../../img/kpay.png') no-repeat 0 3px;width:67px;overflow:hidden;text-indent:-999px;display:inline-block;background-size:35px auto}
-#sod_frm_paysel .PAYNOW{background:url('../../../img/paynow.png') no-repeat 0 3px;width:74px;overflow:hidden;text-indent:-999px;display:inline-block;background-size:45px auto;}
-#sod_frm_paysel .PAYCO{background:url('../../../img/payco.png') no-repeat 0 3px;width:74px;;overflow:hidden;text-indent:-999px;display:inline-block;background-size:45px auto;}
-#sod_frm_paysel .inicis_lpay{background:url('../../../img/lpay_logo.png') no-repeat 0 3px;width:65px;overflow:hidden;text-indent:-999px;display:inline-block;background-size:35px auto;}
-#sod_frm_paysel .kakaopay_icon{background:url('../../../img/kakao.png') no-repeat 0 3px;width:74px;display:inline-block;overflow:hidden;text-indent:-999px;background-size:35px auto}
-#sod_frm_paysel .samsung_pay{background:url('../../../img/samsungpay.png') no-repeat 0 3px;width:106px;display:inline-block;overflow:hidden;text-indent:-999px}
+#sod_frm_paysel .KPAY{background:url('../img/kpay.png') no-repeat 0 3px;width:67px;overflow:hidden;text-indent:-999px;display:inline-block;background-size:35px auto}
+#sod_frm_paysel .PAYNOW{background:url('../img/paynow.png') no-repeat 0 3px;width:74px;overflow:hidden;text-indent:-999px;display:inline-block;background-size:45px auto;}
+#sod_frm_paysel .PAYCO{background:url('../img/payco.png') no-repeat 0 3px;width:74px;;overflow:hidden;text-indent:-999px;display:inline-block;background-size:45px auto;}
+#sod_frm_paysel .inicis_lpay{background:url('../img/lpay_logo.png') no-repeat 0 3px;width:65px;overflow:hidden;text-indent:-999px;display:inline-block;background-size:35px auto;}
+#sod_frm_paysel .kakaopay_icon{background:url('../img/kakao.png') no-repeat 0 3px;width:74px;display:inline-block;overflow:hidden;text-indent:-999px;background-size:35px auto}
+#sod_frm_paysel .samsung_pay{background:url('../img/samsungpay.png') no-repeat 0 3px;width:106px;display:inline-block;overflow:hidden;text-indent:-999px}
 
 #sod_bsk_tot:after {display:block;visibility:hidden;clear:both;content:""}
 .sod_info li {position:relative;float:left;background:#fff;width:33.333%;height:70px;text-align:center;border-bottom:1px solid #e7ebf1;padding:15px 0}
@@ -903,18 +905,17 @@ box-shadow:0 0 8px rgba(65,98,255,0.8)}
 #od_pay_sl input[type="radio"]:checked+.lb_icon {border:1px solid #ff006c;z-index:3}
 #sod_frm_paysel {}
 #sod_frm_paysel legend {position:absolute;font-size:0;line-height:0;overflow:hidden}
-#sod_frm_paysel .KPAY{background:url('../../../img/kpay.png') no-repeat 50% 50% #fff;overflow:hidden;text-indent:-999px}
-#sod_frm_paysel .PAYNOW{background:url('../../../img/paynow.png') no-repeat 50% 50% #fff;overflow:hidden;text-indent:-999px}
-#sod_frm_paysel .PAYCO{background:url('../../../img/payco.png') no-repeat 50% 50% #fff;overflow:hidden;text-indent:-999px}
-#sod_frm_paysel .inicis_lpay{background:url('../../../img/lpay_logo.png') no-repeat 50% 50% #fff;overflow:hidden;text-indent:-999px}
-#sod_frm_paysel .inicis_kakaopay{background:url('../../../img/kakao.png') no-repeat 50% 50% #f4dc34;overflow:hidden;text-indent:-999px}
-#sod_frm_paysel .kakaopay_icon{background:url('../../../img/kakao.png') no-repeat 50% 50% #f4dc34;overflow:hidden;text-indent:-999px}
-#sod_frm_paysel .naverpay_icon{background:url('../../../img/ico-default-naverpay.png') no-repeat 50% 50% #fff;overflow:hidden;text-indent:-999px}
-#sod_frm_paysel .bank_icon{background:url('../../../img/pay_icon1.png') no-repeat 15px 50% #fff}
-#sod_frm_paysel .vbank_icon{background:url('../../../img/pay_icon2.png') no-repeat 15px 50% #fff}
-#sod_frm_paysel .iche_icon{background:url('../../../img/pay_icon2.png') no-repeat 15px 50% #fff}
-#sod_frm_paysel .hp_icon{background:url('../../../img/pay_icon3.png') no-repeat 24px 50% #fff}
-#sod_frm_paysel .card_icon{background:url('../../../img/pay_icon4.png') no-repeat 17px 50% #fff}
+#sod_frm_paysel .KPAY{background:url('../img/kpay.png') no-repeat 50% 50% #fff;overflow:hidden;text-indent:-999px}
+#sod_frm_paysel .PAYNOW{background:url('../img/paynow.png') no-repeat 50% 50% #fff;overflow:hidden;text-indent:-999px}
+#sod_frm_paysel .PAYCO{background:url('../img/payco.png') no-repeat 50% 50% #fff;overflow:hidden;text-indent:-999px}
+#sod_frm_paysel .inicis_lpay{background:url('../img/lpay_logo.png') no-repeat 50% 50% #fff;overflow:hidden;text-indent:-999px}
+#sod_frm_paysel .inicis_kakaopay{background:url('../img/kakao.png') no-repeat 50% 50% #f4dc34;overflow:hidden;text-indent:-999px}
+#sod_frm_paysel .kakaopay_icon{background:url('../img/kakao.png') no-repeat 50% 50% #f4dc34;overflow:hidden;text-indent:-999px}
+#sod_frm_paysel .bank_icon{background:url('../img/pay_icon1.png') no-repeat 15px 50% #fff}
+#sod_frm_paysel .vbank_icon{background:url('../img/pay_icon2.png') no-repeat 15px 50% #fff;padding-top:13px}
+#sod_frm_paysel .iche_icon{background:url('../img/pay_icon2.png') no-repeat 15px 50% #fff;padding-top:13px}
+#sod_frm_paysel .hp_icon{background:url('../img/pay_icon3.png') no-repeat 24px 50% #fff}
+#sod_frm_paysel .card_icon{background:url('../img/pay_icon4.png') no-repeat 17px 50% #fff}
 #forderform .sod_right #sod_bsk_tot {border:1px solid #e3e5e8}
 #forderform .od_pay_buttons_el{margin-top:20px;border:1px solid #e3e5e8;background:#fff;padding:10px}
 #forderform .od_pay_buttons_el h3{font-size:1.167em;margin:0px 0 5px}

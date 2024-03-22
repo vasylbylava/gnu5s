@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 
 $it_id = isset($_GET['it_id']) ? get_search_string(trim($_GET['it_id'])) : '';
 $no = isset($_GET['no']) ? preg_replace('/[^0-9a-z]/i', '', $_GET['no']) : '';

@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 
 // 테마에 mypage.php 있으면 include
 if(defined('G5_THEME_MSHOP_PATH')) {

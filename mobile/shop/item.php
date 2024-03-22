@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 include_once(G5_LIB_PATH.'/iteminfo.lib.php');
 
 $it_id = isset($_GET['it_id']) ? get_search_string(trim($_GET['it_id'])) : '';

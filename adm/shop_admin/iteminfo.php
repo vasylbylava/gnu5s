@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 include_once(G5_LIB_PATH.'/iteminfo.lib.php');
 
 if(isset($it['it_id']) && $it['it_id']) {

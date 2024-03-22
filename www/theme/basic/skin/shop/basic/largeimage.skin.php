@@ -29,7 +29,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_SHOP_SKIN_URL.'/style.css">', 
     if($total_count > 0) {
         echo '<ul>';
         foreach($thumbnails as $key=>$val) {
-            echo '<li><a href="'.G5_SHOP_URL.'/largeimage.php?it_id='.$it_id.'&amp;no='.$key.'" class="img_thumb">'.$val.'</a></li>';
+            echo '<li><a href="'.G5_SHOP_URL.'/largeimage?it_id='.$it_id.'&amp;no='.$key.'" class="img_thumb">'.$val.'</a></li>';
         }
         echo '</ul>';
     }

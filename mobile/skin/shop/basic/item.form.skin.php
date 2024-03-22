@@ -36,7 +36,7 @@ var kakao_javascript_apikey = "<?php echo $config['cf_kakao_js_apikey']; ?>";
             continue;
 
         $thumb_img .= '<li>';
-        $thumb_img .= '<a href="'.G5_SHOP_URL.'/largeimage.php?it_id='.$it['it_id'].'&amp;no='.$i.'" class="popup_item_image slide_img" target="_blank">'.$thumb.'</a>';
+        $thumb_img .= '<a href="'.G5_SHOP_URL.'/largeimage?it_id='.$it['it_id'].'&amp;no='.$i.'" class="popup_item_image slide_img" target="_blank">'.$thumb.'</a>';
         $thumb_img .= '</li>'.PHP_EOL;
     }
     if ($thumb_img)
@@ -231,7 +231,7 @@ var kakao_javascript_apikey = "<?php echo $config['cf_kakao_js_apikey']; ?>";
                 echo '<span class="sound_only">이 분류에 등록된 다른 상품이 없습니다.</span>';
             }
             ?>
-            <a href="<?php echo G5_SHOP_URL; ?>/largeimage.php?it_id=<?php echo $it['it_id']; ?>&amp;no=1" target="_blank" class="popup_item_image "><i class="fa fa-search-plus" aria-hidden="true"></i><span class="sound_only">확대보기</span></a>
+            <a href="<?php echo G5_SHOP_URL; ?>/largeimage?it_id=<?php echo $it['it_id']; ?>&amp;no=1" target="_blank" class="popup_item_image "><i class="fa fa-search-plus" aria-hidden="true"></i><span class="sound_only">확대보기</span></a>
         </div>
         <!-- } 다른 상품 보기 끝 -->
     </section>

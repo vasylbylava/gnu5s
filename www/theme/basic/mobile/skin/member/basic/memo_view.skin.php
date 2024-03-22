@@ -20,9 +20,9 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
     <div class="new_win_con2">
         <!-- 쪽지함 선택 시작 { -->
         <ul class="win_ul">
-            <li class="<?php if ($kind == 'recv') {  ?>selected<?php }  ?>"><a href="./memo.php?kind=recv">받은쪽지</a></li>
-            <li class="<?php if ($kind == 'send') {  ?>selected<?php }  ?>"><a href="./memo.php?kind=send">보낸쪽지</a></li>
-            <li><a href="./memo_form.php">쪽지쓰기</a></li>
+            <li class="<?php if ($kind == 'recv') {  ?>selected<?php }  ?>"><a href="./memo?kind=recv">받은쪽지</a></li>
+            <li class="<?php if ($kind == 'send') {  ?>selected<?php }  ?>"><a href="./memo?kind=send">보낸쪽지</a></li>
+            <li><a href="./memo_form">쪽지쓰기</a></li>
         </ul>
         <!-- } 쪽지함 선택 끝 -->
 
@@ -56,7 +56,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
             </p>
         </article>
 		<div class="win_btn">
-			<?php if ($kind == 'recv') {  ?><a href="./memo_form.php?me_recv_mb_id=<?php echo $mb['mb_id'] ?>&amp;me_id=<?php echo $memo['me_id'] ?>" class="reply_btn">답장</a><?php }  ?>
+			<?php if ($kind == 'recv') {  ?><a href="./memo_form?me_recv_mb_id=<?php echo $mb['mb_id'] ?>&amp;me_id=<?php echo $memo['me_id'] ?>" class="reply_btn">답장</a><?php }  ?>
 			<button type="button" onclick="window.close();" class="btn_close">창닫기</button>
     	</div>
     </div>

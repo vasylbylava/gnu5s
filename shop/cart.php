@@ -280,7 +280,7 @@ function fsubmit_check(f) {
 function form_check(act) {
     var f = document.frmcartlist;
 
-    if (typeof f.records === 'undefined') {
+    if (typeof f.records == 'undefined') {
         alert("장바구니에 상품이 없습니다.");
         return false;
     }

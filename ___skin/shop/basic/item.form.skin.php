@@ -29,7 +29,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_SHOP_CSS_URL.'/style.css">', 0
 	                $thumbnails[] = $thumb;
 	                $big_img_count++;
 	
-	                echo '<a href="'.G5_SHOP_URL.'/largeimage.php?it_id='.$it['it_id'].'&amp;no='.$i.'" target="_blank" class="popup_item_image">'.$img.'</a>';
+	                echo '<a href="'.G5_SHOP_URL.'/largeimage?it_id='.$it['it_id'].'&amp;no='.$i.'" target="_blank" class="popup_item_image">'.$img.'</a>';
 	            }
 	        }
 	
@@ -37,7 +37,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_SHOP_CSS_URL.'/style.css">', 0
 	            echo '<img src="'.G5_URL.'/staic/shop/img/no_image.gif" alt="">';
 	        }
 	        ?>
-	        <a href="<?php echo G5_SHOP_URL; ?>/largeimage.php?it_id=<?php echo $it['it_id']; ?>&amp;no=1" target="_blank" id="popup_item_image" class="popup_item_image"><i class="fa fa-search-plus" aria-hidden="true"></i><span class="sound_only">확대보기</span></a>
+	        <a href="<?php echo G5_SHOP_URL; ?>/largeimage?it_id=<?php echo $it['it_id']; ?>&amp;no=1" target="_blank" id="popup_item_image" class="popup_item_image"><i class="fa fa-search-plus" aria-hidden="true"></i><span class="sound_only">확대보기</span></a>
 	        </div>
 	        <?php
 	        // 썸네일
@@ -51,7 +51,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_SHOP_CSS_URL.'/style.css">', 0
 	                $sit_pvi_last ='';
 	                if ($thumb_count % 5 == 0) $sit_pvi_last = 'class="li_last"';
 	                    echo '<li '.$sit_pvi_last.'>';
-	                    echo '<a href="'.G5_SHOP_URL.'/largeimage.php?it_id='.$it['it_id'].'&amp;no='.$thumb_count.'" target="_blank" class="popup_item_image img_thumb">'.$val.'<span class="sound_only"> '.$thumb_count.'번째 이미지 새창</span></a>';
+	                    echo '<a href="'.G5_SHOP_URL.'/largeimage?it_id='.$it['it_id'].'&amp;no='.$thumb_count.'" target="_blank" class="popup_item_image img_thumb">'.$val.'<span class="sound_only"> '.$thumb_count.'번째 이미지 새창</span></a>';
 	                    echo '</li>';
 	            }
 	            echo '</ul>';

@@ -127,4 +127,9 @@ $app->group('/shop', function ($group) {
         return $response;
     });
     
+    $group->get('/largeimage', function (Request $request, Response $response, $args) {
+        require_once '../shop/largeimage.php';
+        return $response;
+    });
+    
 });

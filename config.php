@@ -121,7 +121,7 @@ define('G5_EXTEND_PATH',    G5_PATH.'/'.G5_EXTEND_DIR);
 define('G5_LIB_PATH',       G5_PATH.'/'.G5_LIB_DIR);
 define('G5_PLUGIN_PATH',    G5_PATH.'/'.G5_PLUGIN_DIR);
 define('G5_SKIN_PATH',      G5_PATH.'/'.G5_PUBLIC_DIR.'/'.G5_SKIN_DIR);
-define('G5_MOBILE_PATH',    G5_PATH.'/'.G5_PUBLIC_DIR.'/'.G5_MOBILE_DIR);
+define('G5_MOBILE_PATH',    G5_PATH.'/'.G5_MOBILE_DIR);
 define('G5_SESSION_PATH',   G5_DATA_PATH.'/'.G5_SESSION_DIR);
 define('G5_EDITOR_PATH',    G5_PLUGIN_PATH.'/'.G5_EDITOR_DIR);
 define('G5_OKNAME_PATH',    G5_PLUGIN_PATH.'/'.G5_OKNAME_DIR);
@@ -142,9 +142,9 @@ define('G5_PHPMAILER_PATH', G5_PLUGIN_PATH.'/'.G5_PHPMAILER_DIR);
 // mobile 설정 시 PC에서도 모바일화면 보여짐
 // both 설정 시 접속 기기에 따른 화면 보여짐
 //------------------------------------------------------------------------------
-define('G5_SET_DEVICE', 'pc');
+define('G5_SET_DEVICE', 'both');
 
-define('G5_USE_MOBILE', false); // 모바일 홈페이지를 사용하지 않을 경우 false 로 설정
+define('G5_USE_MOBILE', true); // 모바일 홈페이지를 사용하지 않을 경우 false 로 설정
 define('G5_USE_CACHE',  false); // 최신글등에 cache 기능 사용 여부
 
 
