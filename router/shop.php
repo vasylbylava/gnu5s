@@ -6,6 +6,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 
 $app->group('/shop', function ($group) {
 
+    // shop/ 뒤에 / 가 붙어 에러가 발생하는 경우를 방지
     $group->get('[/]', function (Request $request, Response $response, $args) {
         require_once '../shop/index.php';
         return $response;
@@ -118,6 +119,11 @@ $app->group('/shop', function ($group) {
     
     $group->get('/cart', function (Request $request, Response $response, $args) {
         require_once '../shop/cart.php';
+        return $response;
+    });
+    
+    $group->get('/search', function (Request $request, Response $response, $args) {
+        require_once '../shop/search.php';
         return $response;
     });
     

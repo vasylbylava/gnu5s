@@ -37,7 +37,7 @@ include_once(G5_LIB_PATH.'/latest.lib.php');
         </div>
     </div>
 
-    <form name="frmsearch1" action="<?php echo G5_SHOP_URL; ?>/search.php" onsubmit="return search_submit(this);">
+    <form name="frmsearch1" action="<?php echo G5_SHOP_URL; ?>/search" onsubmit="return search_submit(this);">
     <aside id="hd_sch">
         <div class="sch_inner">
             <h2>상품 검색</h2>

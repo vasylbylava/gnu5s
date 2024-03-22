@@ -27,4 +27,4 @@ if ($_POST['act_button'] == "선택삭제") {
     }
 }
 
-goto_url("./itemqalist.php?sca=$sca&amp;sst=$sst&amp;sod=$sod&amp;sfl=$sfl&amp;stx=$stx&amp;page=$page");
+goto_url("./itemqalist?sca=$sca&amp;sst=$sst&amp;sod=$sod&amp;sfl=$sfl&amp;stx=$stx&amp;page=$page");

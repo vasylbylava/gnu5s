@@ -52,7 +52,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
         <div class="hd_sch_wr">
             <fieldset id="hd_sch">
                 <legend>사이트 내 전체검색</legend>
-                <form name="fsearchbox" method="get" action="<?php echo G5_BBS_URL ?>/search.php" onsubmit="return fsearchbox_submit(this);">
+                <form name="fsearchbox" method="get" action="<?php echo G5_BBS_URL ?>/search" onsubmit="return fsearchbox_submit(this);">
                 <input type="hidden" name="sfl" value="wr_subject||wr_content">
                 <input type="hidden" name="sop" value="and">
                 <label for="sch_stx" class="sound_only">검색어 필수</label>

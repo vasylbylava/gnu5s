@@ -41,8 +41,8 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
     		</ul>
             <?php } ?>
 			<ul id="hd_qnb">
-	            <li><a href="<?php echo G5_BBS_URL ?>/faq.php">FAQ</a></li>
-	            <li><a href="<?php echo G5_BBS_URL ?>/qalist.php">Q&A</a></li>
+	            <li><a href="<?php echo G5_BBS_URL ?>/faq">FAQ</a></li>
+	            <li><a href="<?php echo G5_BBS_URL ?>/qalist">Q&A</a></li>
 	            <li><a href="<?php echo G5_BBS_URL ?>/new.php">새글</a></li>
 	            <li><a href="<?php echo G5_BBS_URL ?>/current_connect.php" class="visit">접속자<strong class="visit-num"><?php echo connect('theme/basic'); // 현재 접속자수, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정  ?></strong></a></li>
 	        </ul>
@@ -57,7 +57,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
         <div class="hd_sch_wr">
             <fieldset id="hd_sch">
                 <legend>사이트 내 전체검색</legend>
-                <form name="fsearchbox" method="get" action="<?php echo G5_BBS_URL ?>/search.php" onsubmit="return fsearchbox_submit(this);">
+                <form name="fsearchbox" method="get" action="<?php echo G5_BBS_URL ?>/search" onsubmit="return fsearchbox_submit(this);">
                 <input type="hidden" name="sfl" value="wr_subject||wr_content">
                 <input type="hidden" name="sop" value="and">
                 <label for="sch_stx" class="sound_only">검색어 필수</label>

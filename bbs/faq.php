@@ -39,7 +39,7 @@ if(is_file($skin_file)) {
     $himg_src = '';
     $timg_src = '';
     if($is_admin)
-        $admin_href = G5_ADMIN_URL.'/faqmasterform.php?w=u&amp;fm_id='.$fm_id;
+        $admin_href = G5_ADMIN_URL.'/faqmasterform?w=u&amp;fm_id='.$fm_id;
 
     if(!G5_IS_MOBILE) {
         $himg = G5_DATA_PATH.'/faq/'.$fm_id.'_h';

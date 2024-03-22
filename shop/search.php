@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 
 define('IS_SHOP_SEARCH', true);
 
@@ -9,7 +9,7 @@ if (G5_IS_MOBILE) {
 }
 
 $g5['title'] = "상품 검색 결과";
-include_once('./_head.php');
+include_once('_head.php');
 
 // QUERY 문에 공통적으로 들어가는 내용
 // 상품명에 검색어가 포한된것과 상품판매가능인것만
@@ -152,4 +152,4 @@ if(!file_exists($search_skin)) {
     include_once($search_skin);
 }
 
-include_once('./_tail.php');
+include_once('_tail.php');

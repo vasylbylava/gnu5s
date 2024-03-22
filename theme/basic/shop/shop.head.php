@@ -38,12 +38,12 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_JS_URL.'/owlcarousel/owl.carou
     		</ul>
             <?php } ?>
 			<ul id="hd_qnb">
-	            <li><a href="<?php echo G5_BBS_URL ?>/faq.php">FAQ</a></li>
-	            <li><a href="<?php echo G5_BBS_URL ?>/qalist.php">1:1문의</a></li>
-	            <li><a href="<?php echo G5_SHOP_URL ?>/personalpay.php">개인결제</a></li>
-	            <li><a href="<?php echo G5_SHOP_URL ?>/itemuselist.php">사용후기</a></li> 
-	            <li><a href="<?php echo G5_SHOP_URL ?>/itemqalist.php">상품문의</a></li>
-				<li class="bd"><a href="<?php echo G5_SHOP_URL; ?>/couponzone.php">쿠폰존</a></li>
+	            <li><a href="<?php echo G5_BBS_URL ?>/faq">FAQ</a></li>
+	            <li><a href="<?php echo G5_BBS_URL ?>/qalist">1:1문의</a></li>
+	            <li><a href="<?php echo G5_SHOP_URL ?>/personalpay">개인결제</a></li>
+	            <li><a href="<?php echo G5_SHOP_URL ?>/itemuselist">사용후기</a></li> 
+	            <li><a href="<?php echo G5_SHOP_URL ?>/itemqalist">상품문의</a></li>
+				<li class="bd"><a href="<?php echo G5_SHOP_URL; ?>/couponzone">쿠폰존</a></li>
 	        </ul>
 		</div>
 	</div>
@@ -55,7 +55,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_JS_URL.'/owlcarousel/owl.carou
 		<div class="hd_sch_wr">
 	        <fieldset id="hd_sch">
 	            <legend>쇼핑몰 전체검색</legend>
-	            <form name="frmsearch1" action="<?php echo G5_SHOP_URL; ?>/search.php" onsubmit="return search_submit(this);">
+	            <form name="frmsearch1" action="<?php echo G5_SHOP_URL; ?>/search" onsubmit="return search_submit(this);">
 	            <label for="sch_str" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label>
 	            <input type="text" name="q" value="<?php echo stripslashes(get_text(get_search_string($q))); ?>" id="sch_str" required placeholder="검색어를 입력해주세요">
 	            <button type="submit" id="sch_submit" value="검색"><i class="fa fa-search" aria-hidden="true"></i><span class="sound_only">검색</span></button>
@@ -120,8 +120,8 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_JS_URL.'/owlcarousel/owl.carou
 					<li><a href="<?php echo G5_SHOP_URL; ?>/mypage">마이페이지</a></li>
 		            <?php } ?>
 					<li><a href="<?php echo G5_SHOP_URL; ?>/orderinquiry.php">주문내역</a></li>
-					<li><a href="<?php echo G5_BBS_URL ?>/faq.php">FAQ</a></li>
-		            <li><a href="<?php echo G5_BBS_URL ?>/qalist.php">1:1문의</a></li>
+					<li><a href="<?php echo G5_BBS_URL ?>/faq">FAQ</a></li>
+		            <li><a href="<?php echo G5_BBS_URL ?>/qalist">1:1문의</a></li>
 		            <li><a href="<?php echo G5_SHOP_URL ?>/personalpay.php">개인결제</a></li>
 		            <li><a href="<?php echo G5_SHOP_URL ?>/itemuselist.php">사용후기</a></li>
 		            <li><a href="<?php echo G5_SHOP_URL ?>/itemqalist.php">상품문의</a></li>

@@ -75,8 +75,8 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
             </ul>
 
             <ul id="hd_nb">
-            	<li class="hd_nb1"><a href="<?php echo G5_BBS_URL ?>/faq.php" id="snb_faq"><i class="fa fa-question" aria-hidden="true"></i>FAQ</a></li>
-                <li class="hd_nb2"><a href="<?php echo G5_BBS_URL ?>/qalist.php" id="snb_qa"><i class="fa fa-comments" aria-hidden="true"></i>1:1문의</a></li>
+            	<li class="hd_nb1"><a href="<?php echo G5_BBS_URL ?>/faq" id="snb_faq"><i class="fa fa-question" aria-hidden="true"></i>FAQ</a></li>
+                <li class="hd_nb2"><a href="<?php echo G5_BBS_URL ?>/qalist" id="snb_qa"><i class="fa fa-comments" aria-hidden="true"></i>1:1문의</a></li>
                 <li class="hd_nb3"><a href="<?php echo G5_BBS_URL ?>/current_connect.php" id="snb_cnt"><i class="fa fa-users" aria-hidden="true"></i>접속자 <span><?php echo connect('theme/basic'); // 현재 접속자수 ?></span></a></li>
                 <li class="hd_nb4"><a href="<?php echo G5_BBS_URL ?>/new.php" id="snb_new"><i class="fa fa-history" aria-hidden="true"></i>새글</a></li>   
             </ul>
@@ -87,7 +87,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
             <button type="button" id="user_close" class="hd_closer"><span class="sound_only">메뉴 닫기</span><i class="fa fa-times" aria-hidden="true"></i></button>
             <div id="hd_sch">
                 <h2>사이트 내 전체검색</h2>
-                <form name="fsearchbox" action="<?php echo G5_BBS_URL ?>/search.php" onsubmit="return fsearchbox_submit(this);" method="get">
+                <form name="fsearchbox" action="<?php echo G5_BBS_URL ?>/search" onsubmit="return fsearchbox_submit(this);" method="get">
                 <input type="hidden" name="sfl" value="wr_subject||wr_content">
                 <input type="hidden" name="sop" value="and">
                 <input type="text" name="stx" id="sch_stx" placeholder="검색어를 입력해주세요" required maxlength="20">

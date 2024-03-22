@@ -341,7 +341,7 @@ if(!sql_query(" select it_skin from {$g5['g5_shop_item_table']} limit 1", false)
                     <span class="frm_ca_id"><?php echo $it['it_id']; ?></span>
                     <a href="<?php echo shop_item_url($it_id); ?>" class="btn_frmline">상품확인</a>
                     <a href="<?php echo G5_ADMIN_URL; ?>/shop_admin/itemuselist.php?sfl=a.it_id&amp;stx=<?php echo $it_id; ?>" class="btn_frmline">사용후기</a>
-                    <a href="<?php echo G5_ADMIN_URL; ?>/shop_admin/itemqalist.php?sfl=a.it_id&amp;stx=<?php echo $it_id; ?>" class="btn_frmline">상품문의</a>
+                    <a href="<?php echo G5_ADMIN_URL; ?>/shop_admin/itemqalist?sfl=a.it_id&amp;stx=<?php echo $it_id; ?>" class="btn_frmline">상품문의</a>
                 <?php } ?>
             </td>
         </tr>
