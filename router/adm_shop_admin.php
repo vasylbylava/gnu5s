@@ -285,4 +285,25 @@ $app->group('/adm/shop_admin', function ($group) {
         require_once '../adm/shop_admin/price.php';
         return $response;
     });    
+
+    $group->get('/orderform', function (Request $request, Response $response, $args) {
+        require_once '../adm/shop_admin/orderform.php';
+        return $response;
+    });    
+
+    $group->post('/orderformcartupdate', function (Request $request, Response $response, $args) {
+        require_once '../adm/shop_admin/orderformcartupdate.php';
+        return $response;
+    });    
+
+    $group->post('/orderformreceiptupdate', function (Request $request, Response $response, $args) {
+        require_once '../adm/shop_admin/orderformreceiptupdate.php';
+        return $response;
+    });    
+
+    $group->post('/orderformupdate', function (Request $request, Response $response, $args) {
+        require_once '../adm/shop_admin/orderformupdate.php';
+        return $response;
+    });    
+    
 });

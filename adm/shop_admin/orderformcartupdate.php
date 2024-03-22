@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '400400';
-include_once('./_common.php');
+include_once('_common.php');
 
 auth_check_menu($auth, $sub_menu, "w");
 
@@ -344,7 +344,7 @@ sql_query($sql);
 
 $qstr = "sort1=$sort1&amp;sort2=$sort2&amp;sel_field=$sel_field&amp;search=$search&amp;page=$page";
 
-$url = "./orderform.php?od_id=$od_id&amp;$qstr";
+$url = "./orderform?od_id=$od_id&amp;$qstr";
 
 // 신용카드 취소 때 오류가 있으면 알림
 if($pg_cancel == 1 && $pg_res_cd && $pg_res_msg) {

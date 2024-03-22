@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 
 $ev_id = isset($_GET['ev_id']) ? (int) $_GET['ev_id'] : 0;
 $skin = isset($_GET['skin']) ? clean_xss_tags($_GET['skin'], 1, 1) : '';
@@ -23,7 +23,7 @@ if (! (isset($ev['ev_id']) && $ev['ev_id']))
     alert('등록된 이벤트가 없습니다.');
 
 $g5['title'] = $ev['ev_subject'];
-include_once('./_head.php');
+include_once('_head.php');
 
 if ($is_admin)
     echo '<div class="sev_admin"><a href="'.G5_ADMIN_URL.'/shop_admin/itemeventform.php?w=u&amp;ev_id='.$ev['ev_id'].'" class="btn_admin btn"><span class="sound_only">이벤트 관리</span><i class="fa fa-cog fa-spin fa-fw"></i></a></div>';
@@ -117,4 +117,4 @@ if (file_exists($timg))
 <!-- } 이벤트 끝 -->
 
 <?php
-include_once('./_tail.php');
+include_once('_tail.php');

@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '400400';
-include_once('./_common.php');
+include_once('_common.php');
 
 check_admin_token();
 
@@ -66,4 +66,4 @@ sql_query($sql);
 
 $qstr = "sort1=$sort1&amp;sort2=$sort2&amp;sel_field=$sel_field&amp;search=$search&amp;page=$page";
 
-goto_url("./orderform.php?od_id=$od_id&amp;$qstr");
+goto_url("./orderform?od_id=$od_id&amp;$qstr");

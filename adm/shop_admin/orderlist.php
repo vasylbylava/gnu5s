@@ -381,7 +381,7 @@ if( function_exists('pg_setting_check') ){
         <td rowspan="3" class="td_num_right"><?php echo number_format($row['couponprice']); ?></td>
         <td rowspan="3" class="td_num_right"><?php echo number_format($row['od_misu']); ?></td>
         <td rowspan="3" class="td_mng td_mng_s">
-            <a href="./orderform.php?od_id=<?php echo $row['od_id']; ?>&amp;<?php echo $qstr; ?>" class="mng_mod btn btn_02"><span class="sound_only"><?php echo $row['od_id']; ?> </span>보기</a>
+            <a href="./orderform?od_id=<?php echo $row['od_id']; ?>&amp;<?php echo $qstr; ?>" class="mng_mod btn btn_02"><span class="sound_only"><?php echo $row['od_id']; ?> </span>보기</a>
         </td>
     </tr>
     <tr class="<?php echo $bg; ?>">

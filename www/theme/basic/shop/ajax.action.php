@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 
 $action = isset($_REQUEST['action']) ? preg_replace('/[^a-z0-9_]/i', '', $_REQUEST['action']) : '';
 
@@ -144,7 +144,7 @@ switch ($action) {
                     $row4 = sql_fetch($sql4);
 
                     if(($sum_qty + $row4['ct_sum']) > $it['it_buy_max_qty'])
-                        die(json_encode(array('error' => $it['it_name'].'의 선택옵션 개수 총합 '.number_format($it['it_buy_max_qty']).'개 이하로 주문해 주십시오.', './cart.php')));
+                        die(json_encode(array('error' => $it['it_name'].'의 선택옵션 개수 총합 '.number_format($it['it_buy_max_qty']).'개 이하로 주문해 주십시오.', './cart')));
                 }
             }
 
@@ -267,7 +267,7 @@ switch ($action) {
         if($it['it_buy_min_qty'] > 1)
             $item_ct_qty = $it['it_buy_min_qty'];
 
-        $action_url = G5_THEME_SHOP_URL.'/ajax.action.php';
+        $action_url = G5_THEME_SHOP_URL.'/ajax.action';
 
         $is_option   = 0;
         $option_item = get_shop_item_options($it['it_id'], $it['it_option_subject'], 0);

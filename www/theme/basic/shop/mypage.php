@@ -52,7 +52,7 @@ for($k=0; $cp=sql_fetch_array($res); $k++) {
 	            </a>
 	        </li>
 	        <li>
-	            <a href="<?php echo G5_BBS_URL ?>/scrap.php" target="_blank" class="win_scrap">
+	            <a href="<?php echo G5_BBS_URL ?>/scrap" target="_blank" class="win_scrap">
 	            	<i class="fa fa-thumb-tack" aria-hidden="true"></i>스크랩
 	            	<strong class="scrap"><?php echo number_format($member['mb_scrap_cnt']); ?></strong>
 	            </a>

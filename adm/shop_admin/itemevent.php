@@ -62,7 +62,7 @@ $result = sql_query($sql);
         <td class="td_boolean"><?php echo $row['ev_use'] ? '<span class="txt_true">예</span>' : '<span class="txt_false">아니오</span>'; ?></td>
         <td class="td_mng td_mng_l">
             <a href="./itemeventform?w=u&amp;ev_id=<?php echo $row['ev_id']; ?>" class="btn btn_03">수정</a>
-            <a href="<?php echo G5_SHOP_URL; ?>/event.php?ev_id=<?php echo $row['ev_id']; ?>" class="btn btn_02">보기</a>
+            <a href="<?php echo G5_SHOP_URL; ?>/event?ev_id=<?php echo $row['ev_id']; ?>" class="btn btn_02">보기</a>
             <a href="./itemeventformupdate?w=d&amp;ev_id=<?php echo $row['ev_id']; ?>" onclick="return delete_confirm(this);" class="btn btn_02">삭제</a>
         </td>
     </tr>

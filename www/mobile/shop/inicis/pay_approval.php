@@ -38,7 +38,7 @@ if(isset($data['pp_id']) && $data['pp_id']) {
         $tmp_cart_id = get_session('ss_cart_id');
 
     if (get_cart_count($tmp_cart_id) == 0)// 장바구니에 담기
-        alert('세션을 잃거나 다른 브라우저에서 데이터가 변경된 경우입니다. 장바구니 상태를 확인후에 다시 시도해 주세요.', G5_SHOP_URL.'/cart.php');
+        alert('세션을 잃거나 다른 브라우저에서 데이터가 변경된 경우입니다. 장바구니 상태를 확인후에 다시 시도해 주세요.', G5_SHOP_URL.'/cart');
 
     $error = "";
     // 장바구니 상품 재고 검사
@@ -66,12 +66,12 @@ if(isset($data['pp_id']) && $data['pp_id']) {
     }
 
     if($i == 0)
-        alert('장바구니가 비어 있습니다.', G5_SHOP_URL.'/cart.php');
+        alert('장바구니가 비어 있습니다.', G5_SHOP_URL.'/cart');
 
     if ($error != "")
     {
         $error .= "결제진행이 중단 되었습니다.";
-        alert($error, G5_SHOP_URL.'/cart.php');
+        alert($error, G5_SHOP_URL.'/cart');
     }
 }
 

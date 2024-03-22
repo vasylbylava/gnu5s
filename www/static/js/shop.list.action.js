@@ -22,7 +22,7 @@ jQuery(function ($) {
         }
 
         $.post(
-            g5_shop_url + "/ajax.action.php",
+            g5_shop_url + "/ajax.action",
             { it_id: it_id, action : "wish_update" },
             function(error) {
                 if(error != "OK") {
@@ -130,7 +130,7 @@ jQuery(function ($) {
         var ajax_url = g5_shop_url || g5_shop_url;
 
         $.ajax({
-            url: ajax_url + "/ajax.action.php",
+            url: ajax_url + "/ajax.action",
             type: "GET",
             data: {"action":"refresh_cart"},
             dataType: "html",
@@ -159,7 +159,7 @@ jQuery(function ($) {
         }
 
         $.ajax({
-            url: ajax_url + "/ajax.action.php",
+            url: ajax_url + "/ajax.action",
             type: "GET",
             data: {"action":"refresh_wish"},
             dataType: "html",
@@ -206,7 +206,7 @@ jQuery(function ($) {
         $("li.sct_li").not($sct_li).removeClass(overclass);
 
         $.ajax({
-            url: g5_shop_url+"/ajax.action.php",
+            url: g5_shop_url+"/ajax.action",
             type: "POST",
             data: {
                 "it_id" : it_id,

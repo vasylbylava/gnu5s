@@ -190,7 +190,7 @@ $ft_a_st = 'display:block;padding:30px 0;background:#484848;color:#fff;text-alig
         </tbody>
         </table>
 
-        <a href="<?php echo G5_ADMIN_URL.'/shop_admin/orderform.php?od_id='.$od_id; ?>" target="_blank" style="<?php echo $ft_a_st; ?>">관리자 모드에서 주문 확인</a>
+        <a href="<?php echo G5_ADMIN_URL.'/shop_admin/orderform?od_id='.$od_id; ?>" target="_blank" style="<?php echo $ft_a_st; ?>">관리자 모드에서 주문 확인</a>
 
     </div>
 </div>

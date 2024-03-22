@@ -212,7 +212,7 @@ include_once('_head.php');
         <?php if ($i == 0) { ?>
         <a href="<?php echo G5_SHOP_URL; ?>/" class="btn01">쇼핑 계속하기</a>
         <?php } else { ?>
-        <input type="hidden" name="url" value="./orderform.php">
+        <input type="hidden" name="url" value="./orderform">
         <input type="hidden" name="records" value="<?php echo $i; ?>">
         <input type="hidden" name="act" value="">
         <a href="<?php echo shop_category_url($continue_ca_id); ?>" class="btn01">쇼핑 계속하기</a>
@@ -237,7 +237,7 @@ $(function() {
         close_btn_idx = $(".mod_options").index($(this));
 
         $.post(
-            "./cartoption.php",
+            "./cartoption",
             { it_id: it_id },
             function(data) {
                 $("#mod_option_frm").remove();

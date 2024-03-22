@@ -1,6 +1,6 @@
 <?php
 $sub_menu = '400400';
-include_once('./_common.php');
+include_once('_common.php');
 
 $cart_title3 = '주문번호';
 $cart_title4 = '배송완료';
@@ -369,7 +369,7 @@ add_javascript(G5_POSTCODE_JS, 0);    //다음 주소 js
     <h2 class="h2_frm">결제상세정보</h2>
     <?php echo $pg_anchor; ?>
 
-    <form name="frmorderreceiptform" action="./orderformreceiptupdate.php" method="post" autocomplete="off">
+    <form name="frmorderreceiptform" action="./orderformreceiptupdate" method="post" autocomplete="off">
     <input type="hidden" name="od_id" value="<?php echo $od_id; ?>">
     <input type="hidden" name="sort1" value="<?php echo $sort1; ?>">
     <input type="hidden" name="sort2" value="<?php echo $sort2; ?>">
@@ -632,7 +632,7 @@ add_javascript(G5_POSTCODE_JS, 0);    //다음 주소 js
                     ?>
                         <a href="javascript:;" onclick="<?php echo $cash_receipt_script; ?>">현금영수증 확인</a>
                     <?php } else { ?>
-                        <a href="javascript:;" onclick="window.open('<?php echo G5_SHOP_URL; ?>/taxsave.php?od_id=<?php echo $od_id; ?>', 'taxsave', 'width=550,height=400,scrollbars=1,menus=0');">현금영수증 발급</a>
+                        <a href="javascript:;" onclick="window.open('<?php echo G5_SHOP_URL; ?>/taxsave?od_id=<?php echo $od_id; ?>', 'taxsave', 'width=550,height=400,scrollbars=1,menus=0');">현금영수증 발급</a>
                     <?php } ?>
                     </td>
                 </tr>
@@ -844,12 +844,12 @@ add_javascript(G5_POSTCODE_JS, 0);    //다음 주소 js
     <div class="btn_confirm01 btn_confirm">
         <input type="submit" value="결제/배송내역 수정" class="btn_submit btn">
         <?php if($od['od_status'] == '주문' && $od['od_misu'] > 0) { ?>
-        <a href="./personalpayform.php?popup=yes&amp;od_id=<?php echo $od_id; ?>" id="personalpay_add" class="btn btn_02">개인결제추가</a>
+        <a href="./personalpayform?popup=yes&amp;od_id=<?php echo $od_id; ?>" id="personalpay_add" class="btn btn_02">개인결제추가</a>
         <?php } ?>
         <?php if($od['od_misu'] < 0 && ($od['od_receipt_price'] - $od['od_refund_price']) > 0 && ($od['od_settle_case'] == '신용카드' || $od['od_settle_case'] == '계좌이체' || $od['od_settle_case'] == 'KAKAOPAY')) { ?>
-        <a href="./orderpartcancel.php?od_id=<?php echo $od_id; ?>" id="orderpartcancel" class="btn btn_02"><?php echo $od['od_settle_case']; ?> 부분취소</a>
+        <a href="./orderpartcancel?od_id=<?php echo $od_id; ?>" id="orderpartcancel" class="btn btn_02"><?php echo $od['od_settle_case']; ?> 부분취소</a>
         <?php } ?>
-        <a href="./orderlist.php?<?php echo $qstr; ?>" class="btn btn_02">목록</a>
+        <a href="./orderlist?<?php echo $qstr; ?>" class="btn btn_02">목록</a>
     </div>
     </form>
 </section>
@@ -864,7 +864,7 @@ add_javascript(G5_POSTCODE_JS, 0);    //다음 주소 js
         </p>
     </div>
 
-    <form name="frmorderform2" action="./orderformupdate.php" method="post">
+    <form name="frmorderform2" action="./orderformupdate" method="post">
     <input type="hidden" name="od_id" value="<?php echo $od_id; ?>">
     <input type="hidden" name="sort1" value="<?php echo $sort1; ?>">
     <input type="hidden" name="sort2" value="<?php echo $sort2; ?>">
@@ -889,7 +889,7 @@ add_javascript(G5_POSTCODE_JS, 0);    //다음 주소 js
     <h2 class="h2_frm">주문자/배송지 정보</h2>
     <?php echo $pg_anchor; ?>
 
-    <form name="frmorderform3" action="./orderformupdate.php" method="post">
+    <form name="frmorderform3" action="./orderformupdate" method="post">
     <input type="hidden" name="od_id" value="<?php echo $od_id; ?>">
     <input type="hidden" name="sort1" value="<?php echo $sort1; ?>">
     <input type="hidden" name="sort2" value="<?php echo $sort2; ?>">
@@ -1014,7 +1014,7 @@ add_javascript(G5_POSTCODE_JS, 0);    //다음 주소 js
 
     <div class="btn_confirm01 btn_confirm">
         <input type="submit" value="주문자/배송지 정보 수정" class="btn_submit btn ">
-        <a href="./orderlist.php?<?php echo $qstr; ?>" class="btn">목록</a>
+        <a href="./orderlist?<?php echo $qstr; ?>" class="btn">목록</a>
     </div>
 
     </form>

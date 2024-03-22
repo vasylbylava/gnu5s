@@ -1,7 +1,7 @@
 <?php
 $sub_menu = '400400';
-include_once('./_common.php');
-include_once('./admin.shop.lib.php');
+include_once('_common.php');
+include_once('admin.shop.lib.php');
 include_once(G5_LIB_PATH.'/mailer.lib.php');
 
 auth_check_menu($auth, $sub_menu, "w");
@@ -154,7 +154,7 @@ if($info['od_misu'] == 0 && $od_status == '배송') {
 
 // 메일발송
 define("_ORDERMAIL_", true);
-include "./ordermail.inc.php";
+include "ordermail.inc.php";
 
 
 // SMS 문자전송
@@ -175,4 +175,4 @@ if($posts['od_tno'] && $posts['od_escrow'] == 1)
 
 $qstr = "sort1=$sort1&amp;sort2=$sort2&amp;sel_field=$sel_field&amp;search=$search&amp;page=$page";
 
-goto_url("./orderform.php?od_id=$od_id&amp;$qstr");
+goto_url("./orderform?od_id=$od_id&amp;$qstr");

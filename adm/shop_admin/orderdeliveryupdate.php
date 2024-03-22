@@ -88,7 +88,7 @@ if(isset($_FILES['excelfile']['tmp_name']) && $_FILES['excelfile']['tmp_name']) 
 
         // 메일
         if($config['cf_email_use'] && $od_send_mail)
-            include './ordermail.inc.php';
+            include 'ordermail.inc.php';
 
         // 에스크로 배송
         if($send_escrow && $od['od_tno'] && $od['od_escrow']) {

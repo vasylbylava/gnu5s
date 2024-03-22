@@ -53,7 +53,7 @@ else
 
 if (get_cart_count($tmp_cart_id) == 0) {    // 장바구니에 담기
     if(function_exists('add_order_post_log')) add_order_post_log('장바구니가 비어 있습니다.');
-    alert('장바구니가 비어 있습니다.\\n\\n이미 주문하셨거나 장바구니에 담긴 상품이 없는 경우입니다.', G5_SHOP_URL.'/cart.php');
+    alert('장바구니가 비어 있습니다.\\n\\n이미 주문하셨거나 장바구니에 담긴 상품이 없는 경우입니다.', G5_SHOP_URL.'/cart');
 }
 
 $sql = "select * from {$g5['g5_shop_order_table']} limit 1";
@@ -99,7 +99,7 @@ for ($i=0; $row=sql_fetch_array($result); $i++)
 
 if($i == 0) {
     if(function_exists('add_order_post_log')) add_order_post_log('장바구니가 비어 있습니다.');
-    alert('장바구니가 비어 있습니다.\\n\\n이미 주문하셨거나 장바구니에 담긴 상품이 없는 경우입니다.', G5_SHOP_URL.'/cart.php');
+    alert('장바구니가 비어 있습니다.\\n\\n이미 주문하셨거나 장바구니에 담긴 상품이 없는 경우입니다.', G5_SHOP_URL.'/cart');
 }
 
 if ($error != "")

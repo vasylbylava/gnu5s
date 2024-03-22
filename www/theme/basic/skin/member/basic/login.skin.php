@@ -42,7 +42,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
     <?php if (isset($default['de_level_sell']) && $default['de_level_sell'] == 1) { // 상품구입 권한 ?>
 
 	<!-- 주문하기, 신청하기 -->
-	<?php if (preg_match("/orderform.php/", $url)) { ?>
+	<?php if (preg_match("/orderform/", $url)) { ?>
     <section id="mb_login_notmb">
         <h2>비회원 구매</h2>
         <p>비회원으로 주문하시는 경우 포인트는 지급하지 않습니다.</p>

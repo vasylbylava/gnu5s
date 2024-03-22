@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 
 if (G5_IS_MOBILE) {
     include_once(G5_MSHOP_PATH.'/orderinquiry.php');
@@ -80,14 +80,14 @@ if (!$is_member)
 }
 
 $g5['title'] = '주문내역조회';
-include_once('./_head.php');
+include_once('_head.php');
 ?>
 
 <!-- 주문 내역 시작 { -->
 <div id="sod_v">
     <?php
     $limit = " limit $from_record, $rows ";
-    include "./orderinquiry.sub.php";
+    include "orderinquiry.sub.php";
     ?>
 
     <?php echo get_paging($config['cf_write_pages'], $page, $total_page, "{$_SERVER['SCRIPT_NAME']}?$qstr&amp;page="); ?>
@@ -95,4 +95,4 @@ include_once('./_head.php');
 <!-- } 주문 내역 끝 -->
 
 <?php
-include_once('./_tail.php');
+include_once('_tail.php');

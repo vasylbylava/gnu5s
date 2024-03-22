@@ -218,7 +218,7 @@ if($is_kakaopay_use) {
 
         if ($i == 0) {
             //echo '<tr><td colspan="7" class="empty_table">장바구니에 담긴 상품이 없습니다.</td></tr>';
-            alert('장바구니가 비어 있습니다.', G5_SHOP_URL.'/cart.php');
+            alert('장바구니가 비어 있습니다.', G5_SHOP_URL.'/cart');
         } else {
             // 배송비 계산
             $send_cost = get_sendcost($s_cart_id);
@@ -786,7 +786,7 @@ $(function() {
         var it_id = $cp_btn_el.closest("tr").find("input[name^=it_id]").val();
 
         $.post(
-            "./orderitemcoupon.php",
+            "./orderitemcoupon",
             { it_id: it_id,  sw_direct: "<?php echo $sw_direct; ?>" },
             function(data) {
                 $cp_btn_el.after(data);
@@ -960,7 +960,7 @@ $(function() {
         var price = parseInt($("input[name=od_price]").val());
         var send_cost = parseInt($("input[name=od_send_cost]").val());
         $.post(
-            "./ordersendcostcoupon.php",
+            "./ordersendcostcoupon",
             { price: price, send_cost: send_cost },
             function(data) {
                 $this.after(data);
@@ -1169,7 +1169,7 @@ function calculate_temp_point()
 function calculate_sendcost(code)
 {
     $.post(
-        "./ordersendcost.php",
+        "./ordersendcost",
         { zipcode: code },
         function(data) {
             $("input[name=od_send_cost2]").val(data);

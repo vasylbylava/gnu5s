@@ -71,7 +71,7 @@ for ($i=0; $i<$count_post_chk; $i++)
 
             // 메일
             if($config['cf_email_use'] && $od_send_mail)
-                include './ordermail.inc.php';
+                include 'ordermail.inc.php';
 
             break;
 
@@ -104,7 +104,7 @@ for ($i=0; $i<$count_post_chk; $i++)
 
             // 메일
             if($config['cf_email_use'] && $od_send_mail)
-                include './ordermail.inc.php';
+                include 'ordermail.inc.php';
 
             // 에스크로 배송
             if($send_escrow && $od['od_tno'] && $od['od_escrow']) {

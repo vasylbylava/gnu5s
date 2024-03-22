@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 
 $code = isset($_POST['zipcode']) ? preg_replace('#[^0-9]#', '', $_POST['zipcode']) : '';
 

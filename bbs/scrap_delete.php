@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+include_once('_common.php');
 
 $ms_id = isset($_REQUEST['ms_id']) ? (int) $_REQUEST['ms_id'] : 0;
 
@@ -12,4 +12,4 @@ sql_query($sql);
 $sql = " update `{$g5['member_table']}` set mb_scrap_cnt = '".get_scrap_totals($member['mb_id'])."' where mb_id = '{$member['mb_id']}' ";
 sql_query($sql);
 
-goto_url('./scrap.php?page='.$page);
+goto_url('./scrap?page='.$page);

@@ -119,7 +119,7 @@ $colspan = 9;
                 break;
         }
 
-        $link1 = '<a href="./orderform.php?od_id='.$row['od_id'].'">';
+        $link1 = '<a href="./orderform?od_id='.$row['od_id'].'">';
         $link2 = '</a>';
 
         // 쿠폰사용회수

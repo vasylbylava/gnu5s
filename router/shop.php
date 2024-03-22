@@ -132,4 +132,39 @@ $app->group('/shop', function ($group) {
         return $response;
     });
     
+    $group->get('/event', function (Request $request, Response $response, $args) {
+        require_once '../shop/event.php';
+        return $response;
+    });
+    
+    $group->map(['GET', 'POST'], '/ajax.action', function (Request $request, Response $response, $args) {
+        require_once '../shop/ajax.action.php';
+        return $response;
+    });
+    
+    $group->get('/orderinquiry', function (Request $request, Response $response, $args) {
+        require_once '../shop/orderinquiry.php';
+        return $response;
+    });
+    
+    $group->post('/orderitemcoupon', function (Request $request, Response $response, $args) {
+        require_once '../shop/orderitemcoupon.php';
+        return $response;
+    });
+    
+    $group->post('/cartoption', function (Request $request, Response $response, $args) {
+        require_once '../shop/cartoption.php';
+        return $response;
+    });
+    
+    $group->post('/ordersendcost', function (Request $request, Response $response, $args) {
+        require_once '../shop/ordersendcost.php';
+        return $response;
+    });
+    
+    $group->post('/ordersendcostcoupon', function (Request $request, Response $response, $args) {
+        require_once '../shop/ordersendcostcoupon.php';
+        return $response;
+    });
+    
 });

@@ -24,7 +24,7 @@ $cart_action_url = G5_SHOP_URL.'/cartupdate';
         $it_img = get_it_image($row['it_id'], 65, 65, true);
 		echo '<div class="prd_img">'.$it_img.'</div>';
 		echo '<div class="prd_cnt">';
-        echo '<a href="'.G5_SHOP_URL.'/cart.php" class="prd_name">'.$it_name.'</a>';
+        echo '<a href="'.G5_SHOP_URL.'/cart" class="prd_name">'.$it_name.'</a>';
         echo '<span class="prd_cost">';
 		echo number_format($row['ct_price']).PHP_EOL;
         echo '</span>'.PHP_EOL;
@@ -45,7 +45,7 @@ $cart_action_url = G5_SHOP_URL.'/cartupdate';
     ?>
     </ul>
     <?php if($i){ ?><div class="btn_buy"><button type="submit" class="btn_submit">구매하기</button></div><?php } ?>
-    <a href="<?php echo G5_SHOP_URL; ?>/cart.php" class="go_cart">전체보기</a>
+    <a href="<?php echo G5_SHOP_URL; ?>/cart" class="go_cart">전체보기</a>
     </form>
 </aside>
 <script>
@@ -57,7 +57,7 @@ jQuery(function ($) {
         var $wrap = $(this).closest("li");
 
         $.ajax({
-            url: g5_theme_shop_url+"/ajax.action.php",
+            url: g5_theme_shop_url+"/ajax.action",
             type: "POST",
             data: {
                 "it_id" : it_id,

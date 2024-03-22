@@ -71,6 +71,11 @@ $app->group('/bbs', function ($group) {
         return $response;
     });
 
+    $group->get('/scrap_delete', function (Request $request, Response $response, $args) {
+        require_once '../bbs/scrap_delete.php';
+        return $response;
+    });
+
     $group->get('/board', function (Request $request, Response $response, $args) {
         require_once '../bbs/board.php';
         return $response;

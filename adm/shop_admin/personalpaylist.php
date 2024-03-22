@@ -103,7 +103,7 @@ $colspan = 10;
     <?php
     for ($i=0; $row=sql_fetch_array($result); $i++) {
         if($row['od_id'])
-            $od_id = '<a href="./orderform.php?od_id='.$row['od_id'].'" target="_blank">'.$row['od_id'].'</a>';
+            $od_id = '<a href="./orderform?od_id='.$row['od_id'].'" target="_blank">'.$row['od_id'].'</a>';
         else
             $od_id = '&nbsp;';
 
