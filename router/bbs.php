@@ -251,4 +251,24 @@ $app->group('/bbs', function ($group) {
         return $response;
     });
 
+    $group->post('/ajax.autosave', function (Request $request, Response $response, $args) {
+        require_once '../bbs/ajax.autosave.php';
+        return $response;
+    });
+
+    $group->get('/ajax.autosavelist', function (Request $request, Response $response, $args) {
+        require_once '../bbs/ajax.autosavelist.php';
+        return $response;
+    });
+
+    $group->get('/ajax.autosaveload', function (Request $request, Response $response, $args) {
+        require_once '../bbs/ajax.autosaveload.php';
+        return $response;
+    });
+
+    $group->get('/ajax.autosavedel', function (Request $request, Response $response, $args) {
+        require_once '../bbs/ajax.autosavedel.php';
+        return $response;
+    });
+
 });

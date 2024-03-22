@@ -22,7 +22,7 @@ function autosave() {
         // 변수에 저장해 놓은 값과 다를 경우에만 임시 저장함
         if (save_wr_subject != this.wr_subject.value || save_wr_content != this.wr_content.value) {
             $.ajax({
-                url: g5_bbs_url+"/ajax.autosave.php",
+                url: g5_bbs_url+"/ajax.autosave",
                 data: {
                     "uid" : this.uid.value,
                     "subject": this.wr_subject.value,
@@ -50,7 +50,7 @@ $(function(){
     // 임시저장된 글목록을 가져옴
     $("#btn_autosave").click(function(){
         if ($("#autosave_pop").is(":hidden")) {
-            $.get(g5_bbs_url+"/ajax.autosavelist.php", function(data){
+            $.get(g5_bbs_url+"/ajax.autosavelist", function(data){
                 //alert(data);
                 //console.log( "Data: " + data);
                 $("#autosave_pop ul").empty();
@@ -79,7 +79,7 @@ $(function(){
         var as_id = $li.data("as_id");
         var as_uid = $li.data("uid");
         $("#fwrite input[name='uid']").val(as_uid);
-        $.get(g5_bbs_url+"/ajax.autosaveload.php", {"as_id":as_id}, function(data){
+        $.get(g5_bbs_url+"/ajax.autosaveload", {"as_id":as_id}, function(data){
             var subject = $(data).find("item").find("subject").text();
             var content = $(data).find("item").find("content").text();
             $("#wr_subject").val(subject);
@@ -103,7 +103,7 @@ $(function(){
     $(document).on( "click", ".autosave_del", function(){
         var $li = $(this).parents("li");
         var as_id = $li.data("as_id");
-        $.get(g5_bbs_url+"/ajax.autosavedel.php", {"as_id":as_id}, function(data){
+        $.get(g5_bbs_url+"/ajax.autosavedel", {"as_id":as_id}, function(data){
             if (data == -1) {
                 alert("임시 저장된글을 삭제중에 오류가 발생하였습니다.");
             } else {

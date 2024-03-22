@@ -9,7 +9,7 @@ if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
     ?>
     <h2>답변등록</h2>
 
-    <form name="fanswer" method="post" action="./qawrite_update.php" onsubmit="return fwrite_submit(this);" enctype="multipart/form-data" autocomplete="off">
+    <form name="fanswer" method="post" action="./qawrite_update" onsubmit="return fwrite_submit(this);" enctype="multipart/form-data" autocomplete="off">
     <input type="hidden" name="qa_id" value="<?php echo $view['qa_id']; ?>">
     <input type="hidden" name="w" value="a">
     <input type="hidden" name="sca" value="<?php echo $sca ?>">
