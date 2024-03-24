@@ -424,7 +424,6 @@ $pg_anchor = '<ul class="anchor">
     <li><a href="#anc_cf_board">게시판기본</a></li>
     <li><a href="#anc_cf_join">회원가입</a></li>
     <li><a href="#anc_cf_cert">본인확인</a></li>
-    <li><a href="#anc_cf_url">짧은주소</a></li>
     <li><a href="#anc_cf_mail">기본메일환경</a></li>
     <li><a href="#anc_cf_article_mail">글작성메일</a></li>
     <li><a href="#anc_cf_join_mail">가입메일</a></li>
@@ -1069,10 +1068,6 @@ if ($config['cf_sms_use'] && $config['cf_icode_id'] && $config['cf_icode_pw']) {
             </table>
         </div>
     </section>
-
-    <?php
-    require_once '_rewrite_config_form.php';
-    ?>
 
     <section id="anc_cf_mail">
         <h2 class="h2_frm">기본 메일 환경 설정</h2>
