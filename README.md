@@ -1,6 +1,6 @@
 
 # 그누보드5 짧은 주소 Alpha Version
-# GNUBOARD5s is short url version in GNUBOARD5.
+(GNUBOARD5s is short url version in GNUBOARD5.)
 
 ## 데모 사이트
 - [https://gnu5s.gnuboard.kr](https://gnu5s.gnuboard.kr)
